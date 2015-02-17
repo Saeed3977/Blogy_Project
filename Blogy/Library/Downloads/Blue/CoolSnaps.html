@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>My photos</title>
+<link href= "fonts.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lightbox.js"></script>
+
+<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lightbox.js"></script>
+
+<script type = "text/javascript">
+		function displayNextImage() {
+			//document.getElementById("img").src = images[x];
+			
+        }
+
+		function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("img").src = images[x];
+        }
+
+        function startTimer() {
+            setInterval(displayNextImage, 5000);
+        }
+
+		var images = [], x = -1;
+		images[0] = "images/1.jpg";
+		images[1] = "images/gero.jpg";
+
+		/*
+		function nameHover() {
+			document.getElementById("name").textContent = "#Gero Nikolov";
+		}
+		function nameLeave() {
+			document.getElementById("name").textContent = "Gero Nikolov";
+		}
+		*/
+		
+		function changeImage(path) {
+			document.getElementById("snapy").src = path;
+		}
+</script>
+
+</head>
+
+<body onLoad = "$('#img').slideUp('slow')">
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li class="me"><a href="index.html">Me</a></li>
+			<li><a href="MyWork.html">My work</a></li>
+			<li><a href="CoolSnaps.html">Photos</a></li>
+		</ul>
+	</div>
+	<!-- end #menu --> 
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>Photos</h1>
+		</div>
+	</div>
+</div>
+<div id="wrapper"> 
+	<div id="page">
+	<table id="gallery" align="center">
+		<tr>
+			<td>
+				<a href="images/5.jpg" rel="lightbox">
+				<!--Image Headers-->
+					Beauty of the mountain
+				<!--Photos-->
+					<img src="images/5.jpg" id="1"/>
+				</a>
+			</td>
+			<td>
+				<a href="images/6.jpg" rel="lightbox">
+				<!--Image Headers-->
+					The mountain mist
+				<!--Photos-->
+					<img src="images/6.jpg" id="1"/>
+				</a>
+			</td>
+			<td>
+				<a href="images/7.jpg" rel="lightbox">
+				<!--Image Headers-->
+					Pretty sunset
+				<!--Photos-->
+					<img src="images/7.jpg" id="1"/>
+				</a>
+			</td>
+			<td>
+				<a href="images/8.jpg" rel="lightbox">
+				<!--Image Headers-->
+					Mountain Sky
+				<!--Photos-->
+					<img src="images/8.jpg" rel="lightbox"/>
+				</a>
+			</td>
+		</tr>
+	</table>
+<!--
+		<div id="snaps" align="center">
+			<a href="#">
+				<img id="image" class="buzz" src="images/1.jpg" onClick='changeImage("images/1.jpg")'/>
+			</a>
+			<a href="#">
+				<img id="image" class="buzz" src="images/2.jpg" onClick='changeImage("images/2.jpg")'/>
+			</a>
+		</div>
+	</div>
+-->
+</div>
+</body>
+</html>

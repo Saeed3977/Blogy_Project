@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<link rel="shortcut icon" href="Library/images/Blogy-ICO.png" type="image/x-icon">
+		<link rel="icon" href="Library/images/Blogy-ICO.png" type="image/x-icon">
+		<title>Log in</title>
+		<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href= "fonts.css" rel="stylesheet" type="text/css">
+		
+		<script type='text/javascript' src='java.js'></script>
+		<script type="text/javascript">
+			function checkKey(e) {
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if(code == 13) { //Enter keycode
+					var text = document.getElementById('mail').value.toLowerCase();
+					var pass = document.getElementById('password').value;
+					document.getElementById('mail').value = document.getElementById('mail').value.toLowerCase();
+					
+					if (text == "")
+					{
+						alert("Enter your e-mail please.");
+					}
+					else
+					if (pass == "")
+					{
+						alert("Enter your password please.");
+					}
+					else
+					{
+						if (!isValidEmailAddress(text)) {
+							alert("Enter valid e-mail address please.");
+						}
+						else {
+							document.forms['signIn'].submit();
+						}
+					}
+				}
+			}
+			
+			function start() {
+				var text = document.getElementById('mail').value;
+				var pass = document.getElementById('password').value;
+				document.getElementById('mail').value = document.getElementById('mail').value.toLowerCase();
+				
+				if (text == "")
+				{
+					alert("Enter your e-mail please.");
+				}
+				else
+				if (pass == "")
+				{
+					alert("Enter your password please.");
+				}
+				else
+				{
+					if (!isValidEmailAddress(text)) {
+						alert("Enter valid e-mail address please.");
+					}
+					else {
+						document.forms['signIn'].submit();
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="http://www.vss.free.bg" target='_blank' class="logo-button"><img src="Library/images/logo.png" /></a>
+			<a href="index.php">Home</a>
+			<a href="Blogies_index.php">Blogies</a>
+			<a href='Downloads.html'>Downloads</a>
+			<a href='SignIn.html'>Log in</a>
+		</div>
+		<div id="sub-logo">
+			<h1>Log into blogy.</h1>
+		</div>
+		<div id="body">
+			<form id="signIn"  action="Library/PHP/checkLog.php" method="post">
+				<input type="text" name="mail" id="mail" placeholder="E-mail"></input><br>
+				<input type="password" name="password" id="password" onkeypress="checkKey(event)" placeholder="Password"></input><br>
+				<a href="#" onclick="start()">Log in</a>
+				<a href='Register.html'>Register</a>
+				<div class="addMarginSmall"></div>
+			</form>
+		</div>
+	</body>
+</html>
