@@ -63,7 +63,7 @@ echo "
 				}
 				
 				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
+					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 					document.forms['accountInfo'].submit();
 				}
 			</script>

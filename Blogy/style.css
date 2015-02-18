@@ -146,6 +146,15 @@ h2, #blogies h3{
 	/*border: 1px solid #ccc;
 	border-radius: 2px;*/
 }
+#body h1 {
+	text-align: center;
+	
+	font-family: OpenSansLight;
+	font-size: 24px;
+	font-weight: normal;
+	
+	color: black;
+}
 
 #main-table {
 	text-align: center;
@@ -616,6 +625,8 @@ h2, #blogies h3{
 	font-family: OpenSansLight;
 	font-size: 16px;
 	font-weight: normal;
+	
+	line-height: 10px;
 }
 #signIn input {
 	font-family: OpenSansRegular;
@@ -623,9 +634,12 @@ h2, #blogies h3{
 	font-weight: normal;
 	
 	margin-top: 10px;
-	margin-bottom: 6px;
+	margin-bottom: 5px;
 	padding: 5px 5px 5px 5px;
 	text-align: left;
+}
+#signIn .bottom {
+	margin-bottom: 15px;
 }
 #signIn a {
 	-webkit-transition: all 0.25s ease-in-out;
@@ -955,33 +969,29 @@ h2, #blogies h3{
 }
 
 #personalMessage {
-	width: 125px;
+	width: 100%;
 	height: 20px;
 	
 	margin: auto auto auto auto;
+	text-align: center;
 }
 #personalMessage a {
-	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	font-family: OpenSansRegular;
 	font-size: 11px;
 	
 	background: -webkit-linear-gradient(#4c69ba, #3b55a0);
 	background: -moz-linear-gradient(#4c69ba, #3b55a0);
 	border: none;
-	border-radius: 1.5px;
-	-webkit-border-radius: 2px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
 	color: #fff;
 	
-	padding: 3.25px 10px 3.25px;
-	text-shadow: 0 -1px 0 #354c8c;
-	white-space: nowrap;
+	padding: 3.25px 10px;
 }
 #personalMessage a:hover {
 	background: -webkit-gradient(linear, center top, center bottom, from(#5A79D2), to(#4A67B6));
 	background: -moz-linear-gradient(90deg, #4A67B6 ,#5A79D2, #5A79D2);
 	border: none;
-}
-#personalMessage #left {
-	float: left;
 }
 .right {
 	float: right;

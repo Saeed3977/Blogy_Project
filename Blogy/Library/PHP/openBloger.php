@@ -7,6 +7,7 @@
 		$line = trim(fgets($parseSender));
 		if ($line_counter == 6) {
 			$senderMail = $line;
+			break;
 		}
 		$line_counter++;
 	}
@@ -98,7 +99,7 @@ echo "
 				}
 				
 				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
+					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 					document.forms['accountInfo'].submit();
 				}
 			</script>
@@ -146,8 +147,10 @@ echo "
 			</a>
 			<br>
 			<div id='personalMessage'>
-				<div id='left' class='fb-share-button' data-href='http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php' data-layout='button'></div>
-				<a href='#' class='right' onclick='doPost()'>Message</a>
+				<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$blogerFN $blogerLN&p[url]=http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php&p[images][0]=$blogerImg' target='_blank'>
+					Share
+				</a>
+				<a href='#' onclick='doPost()'>Message</a>
 			</div>
 			<div id='followers'>
 				<h1>$followersCount followers</h1>

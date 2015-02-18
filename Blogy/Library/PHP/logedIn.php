@@ -101,7 +101,7 @@ echo "
 					var title = document.getElementById('title').value;
 					var isHere = 0;
 					
-					for (var i = 0; i < title.length; i++) {
+					for (var i = 0; i < stack.length; i++) {
 						if (stack[i] == title) {
 							isHere = 1;
 						}
@@ -168,7 +168,7 @@ echo "
 				}
 				
 				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
+					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 					document.forms['accountInfo'].submit();
 				}
 			</script>
@@ -210,7 +210,11 @@ echo "
 					$profileName
 				</a>
 				<br>
-				<div id='left' class='fb-share-button' data-href='http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' data-layout='button'></div>
+				<div id='personalMessage'>
+					<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$profileFirst $profileLast&p[url]=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&p[images][0]=$profilePic' target='_blank'>
+						Share
+					</a>
+				</div>
 ";
 echo "
 				<div id='followers'>

@@ -65,7 +65,11 @@ echo "
 				$profileName
 			</a>
 			<br>
-			<div class='fb-share-button' data-href='http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' data-layout='button'></div>
+			<div id='personalMessage'>
+				<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$profileFirst $profileLast&p[url]=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&p[images][0]=$profilePic' target='_blank'>
+					Share
+				</a>
+			</div>
 			<div id='followers'>
 				<h1>$followersCount followers</h1>
 				<a href='conf_Following.html'>Follow</a>

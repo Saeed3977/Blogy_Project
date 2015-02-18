@@ -28,6 +28,7 @@
 		else
 		if ($doLine == 5) {
 			$pass = $line;
+			break;
 		}
 
 		$doLine++;
@@ -97,7 +98,7 @@ echo "
 			}
 			
 			function exploreStories() {
-				document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
+				document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 				document.forms['accountInfo'].submit();
 			}
 		</script>
@@ -163,6 +164,7 @@ echo "
 								else
 								if ($lines_count == 4) {
 									$authorLN = trim($line);
+									break;
 								}
 								$lines_count++;
 							}

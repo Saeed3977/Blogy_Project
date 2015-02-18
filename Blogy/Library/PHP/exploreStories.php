@@ -45,7 +45,7 @@ echo "
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 		<link rel='shortcut icon' href='../images/Blogy-ICO.png' type='image/x-icon'>
 		<link rel='icon' href='../images/Blogy-ICO.png' type='image/x-icon'>
-		<title>Worldwide stories</title>
+		<title>Worldwide blogies</title>
 		<link href='../../style.css' rel='stylesheet' type='text/css' media='screen' />
 		<link href= '../../fonts.css' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='../../java.js'></script>
@@ -86,7 +86,7 @@ echo "
 			}
 			
 			function exploreStories() {
-				document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
+				document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 				document.forms['accountInfo'].submit();
 			}
 			
@@ -124,9 +124,9 @@ echo "
 		</form>
 		
 		<div id='sub-logo'>
-			<a href='#' class='current'>Worldwide</a>
-			/
 			<a href='#' onclick='change()'>Following</a>
+			/
+			<a href='#' class='current'>Worldwide</a>
 		</div>
 		<div id='body'>
 			<table id='main-table'>
@@ -203,6 +203,7 @@ echo "
 				else
 				if ($count == 4) {
 					$authorLN = trim($line);
+					break;
 				}
 				$count++;
 			}
