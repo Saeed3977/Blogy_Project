@@ -76,11 +76,11 @@
 		<div id="body">
 			<form id="signIn"  action="Library/PHP/checkLog.php" method="post">
 				<input type="text" name="mail" id="mail" placeholder="E-mail"></input><br>
-				<input type="password" name="password" id="password" onkeypress="checkKey(event)" placeholder="Password" class='bottom'></input><br>
-				<a href="#" onclick="start()">Log in</a>
-				<a href='Register.html'>Register</a>
-				<br>
-				<br>
+				<input type="password" name="password" id="password" onkeypress="checkKey(event)" placeholder="Password"></input><br>
+				<div id="controlBox">
+					<a href="#" onclick="start()">Log in</a>
+					<a href='Register.html'>Register</a>
+				</div>
 			</form>
 		</div>
 	</body>

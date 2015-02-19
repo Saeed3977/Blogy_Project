@@ -463,6 +463,9 @@ h2, #blogies h3{
 	
 	border-radius: 100px;
 }
+#author img {
+	border: 1px solid #e5e5e5;
+}
 #list a, #author a {
 	-webkit-transition: all 0.25s ease-in-out;
 	-moz-transition: all 0.25s ease-in-out;
@@ -638,9 +641,6 @@ h2, #blogies h3{
 	padding: 5px 5px 5px 5px;
 	text-align: left;
 }
-#signIn .bottom {
-	margin-bottom: 15px;
-}
 #signIn a {
 	-webkit-transition: all 0.25s ease-in-out;
 	-moz-transition: all 0.25s ease-in-out;
@@ -660,6 +660,10 @@ h2, #blogies h3{
 #signIn a:hover {
 	color: #0088cc;
 	border: 1px solid #0088cc;
+}
+#controlBox {
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
 
 .homeButton img {	

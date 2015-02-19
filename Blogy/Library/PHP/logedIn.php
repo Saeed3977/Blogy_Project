@@ -1,7 +1,7 @@
 <?php
 	$sender = $_POST['sender'];
 	
-	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or die("Fatal error: Flag not found.");
+	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
 	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
 	fclose($logCheck);
 	
@@ -13,7 +13,6 @@
 		$followers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
 		$followersCount = fread($followers, filesize("../Authors/$sender/Followers.html"));
 		fclose($followers);
-	}
 	
 	$doLine = 0;
 		$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
@@ -431,4 +430,5 @@ echo "
 			</body>
 		</html>
 ";
+	}
 ?>

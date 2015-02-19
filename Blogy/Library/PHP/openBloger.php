@@ -1,6 +1,16 @@
 <?php
 	$sender = $_POST['accSender'];
 	$senderPic = $_POST['imgSender'];
+	
+	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
+	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
+	fclose($logCheck);
+	
+	if ($flag == "0") {
+		header('Location: ../Errors/E4.html');
+	}
+	else
+	if ($flag == "1") {
 	$line_counter = 0;
 	$parseSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to start parsing.");
 	while (!feof($parseSender)) {
@@ -353,4 +363,5 @@ echo "
 	</body>
 </html>
 ";
+	}
 ?>

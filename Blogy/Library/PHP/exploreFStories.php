@@ -1,6 +1,15 @@
 <?php
 	$sender = $_POST['sender'];
 	
+	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
+	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
+	fclose($logCheck);
+	
+	if ($flag == "0") {
+		header('Location: ../Errors/E4.html');
+	}
+	else
+	if ($flag == "1") {
 	$doLine = 0;
 	$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
 	while (! feof($config)) {
@@ -124,219 +133,223 @@ echo "
 			<br>
 ";
 
+	$followingCount = 0;
 	$todayPosts = array();
 	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 	$loadFollowing = fopen("../Authors/$sender/Following.txt", "r") or die("Unable to load Following.");
 	while (!feof($loadFollowing)) {
 		$line = trim(fgets($loadFollowing));
 		if ($line != "") {
+			$followingCount++;
 			$postAuthor = $line;
 
 			$files = scandir("../Authors/$postAuthor/Posts");
 			foreach($files as $file) {
-				if ($file != "Stack.txt" && $file != "." && date("Y-m-d", filemtime("../Authors/$postAuthor/Posts/$file")) == date("Y-m-d")) {
-					$todayPosts = array_merge($todayPosts, array("$file`$postAuthor" => date("H:i:s", filemtime("../Authors/$postAuthor/Posts/$file"))));//array_push($todayPosts, $filedate("H:i:s", filemtime("../Authors/$postAuthor/Posts/$file")));
+				if ($file != "Stack.txt" && $file != "." && $file != "..") { //&& date("Y-m-d", filemtime("../Authors/$postAuthor/Posts/$file")) == date("Y-m-d")) {
+					$todayPosts = array_merge($todayPosts, array("$file`$postAuthor" => date("Y-m-d H:i:s", filemtime("../Authors/$postAuthor/Posts/$file"))));//array_push($todayPosts, $filedate("H:i:s", filemtime("../Authors/$postAuthor/Posts/$file")));
 				}
 			}
 		}
 	}
 	fclose($loadFollowing);
-	
-	arsort($todayPosts);
-	foreach(array_keys($todayPosts) as $key) {
-		$keySplit = explode("`", $key);
-		$post = $keySplit[0];
-		$postAuthor = $keySplit[1];
-		$contentPost = (string)NULL;
-		$count = 0;
-		$fd = fopen("../Authors/$postAuthor/Posts/$post", "r") or die("Unable to open post.");
-		while (!feof($fd)) {
-			$line = fgets($fd);
-			if ($count == 0) {
-				$titlePost = trim($line);
-			}
-			else
-			if ($count == 1) {
-				$postImg = trim($line);
-			}
-			else
-			if ($count == 2 || $flag == 1) {
-				$line = str_replace("<br />", "", $line);
-				$url = NULL;
-				if(preg_match($reg_exUrl, $line, $url)) {
-					$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
-				}
-				$contentPost .= $line."<br>";
-				$flag = 1;
-			}
-			$count++;
-		}
-		fclose($fd);
 		
-		if ($contentPost == "NULL<br>") {
-			$contentPost = NULL;
-		}
-		$count = 0;
-		
-		//Pull author
-		$pullAuthor = fopen("../Authors/$postAuthor/config.txt", "r") or die("Unable to pull Author.");
-		while (! feof($pullAuthor)) {
-			$line = fgets($pullAuthor);
-			if ($count == 0) {
-				$authorImg = trim($line);
-			}
-			else
-			if ($count == 1) {
-				$authorHref = trim($line);
-			}
-			else
-			if ($count == 3) {
-				$authorFN = trim($line);
-			}
-			else
-			if ($count == 4) {
-				$authorLN = trim($line);
-				break;
-			}
-			$count++;
-		}
-		fclose($pullAuthor);
-		
-		if ($postImg != "NULL") {
-			$parseUrl = parse_url($postImg);
-
-			if ($parseUrl['host'] == 'www.youtube.com') {
-				$query = $parseUrl['query'];
-				$queryParse = explode("=", $query);
-				$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else 
-			if ($parseUrl['host'] == 'vimeo.com') {
-				$query = $parseUrl['path'];
-				$cmd ="<iframe src='//player.vimeo.com/video$query' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.dailymotion.com') {
-				$query = $parseUrl['path'];
-				$src = "//www.dailymotion.com/embed/$query";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.metacafe.com') {
-				$query = $parseUrl['path'];
-				$queryParse = explode("/", $query);
-				$src = "http://www.metacafe.com/embed/$queryParse[2]/";
-				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
-			}
-			else {
-				$url_headers=get_headers($postImg, 1);
-
-				if(isset($url_headers['Content-Type'])){
-					$type=strtolower($url_headers['Content-Type']);
-
-					$valid_image_type=array();
-					$valid_image_type['image/png']='';
-					$valid_image_type['image/jpg']='';
-					$valid_image_type['image/jpeg']='';
-					$valid_image_type['image/jpe']='';
-					$valid_image_type['image/gif']='';
-					$valid_image_type['image/tif']='';
-					$valid_image_type['image/tiff']='';
-					$valid_image_type['image/svg']='';
-					$valid_image_type['image/ico']='';
-					$valid_image_type['image/icon']='';
-					$valid_image_type['image/x-icon']='';
-
-					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
-					} else {
-						$cmd = "<h2>Unsupported player :(</h2>";
-					}
-				}
-			}
-			
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<div id='history'>
-						<a href='#' onclick=\"openBloger('$postAuthor')\">
-							<img src='$authorImg' alt='Bad image link :('>
-							<form id='$postAuthor' method='post' style='display: none;'>
-								<input type='text' name='accSender' value='$sender'></input>
-								<input type='text' name='imgSender' value='$profilePic'></input>
-								<input type='text' name='blogSender' value='$postAuthor'></input>
-								<input type='text' name='blogerFN' value='$authorFN'></input>
-								<input type='text' name='blogerLN' value='$authorLN'></input>
-								<input type='text' name='blogerImg' value='$authorImg'></input>
-								<input type='text' name='blogerHref' value='$authorHref'></input>
-							</form>
-						</a>
-					</div>
-					<div id='history-right'>
-						<h1>$titlePost</h1>
-					</div>
-					$cmd
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
-		}
-		else
-		if ($postImg == "NULL") {
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<div id='history'>
-						<a href='#' onclick=\"openBloger('$postAuthor')\">
-							<img src='$authorImg' alt='Bad image link :('>
-							<form id='$postAuthor' method='post' style='display: none;'>
-								<input type='text' name='accSender' value='$sender'></input>
-								<input type='text' name='imgSender' value='$profilePic'></input>
-								<input type='text' name='blogSender' value='$postAuthor'></input>
-								<input type='text' name='blogerFN' value='$authorFN'></input>
-								<input type='text' name='blogerLN' value='$authorLN'></input>
-								<input type='text' name='blogerImg' value='$authorImg'></input>
-								<input type='text' name='blogerHref' value='$authorHref'></input>
-							</form>
-						</a>
-					</div>
-					<div id='history-right'>
-						<h1>$titlePost</h1>
-					</div>
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
-		}
-		
-		echo "$postBuild";
+	if ($followingCount == 0) {
+		echo "<h1>You don't follow anybody :(<h1>";
 	}
 	
-	if (empty($todayPosts)) {
-		echo "<h1>No body shared stories today :(<h1>";
+	if (!empty($todayPosts)) {
+		arsort($todayPosts);
+		foreach(array_keys($todayPosts) as $key) {
+			$keySplit = explode("`", $key);
+			$post = $keySplit[0];
+			$postAuthor = $keySplit[1];
+			$contentPost = (string)NULL;
+			$count = 0;
+			$fd = fopen("../Authors/$postAuthor/Posts/$post", "r") or die("Unable to open post.");
+			while (!feof($fd)) {
+				$line = fgets($fd);
+				if ($count == 0) {
+					$titlePost = trim($line);
+				}
+				else
+				if ($count == 1) {
+					$postImg = trim($line);
+				}
+				else
+				if ($count == 2 || $flag == 1) {
+					$line = str_replace("<br />", "", $line);
+					$url = NULL;
+					if(preg_match($reg_exUrl, $line, $url)) {
+						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+					}
+					$contentPost .= $line."<br>";
+					$flag = 1;
+				}
+				$count++;
+			}
+			fclose($fd);
+			
+			if ($contentPost == "NULL<br>") {
+				$contentPost = NULL;
+			}
+			$count = 0;
+			
+			//Pull author
+			$pullAuthor = fopen("../Authors/$postAuthor/config.txt", "r") or die("Unable to pull Author.");
+			while (! feof($pullAuthor)) {
+				$line = fgets($pullAuthor);
+				if ($count == 0) {
+					$authorImg = trim($line);
+				}
+				else
+				if ($count == 1) {
+					$authorHref = trim($line);
+				}
+				else
+				if ($count == 3) {
+					$authorFN = trim($line);
+				}
+				else
+				if ($count == 4) {
+					$authorLN = trim($line);
+					break;
+				}
+				$count++;
+			}
+			fclose($pullAuthor);
+			
+			if ($postImg != "NULL") {
+				$parseUrl = parse_url($postImg);
+
+				if ($parseUrl['host'] == 'www.youtube.com') {
+					$query = $parseUrl['query'];
+					$queryParse = explode("=", $query);
+					$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
+					$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
+				}
+				else 
+				if ($parseUrl['host'] == 'vimeo.com') {
+					$query = $parseUrl['path'];
+					$cmd ="<iframe src='//player.vimeo.com/video$query' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+				}
+				else
+				if ($parseUrl['host'] == 'www.dailymotion.com') {
+					$query = $parseUrl['path'];
+					$src = "//www.dailymotion.com/embed/$query";
+					$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
+				}
+				else
+				if ($parseUrl['host'] == 'www.metacafe.com') {
+					$query = $parseUrl['path'];
+					$queryParse = explode("/", $query);
+					$src = "http://www.metacafe.com/embed/$queryParse[2]/";
+					$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
+				}
+				else {
+					$url_headers=get_headers($postImg, 1);
+
+					if(isset($url_headers['Content-Type'])){
+						$type=strtolower($url_headers['Content-Type']);
+
+						$valid_image_type=array();
+						$valid_image_type['image/png']='';
+						$valid_image_type['image/jpg']='';
+						$valid_image_type['image/jpeg']='';
+						$valid_image_type['image/jpe']='';
+						$valid_image_type['image/gif']='';
+						$valid_image_type['image/tif']='';
+						$valid_image_type['image/tiff']='';
+						$valid_image_type['image/svg']='';
+						$valid_image_type['image/ico']='';
+						$valid_image_type['image/icon']='';
+						$valid_image_type['image/x-icon']='';
+
+						if(isset($valid_image_type[$type])) {
+							$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+						} else {
+							$cmd = "<h2>Unsupported player :(</h2>";
+						}
+					}
+				}
+				
+				$postBuild = "
+				<tr>
+					<td>
+					</td>
+					<td id='poster'>
+						<div id='history'>
+							<a href='#' onclick=\"openBloger('$postAuthor')\">
+								<img src='$authorImg' alt='Bad image link :('>
+								<form id='$postAuthor' method='post' style='display: none;'>
+									<input type='text' name='accSender' value='$sender'></input>
+									<input type='text' name='imgSender' value='$profilePic'></input>
+									<input type='text' name='blogSender' value='$postAuthor'></input>
+									<input type='text' name='blogerFN' value='$authorFN'></input>
+									<input type='text' name='blogerLN' value='$authorLN'></input>
+									<input type='text' name='blogerImg' value='$authorImg'></input>
+									<input type='text' name='blogerHref' value='$authorHref'></input>
+								</form>
+							</a>
+						</div>
+						<div id='history-right'>
+							<h1>$titlePost</h1>
+						</div>
+						$cmd
+						<p>
+							$contentPost
+						</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+					</td>
+				</tr>
+				";
+			}
+			else
+			if ($postImg == "NULL") {
+				$postBuild = "
+				<tr>
+					<td>
+					</td>
+					<td id='poster'>
+						<div id='history'>
+							<a href='#' onclick=\"openBloger('$postAuthor')\">
+								<img src='$authorImg' alt='Bad image link :('>
+								<form id='$postAuthor' method='post' style='display: none;'>
+									<input type='text' name='accSender' value='$sender'></input>
+									<input type='text' name='imgSender' value='$profilePic'></input>
+									<input type='text' name='blogSender' value='$postAuthor'></input>
+									<input type='text' name='blogerFN' value='$authorFN'></input>
+									<input type='text' name='blogerLN' value='$authorLN'></input>
+									<input type='text' name='blogerImg' value='$authorImg'></input>
+									<input type='text' name='blogerHref' value='$authorHref'></input>
+								</form>
+							</a>
+						</div>
+						<div id='history-right'>
+							<h1>$titlePost</h1>
+						</div>
+						<p>
+							$contentPost
+						</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+					</td>
+				</tr>
+				";
+			}
+			
+			echo "$postBuild";
+		}
 	}
 	
 echo "
@@ -345,4 +358,5 @@ echo "
 		</div>
 	</body>
 ";
+	}
 ?>
