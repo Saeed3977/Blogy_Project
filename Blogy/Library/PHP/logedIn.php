@@ -1,18 +1,9 @@
 <?php
 	$sender = $_POST['sender'];
-	
-	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
-	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
-	fclose($logCheck);
-	
-	if ($flag == "0") {
-		header('Location: ../Errors/E4.html');
-	}
-	else
-	if ($flag == "1") {
-		$followers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
-		$followersCount = fread($followers, filesize("../Authors/$sender/Followers.html"));
-		fclose($followers);
+		
+	$followers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
+	$followersCount = fread($followers, filesize("../Authors/$sender/Followers.html"));
+	fclose($followers);
 	
 	$doLine = 0;
 		$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
@@ -24,7 +15,7 @@
 			}
 			else
 			if ($doLine == 1) {
-				$profileHref = $line;
+				$profileHref = trim($line);
 			}
 			else
 			if ($doLine == 2) {
@@ -203,11 +194,29 @@ echo "
 			</form>
 			
 			<div id='author'>
-				<a href='$profileHref' target='_blank'>
-					<img src='$profilePic' />
-					<br>
-					$profileName
-				</a>
+";
+	
+	if ($profileHref != "NULL") {
+		echo "
+			<a href='$profileHref' target='_blank'>
+				<img src='$profilePic' />
+				<br>
+				$profileName
+			</a>
+		";
+	}
+	else
+	if ($profileHref == "NULL") {
+		echo "
+			<a>
+				<img src='$profilePic' />
+				<br>
+				$profileName
+			</a>
+		";
+	}
+
+echo "
 				<br>
 				<div id='personalMessage'>
 					<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$profileFirst $profileLast&p[url]=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&p[images][0]=$profilePic' target='_blank'>
@@ -430,5 +439,4 @@ echo "
 			</body>
 		</html>
 ";
-	}
 ?>

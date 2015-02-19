@@ -2,15 +2,6 @@
 	$sender = $_POST['accSender'];
 	$senderPic = $_POST['imgSender'];
 	
-	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
-	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
-	fclose($logCheck);
-	
-	if ($flag == "0") {
-		header('Location: ../Errors/E4.html');
-	}
-	else
-	if ($flag == "1") {
 	$line_counter = 0;
 	$parseSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to start parsing.");
 	while (!feof($parseSender)) {
@@ -150,11 +141,29 @@ echo "
 			</form>
 
 			<div id='author'>
+";
+
+	if ($profileHref != "NULL") {
+		echo "
 			<a href='$profileHref' target='_blank'>
 				<img src='$blogerImg' />
 				<br>
 				$profileName
 			</a>
+		";
+	}
+	else
+	if ($profileHref == "NULL") {
+		echo "
+			<a>
+				<img src='$blogerImg' />
+				<br>
+				$profileName
+			</a>
+		";
+	}
+
+echo "
 			<br>
 			<div id='personalMessage'>
 				<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$blogerFN $blogerLN&p[url]=http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php&p[images][0]=$blogerImg' target='_blank'>
@@ -363,5 +372,4 @@ echo "
 	</body>
 </html>
 ";
-	}
 ?>

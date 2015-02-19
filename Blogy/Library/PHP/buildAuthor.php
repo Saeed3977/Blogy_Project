@@ -6,6 +6,10 @@
 	$profile = $_POST['social'];
 	$pass = $_POST['pass'];
 	
+	if ($profile == "") {
+		$profile = "NULL";
+	}
+	
 	$error = "Unable to open file.";
 	$fullName = "$fName$lName";
 	$freeName = 0;

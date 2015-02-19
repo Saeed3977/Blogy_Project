@@ -1,15 +1,6 @@
 <?php
 	$sender = $_POST['sender'];
-	
-	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
-	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
-	fclose($logCheck);
-	
-	if ($flag == "0") {
-		header('Location: ../Errors/E4.html');
-	}
-	else
-	if ($flag == "1") {
+
 	$doLine = 0;
 	$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
 	while (! feof($config)) {
@@ -20,7 +11,7 @@
 		}
 		else
 		if ($doLine == 1) {
-			$profileHref = $line;
+			$profileHref = trim($line);
 		}
 		else
 		if ($doLine == 2) {
@@ -60,6 +51,10 @@
 	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
 	fclose($pullNotifications);
 	
+	if ($profileHref == "NULL") {
+		$profileHref = NULL;
+	}
+	
 echo "
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -85,8 +80,7 @@ echo "
 				}
 				else 
 				if (profileHref == '') {
-					alert('Choose your social network account');
-					flag = 1;
+					document.getElementById('profileHref').value = 'NULL';
 				}
 				else
 				if (fName == '') {
@@ -198,5 +192,4 @@ echo "
 		</div>
 	</body>
 ";
-	}
 ?>

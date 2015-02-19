@@ -1,15 +1,6 @@
 <?php
 	$sender = $_POST['sender'];
 	
-	$logCheck = fopen("../Authors/$sender/LogFlag.txt", "r") or header('Location: ../../SignIn.html');
-	$flag = fread($logCheck, filesize("../Authors/$sender/LogFlag.txt"));
-	fclose($logCheck);
-	
-	if ($flag == "0") {
-		header('Location: ../Errors/E4.html');
-	}
-	else
-	if ($flag == "1") {
 	$loadSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to load sender.");
 	$senderPic = trim(fgets($loadSender));
 	fclose($loadSender);
@@ -163,5 +154,4 @@ echo "
 		</body>
 	</html>
 ";
-	}
 ?>
