@@ -1,13 +1,4 @@
 <?php
-	$logCheck = fopen("LogFlag.txt", "r") or die("Fatal error: Flag not found.");
-	$flag = fread($logCheck, filesize("LogFlag.txt"));
-	fclose($logCheck);
-	
-	if ($flag == "0") {
-		header('Location: ../../Errors/E4.html');
-	}
-	else
-	if ($flag == "1") {
 		$followers =  fopen('Followers.html', 'r') or die('Unable to open file !');
 		$followersCount = fread($followers, filesize('Followers.html'));
 		fclose($followers);
@@ -21,7 +12,7 @@
 			}
 			else
 			if ($doLine == 1) {
-				$profileHref = $line;
+				$profileHref = trim($line);
 			}
 			else
 			if ($doLine == 2) {
@@ -39,183 +30,117 @@
 			$doLine++;
 		}
 		fclose($config);
-	
 		$profileName = "$profileFirst $profileLast";
-		
-		$stack = array();
-		$loadStack = fopen("Posts/Stack.txt", "r") or die("Unable to load Stack.");
-		while (!feof($loadStack)) {
-			$line = fgets($loadStack);
-			if ($line != "") {
-				array_push($stack, trim($line));
-			}
-		}
-		fclose($loadStack);
-		$stack = implode(",", $stack); //Convert from array to int for the JS
-		
-		//Pull notifications
-		$pullNotifications = fopen("Messages/Notification.txt", "r") or die("Unable to pull.");
-		$countNotifications = fread($pullNotifications, filesize("Messages/Notification.txt"));
-		fclose($pullNotifications);
-		
 echo "
-		<html>
-			<head>
-				<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-				<link rel='shortcut icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
-				<link rel='icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
-				<title>$profileFirst's story</title>
-				<link href='../../../style.css' rel='stylesheet' type='text/css' media='screen'>
-				<link href='../../../fonts.css' rel='stylesheet' type='text/css'>		
-				<script type='text/javascript' src='../../../java.js'></script>
-				<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-				<script type='text/javascript'> 
-					var stack = '$stack'.split(',');
-					var flag = 0;
-					
-					function hideElement() {
-						document.getElementById('post').style.visibility='hidden'; 
-						$('#post').slideUp('fast');
-					}
-					
-					function doPost() {
-						if (flag == 0) {
-							document.getElementById('post').style.visibility='visible'; 
-							$('#post').slideDown('fast');
-							flag = 1;
-						}
-						else
-						if (flag == 1) {
-							$('#post').slideUp('fast');
-							document.getElementById('post').style.visibility='hidden'; 
-							flag = 0;
-						}
-					}
-					
-					function writePost() {
-						var title = document.getElementById('title').value;
-						var isHere = 0;
-						
-						for (var i = 0; i < title.length; i++) {
-							if (stack[i] == title) {
-								isHere = 1;
-							}
-						}
-						
-						if (isHere == 0) {
-							var img = document.getElementById('postImg').value;
-							var content = document.getElementById('content').value;
-							
-							if (title == '') {
-								alert('Give title to your post.');
-							}
-							else
-							if (img == '' && content == '') {
-								alert('Well write something or add a picture.');
-							}
-							else {
-								document.getElementById('post').action = '../../PHP/writeMethod.php';
-								document.forms['post'].submit();
-							}
-						} else {
-							var message = 'You already have post with title \"'+title+'\"';
-							alert(message);
-						}
-					}
-					
-					function loadBlogers() {
-						document.getElementById('post').action = '../../PHP/loadBlogers.php';
-						document.forms['post'].submit();
-					}
-					
-					function editPost(title) {
-						document.getElementById(title).action = '../../PHP/editMethod.php';
-						document.forms[title].submit();
-					}
-					
-					function deletePost(title) {
-						document.getElementById(title).action = '../../PHP/deleteMethod.php';
-						document.forms[title].submit();
-					}
-					
-					function logOut() {
-						document.getElementById('post').action = '../../PHP/LogOut.php';
-						document.forms['post'].submit();
-					}
-					
-					function openMessages(state) {
-						if (state == 0) {
-							document.getElementById('cmd').value = '0';
-							document.getElementById('post').action = '../../PHP/storeMessages.php';
-							document.forms['post'].submit();
-						}
-						else
-						if (state == 1) {
-							document.getElementById('cmd').value = '1';
-							document.getElementById('post').action = '../../PHP/storeMessages.php';
-							document.forms['post'].submit();
-						}
-					}
-				</script>
-			</head>
-			<body onload='hideElement()'>
-				<div id='fb-root'></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249236501932040&version=v2.0';
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-				<div id='menu'>
-					<a href='Loged.php' class='homeButton'><img src='$profilePic'></a>
-					<a href='Settings.php'>Settings</a>
-					<a href='#' onclick='loadBlogers()'>Blogers</a>
-					<a href='#' onclick='logOut()'>Log out</a>
-				</div>
-				<div id='author'>
-					<a href='$profileHref' target='_blank'>
-						<img src='$profilePic'>
-						<br>
-						$profileName
+<html>
+	<META http-equiv='content-type' content='text/html; charset=utf-8'>
+	<head>
+		<link rel='shortcut icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
+		<title>$profileFirst's story</title>
+		<link href='../../../style.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= '../../../fonts.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='../../../java.js'></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type='text/javascript'>
+			var shareFlag = 0;
+			function shareIt() {
+				if (shareFlag == 0) {
+					document.getElementById('shareMethod').style.visibility='visible'; 
+					$('#shareMethod').slideDown('fast');
+					shareFlag = 1;
+				}
+				else
+				if (shareFlag== 1) {
+					$('#shareMethod').slideUp('fast');
+					document.getElementById('shareMethod').style.visibility='hidden'; 
+					shareFlag = 0;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id='fb-root'></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249236501932040&version=v2.0';
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div id='menu'>
+			<a href='http://www.vss.free.bg' target='_blank' class='logo-button' target='_blank'><img src='../../images/logo.png' /></a>
+			<a href='../../../index.php'>Home</a>
+			<a href='../../../Blogies_index.php'>Blogies</a>
+			<a href='../../../Downloads.html'>Downloads</a>
+			<a href='../../../SignIn.html'>Log in</a>
+		</div>
+		
+		<div id='shareMethod' style='display: none;'>
+			<div id='buttons'>
+				<div id='facebook'>
+					<a href='http://www.facebook.com/share.php?u=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&title=$profileFirst $profileLast's story' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png' />
 					</a>
-					<br>
-					<div id='personalMessage'>
-						<div id='left' class='fb-share-button' data-href='http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' data-layout='button'></div>
+				</div>
+				<div id='twitter'>
+					<a href='http://twitter.com/home?status=Check+this+story+http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-128.png' />
+					</a>
+				</div>
+				<div id='googlePlus'>
+					<a href='https://plus.google.com/share?url=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-128.png' />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div id='author'>
+			<div class='left'>
+				<a title='Share' href='#' onclick='shareIt()'>
+					<img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_share-128.png' />
+				</a>
+			</div>
+			<div class='right' style='visibility: hidden;'>
+				<a href='#'>
+					<img src='https://cdn2.iconfinder.com/data/icons/metroicons/48/i.png' />
+				</a>
+			</div>
 ";
 
-	if ($countNotifications != "0") {
-		echo "<a href='#' class='right-notification' onclick='openMessages(1)'>$countNotifications</a>";
+	if ($profileHref != "NULL") {
+		echo "
+			<a href='$profileHref' target='_blank'>
+				<img src='$profilePic' />
+				<br>
+				$profileName
+			</a>
+		";
 	}
 	else
-	if ($countNotifications == "0") {
-		echo "<a href='#' class='right' onclick='openMessages(0)'>Messages</a>";
-	}						
+	if ($profileHref == "NULL") {
+		echo "
+			<a class='inactive'>
+				<img src='$profilePic' />
+				<br>
+				$profileName
+			</a>
+		";
+	}
 
 echo "
-					</div>
-					<div id='followers'>
-						<h1>$followersCount followers</h1>
-						<a href='#' onclick='doPost()'>Post</a>
-					</div>
-				</div>
-				<div id='body'>
-					<form id='post' method='post' style='visibility: hidden; display: none;'>
-							<input type='text' placeholder='Give it title.' id='title' name='title'>
-							<input type='text' placeholder='Place link for an image.' id='postImg' name='photo'>
-							<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
-							<a href='#' onclick='writePost()'>Post</a>
-							
-							<input type='hidden' name='sender' value='$fullName'></input>
-							<input type='hidden' name='fname' value='$profileFirst'></input>
-							<input type='hidden' id='cmd' name='cmd' value='1'></input>
-					</form>
-					<table id='main-table'>
+			<br>
+			<div id='followers'>
+				<h1>$followersCount followers</h1>
+				<a href='conf_Following.html'>Follow</a>
+			</div>
+		</div>
+		<div id='body'>
+			<table id='main-table'>
 ";
-	$path = "Posts/*.txt";
+
 	$stack = array();
-	$stack_size = 0;
-	
 	$getStack = fopen("Posts/Stack.txt", "r") or die("Stack not found.");
 	while (! feof($getStack)) {
 		$line = fgets($getStack);
@@ -227,6 +152,7 @@ echo "
 	
 	$reversed_stack = array_reverse($stack);
 	
+	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 	$post_count = 0;
 	$count = 0;
 	$flag = 0;
@@ -245,34 +171,84 @@ echo "
 			}
 			else
 			if ($count == 2 || $flag == 1) {
-				$contentPost .= $line;
+				$line = str_replace("<br />", "", $line);
+				$url = NULL;
+				if(preg_match($reg_exUrl, $line, $url)) {
+					$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+				}
+				$contentPost .= $line."<br>";
 				$flag = 1;
 			}
 			$count++;
 		}
 		fclose($fd);
 		
-		if ($contentPost == "NULL") {
+		if ($contentPost == "NULL<br>") {
 			$contentPost = NULL;
 		}
 		
 		if ($postImg != "NULL") {
+			$parseUrl = parse_url($postImg);
+
+			if ($parseUrl['host'] == 'www.youtube.com') {
+				$query = $parseUrl['query'];
+				$queryParse = explode("=", $query);
+				$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
+				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
+			}
+			else 
+			if ($parseUrl['host'] == 'vimeo.com') {
+				$query = $parseUrl['path'];
+				$cmd ="<iframe src='//player.vimeo.com/video$query' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+			}
+			else
+			if ($parseUrl['host'] == 'www.dailymotion.com') {
+				$query = $parseUrl['path'];
+				$src = "//www.dailymotion.com/embed/$query";
+				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
+			}
+			else
+			if ($parseUrl['host'] == 'www.metacafe.com') {
+				$query = $parseUrl['path'];
+				$queryParse = explode("/", $query);
+				$src = "http://www.metacafe.com/embed/$queryParse[2]/";
+				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
+			}
+			else {
+				$url_headers=get_headers($postImg, 1);
+
+				if(isset($url_headers['Content-Type'])){
+					$type=strtolower($url_headers['Content-Type']);
+
+					$valid_image_type=array();
+					$valid_image_type['image/png']='';
+					$valid_image_type['image/jpg']='';
+					$valid_image_type['image/jpeg']='';
+					$valid_image_type['image/jpe']='';
+					$valid_image_type['image/gif']='';
+					$valid_image_type['image/tif']='';
+					$valid_image_type['image/tiff']='';
+					$valid_image_type['image/svg']='';
+					$valid_image_type['image/ico']='';
+					$valid_image_type['image/icon']='';
+					$valid_image_type['image/x-icon']='';
+
+					if(isset($valid_image_type[$type])) {
+						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+					} else {
+						$cmd = "<h2>Unsupported player :(</h2>";
+					}
+				}
+			}
+			
 			$postBuild = "
 			<tr>
 				<td>
 				</td>
 				<td id='poster'>
-					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titlePost')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titlePost')\" class='right'>Delete</a><br>
-						<form id='$titlePost' method='post'>
-							<input name='sender' value='$fullName'></input>
-							<input name='postId' value='$titlePost'></input>
-							<input name='content' value='$contentPost'></input>
-						</form>
 					<h1>$titlePost</h1>
 					</div>
-					<img src='$postImg' alt='Image link is broken :('/>
+					$cmd
 					<p>
 						$contentPost
 					</p>
@@ -294,16 +270,7 @@ echo "
 				<td>
 				</td>
 				<td id='poster'>
-					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titlePost')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titlePost')\" class='right'>Delete</a>
-						<form id='$titlePost' method='post'>
-							<input name='sender' value='$fullName'></input>
-							<input name='postId' value='$titlePost'></input>
-							<input name='content' value='$contentPost'></input>
-						</form>
 					<h1>$titlePost</h1>
-					</div>
 					<p>
 						$contentPost
 					</p>
@@ -323,27 +290,11 @@ echo "
 		echo "$postBuild";
 		$contentPost = NULL;
 	}
-	
+
 echo "
-						<tr>
-							<td>
-							</td>
-							<td id='poster'>
-								<h1>Hello there :)</h1>
-								<img src='https://scontent-a-ams.xx.fbcdn.net/hphotos-xap1/t31.0-8/10914966_812627088773787_3619532195404352482_o.jpg' alt='Image ling is broken :('>
-								<p>
-									Welcome on board <b>$profileFirst</b>.<br>
-									This is the place where you can share photos and stories with your followers.<br>
-									Have <b>fun</b> and enjoy <b>Blogy</b>-ing.<br>
-								</p>
-							</td>
-							<td>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</body>
-		</html>
+			</table>
+		</div>
+	</body>
+</html>
 ";
-	}
 ?>

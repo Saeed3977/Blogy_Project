@@ -18,7 +18,7 @@
 			$path = "../Authors/$array[1]/config.txt";
 			$fd = fopen("$path", "r") or die("Unable to open file.");
 			$line_counter = 0;
-			while (! feof($fd)) {
+			while (!feof($fd)) {
 				$line = fgets($fd);
 				if ($line_counter == 2) {
 					$sender = trim($line);
@@ -26,6 +26,7 @@
 				else
 				if ($line_counter == 5) {
 					$passCode = trim($line);
+					break;
 				}
 				$line_counter++;
 			}

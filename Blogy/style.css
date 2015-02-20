@@ -505,6 +505,35 @@ h2, #blogies h3{
 #author a:hover {
 	border-bottom: 1px solid black;
 }
+#author .inactive:hover {
+	border-bottom: 1px solid white;
+}
+#author .left {
+	float: left;
+}
+#author .left img, #author .right img {
+	padding: 1px 1px 1px 1px;
+	
+	opacity: 0.5;
+    filter: alpha(opacity=50);
+
+	width: 14px;
+	height: 14px;
+	
+	border: none;
+	border-radius: 0px;
+}
+#author .left img:hover, #author .right img:hover {
+	opacity: 1;
+    filter: alpha(opacity=100);
+
+}
+#author .left a:hover, #author .right a:hover {
+	border: none;
+}
+#author .right {
+	float: right;
+}
 
 #followers {
 	border-top: 1px solid #e5e5e5;
@@ -1298,6 +1327,39 @@ h2, #blogies h3{
 
 .notification {
 	background-color: #006699;
+}
+
+#shareMethod {
+	width: 256px;
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+	margin: 45px auto -40px auto;
+	
+	background-color: white;
+	text-align: center;
+}
+#shareMethod a {
+	font-family: OpenSansRegular;
+	font-size: 14px;
+	font-weight: normal;
+}
+#shareMethod #facebook, #shareMethod #twitter, #shareMethod #googlePlus {
+	display: inline-block;
+	margin-right: 3px;
+}
+#shareMethod #facebook img, #shareMethod #twitter img, #shareMethod #googlePlus img {
+	width: 32px;
+	height: 32px;
+	
+	opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+#shareMethod #facebook img:hover, #shareMethod #twitter img:hover, #shareMethod #googlePlus img:hover {
+	opacity: 1;
+    filter: alpha(opacity=100);
+}
+#shareMethod #buttons {
+	margin: 5px 0px 0px 0px;
 }
 
 @-moz-document url-prefix() {

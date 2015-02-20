@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<link rel='shortcut icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='../../images/Blogy-ICO.png' type='image/x-icon'>
+		<title>Start following</title>
+		<link href='../../../style.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= '../../../fonts.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='../../../java.js'></script>
+		<script type="text/javascript">
+			function checkKey(e) {
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if(code == 13) { //Enter keycode
+					var text = document.getElementById('mail').value;
+					
+					if (text == "")
+					{
+						alert("Enter your e-mail please.");
+					}
+					else
+					{
+						if (!isValidEmailAddress(text)) {
+							alert("Enter valid e-mail address please.");
+						}
+						else {
+							//PHP calls
+						}
+					}
+				}
+			}
+		
+			function start() {
+				var text = document.getElementById('mail').value;
+				
+				if (text == "")
+				{
+					alert("Enter your e-mail please.");
+				}
+				else
+				{
+					if (!isValidEmailAddress(text)) {
+						alert("Enter valid e-mail address please.");
+					}
+					else {
+						document.forms['share'].submit();
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="download-conf" action="following.php" method="post" name="share">
+			<div class="back-button">
+				<a href="Author.php"><</a>
+			</div>
+			<h1>Enter your e-mail</h1>
+			<input type="text" name="mail" id="mail" onkeypress="checkKey(event)"></input>
+			<p>
+				<b>Why we need you e-mail ?</b><br>
+				Next time when this e-mail is used we will see that you already have followed this author.<br>
+				When you start to follow some author you will receive and e-mail every time when he / she,<br>
+				uploads a new <b>Blogy</b> style.<br>
+				<b>! REMEMBER !</b><br>
+				We <b>won't</b> ask you for your privacy information and we <b>won't</b> send you spam e-mail.<br>
+			</p>
+			<div class="download-button">
+				<a href="#" onclick="start()">Start following</a>
+			</div>
+		</form>
+	</body>
+</html>

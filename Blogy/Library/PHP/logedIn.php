@@ -68,6 +68,21 @@ echo "
 				var stack = '$stack'.split(',');
 				var flag = 0;
 				
+				var shareFlag = 0;
+				function shareIt() {
+					if (shareFlag == 0) {
+						document.getElementById('shareMethod').style.visibility='visible'; 
+						$('#shareMethod').slideDown('fast');
+						shareFlag = 1;
+					}
+					else
+					if (shareFlag== 1) {
+						$('#shareMethod').slideUp('fast');
+						document.getElementById('shareMethod').style.visibility='hidden'; 
+						shareFlag = 0;
+					}
+				}
+				
 				function hideElement() {
 					document.getElementById('post').style.visibility='hidden'; 
 					$('#post').slideUp('fast');
@@ -193,7 +208,37 @@ echo "
 				<input type='text' name='sender' value='$sender'></input>
 			</form>
 			
+			<div id='shareMethod' style='display: none;'>
+				<div id='buttons'>
+					<div id='facebook'>
+						<a href='http://www.facebook.com/share.php?u=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&title=$profileFirst $profileLast's story' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png' />
+						</a>
+					</div>
+					<div id='twitter'>
+						<a href='http://twitter.com/home?status=Check+this+story+http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-128.png' />
+						</a>
+					</div>
+					<div id='googlePlus'>
+						<a href='https://plus.google.com/share?url=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-128.png' />
+						</a>
+					</div>
+				</div>
+			</div>
+			
 			<div id='author'>
+				<div class='left'>
+					<a title='Share' href='#' onclick='shareIt()'>
+						<img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_share-128.png' />
+					</a>
+				</div>
+				<div class='right' style='visibility: hidden;'>
+					<a href='#'>
+						<img src='https://cdn2.iconfinder.com/data/icons/metroicons/48/i.png' />
+					</a>
+				</div>
 ";
 	
 	if ($profileHref != "NULL") {
@@ -208,7 +253,7 @@ echo "
 	else
 	if ($profileHref == "NULL") {
 		echo "
-			<a>
+			<a class='inactive'>
 				<img src='$profilePic' />
 				<br>
 				$profileName
@@ -216,14 +261,6 @@ echo "
 		";
 	}
 
-echo "
-				<br>
-				<div id='personalMessage'>
-					<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$profileFirst $profileLast&p[url]=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&p[images][0]=$profilePic' target='_blank'>
-						Share
-					</a>
-				</div>
-";
 echo "
 				<div id='followers'>
 					<a href='#' class='header' onclick='exploreFollowers()'>$followersCount followers</a>
@@ -293,6 +330,12 @@ echo "
 			$contentPost = NULL;
 		}
 		
+		if (is_numeric($titlePost)) {
+			$titleId = "id$titlePost";
+		} else {
+			$titleId = $titlePost;
+		}
+		
 		if ($postImg != "NULL") {
 			$parseUrl = parse_url($postImg);
 
@@ -357,9 +400,9 @@ echo "
 				</td>
 				<td id='poster'>
 					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titlePost')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titlePost')\" class='right'>Delete</a><br>
-						<form id='$titlePost' method='post'>
+						<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
+						<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a><br>
+						<form id='$titleId' method='post'>
 							<input name='sender' value='$fullName'></input>
 							<input name='postId' value='$titlePost'></input>
 							<input name='content' value='$contentPost'></input>
@@ -389,9 +432,9 @@ echo "
 				</td>
 				<td id='poster'>
 					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titlePost')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titlePost')\" class='right'>Delete</a>
-						<form id='$titlePost' method='post'>
+						<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
+						<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
+						<form id='$titleId' method='post'>
 							<input name='sender' value='$fullName'></input>
 							<input name='postId' value='$titlePost'></input>
 							<input name='content' value='$contentPost'></input>

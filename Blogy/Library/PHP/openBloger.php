@@ -44,6 +44,22 @@ echo "
 			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>			
 			<script type='text/javascript'>
 				var flag = 0;
+				
+				var shareFlag = 0;
+				function shareIt() {
+					if (shareFlag == 0) {
+						document.getElementById('shareMethod').style.visibility='visible'; 
+						$('#shareMethod').slideDown('fast');
+						shareFlag = 1;
+					}
+					else
+					if (shareFlag== 1) {
+						$('#shareMethod').slideUp('fast');
+						document.getElementById('shareMethod').style.visibility='hidden'; 
+						shareFlag = 0;
+					}
+				}
+				
 				function doPost() {
 					if (flag == 0) {
 						document.getElementById('messageInput').style.visibility='visible'; 
@@ -140,7 +156,37 @@ echo "
 				<input name='authorId' value='$blogerSender'></input>
 			</form>
 
+			<div id='shareMethod' style='display: none;'>
+				<div id='buttons'>
+					<div id='facebook'>
+						<a href='http://www.facebook.com/share.php?u=http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php&title=$blogerFN $blogerLN's story' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png' />
+						</a>
+					</div>
+					<div id='twitter'>
+						<a href='http://twitter.com/home?status=Check+this+story+http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-128.png' />
+						</a>
+					</div>
+					<div id='googlePlus'>
+						<a href='https://plus.google.com/share?url=http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php' target='_blank'>
+							<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-128.png' />
+						</a>
+					</div>
+				</div>
+			</div>
+			
 			<div id='author'>
+				<div class='left'>
+					<a title='Share' href='#' onclick='shareIt()'>
+						<img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_share-128.png' />
+					</a>
+				</div>
+				<div class='right'>
+					<a href='#' onclick='doPost()'>
+						<img src='https://cdn4.iconfinder.com/data/icons/linecon/512/send-128.png' />
+					</a>
+				</div>
 ";
 
 	if ($profileHref != "NULL") {
@@ -155,7 +201,7 @@ echo "
 	else
 	if ($profileHref == "NULL") {
 		echo "
-			<a>
+			<a class='inactive'>
 				<img src='$blogerImg' />
 				<br>
 				$profileName
@@ -165,12 +211,6 @@ echo "
 
 echo "
 			<br>
-			<div id='personalMessage'>
-				<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$blogerFN $blogerLN&p[url]=http://www.blogy.sitemash.net/Library/Authors/$blogerSender/Author.php&p[images][0]=$blogerImg' target='_blank'>
-					Share
-				</a>
-				<a href='#' onclick='doPost()'>Message</a>
-			</div>
 			<div id='followers'>
 				<h1>$followersCount followers</h1>
 ";

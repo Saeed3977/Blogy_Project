@@ -12,7 +12,7 @@
 			}
 			else
 			if ($doLine == 1) {
-				$profileHref = $line;
+				$profileHref = trim($line);
 			}
 			else
 			if ($doLine == 2) {
@@ -41,6 +41,23 @@ echo "
 		<link href='../../../style.css' rel='stylesheet' type='text/css' media='screen' />
 		<link href= '../../../fonts.css' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='../../../java.js'></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type='text/javascript'>
+			var shareFlag = 0;
+			function shareIt() {
+				if (shareFlag == 0) {
+					document.getElementById('shareMethod').style.visibility='visible'; 
+					$('#shareMethod').slideDown('fast');
+					shareFlag = 1;
+				}
+				else
+				if (shareFlag== 1) {
+					$('#shareMethod').slideUp('fast');
+					document.getElementById('shareMethod').style.visibility='hidden'; 
+					shareFlag = 0;
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id='fb-root'></div>
@@ -58,18 +75,62 @@ echo "
 			<a href='../../../Downloads.html'>Downloads</a>
 			<a href='../../../SignIn.html'>Log in</a>
 		</div>
+		
+		<div id='shareMethod' style='display: none;'>
+			<div id='buttons'>
+				<div id='facebook'>
+					<a href='http://www.facebook.com/share.php?u=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&title=$profileFirst $profileLast's story' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png' />
+					</a>
+				</div>
+				<div id='twitter'>
+					<a href='http://twitter.com/home?status=Check+this+story+http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-128.png' />
+					</a>
+				</div>
+				<div id='googlePlus'>
+					<a href='https://plus.google.com/share?url=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php' target='_blank'>
+						<img src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-google-plus-128.png' />
+					</a>
+				</div>
+			</div>
+		</div>
+		
 		<div id='author'>
+			<div class='left'>
+				<a title='Share' href='#' onclick='shareIt()'>
+					<img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_share-128.png' />
+				</a>
+			</div>
+			<div class='right' style='visibility: hidden;'>
+				<a href='#'>
+					<img src='https://cdn2.iconfinder.com/data/icons/metroicons/48/i.png' />
+				</a>
+			</div>
+";
+
+	if ($profileHref != "NULL") {
+		echo "
 			<a href='$profileHref' target='_blank'>
 				<img src='$profilePic' />
 				<br>
 				$profileName
 			</a>
+		";
+	}
+	else
+	if ($profileHref == "NULL") {
+		echo "
+			<a class='inactive'>
+				<img src='$profilePic' />
+				<br>
+				$profileName
+			</a>
+		";
+	}
+
+echo "
 			<br>
-			<div id='personalMessage'>
-				<a title='send to Facebook' href='http://www.facebook.com/sharer.php?s=100&p[title]=&p[summary]=$profileFirst $profileLast&p[url]=http://www.blogy.sitemash.net/Library/Authors/$fullName/Author.php&p[images][0]=$profilePic' target='_blank'>
-					Share
-				</a>
-			</div>
 			<div id='followers'>
 				<h1>$followersCount followers</h1>
 				<a href='conf_Following.html'>Follow</a>
@@ -122,7 +183,7 @@ echo "
 		}
 		fclose($fd);
 		
-		if ($contentPost == "NULL") {
+		if ($contentPost == "NULL<br>") {
 			$contentPost = NULL;
 		}
 		
