@@ -1,0 +1,6 @@
+[23-Feb-2015 21:23:24 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'username'@'localhost' (using password: YES) in /home/kdkcompu/gero/blogy/test.php on line 7
+[23-Feb-2015 21:27:05 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
+[23-Feb-2015 21:27:40 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
+[23-Feb-2015 21:28:18 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
+[23-Feb-2015 21:28:38 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
+[23-Feb-2015 21:28:49 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7

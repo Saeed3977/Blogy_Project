@@ -1,6 +1,10 @@
 <?php
-	$sender = $_POST['sender'];
-	
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
+
 	$isChecked = (string)NULL;
 	$doLine = 0;
 	$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
@@ -113,14 +117,14 @@ echo "
 	</head>
 	<body>
 		<div id='menu'>
-			<a href='#' onclick='returnToHome()' class='homeButton'><img src='$profilePic'></a>
+			<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 	
 	if ($notifyOnPost == "1") {
@@ -130,11 +134,10 @@ echo "
 		$isChecked = NULL;
 	}
 echo "
-			<a href='#' onclick='openSettings()'>Settings</a>
-			<a href='#' onclick='loadBlogers()'>Blogers</a>
-			<a href='#' onclick='exploreStories()'>Stories</a>
+			<a href='openSettings.php'>Settings</a>
+			<a href='loadBlogers.php'>Blogers</a>
+			<a href='exploreFStories.php'>Stories</a>
 			<a href='#' onclick='logOut()'>Log out</a>
-		</div>
 		
 		<form id='accountInfo' method='post' style='display: none;'>
 			<input type='text' name='sender' value='$sender'></input>

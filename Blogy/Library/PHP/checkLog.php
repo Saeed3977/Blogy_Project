@@ -20,14 +20,44 @@
 			$line_counter = 0;
 			while (!feof($fd)) {
 				$line = fgets($fd);
+				if ($line_counter == 0) {
+					$senderImg = trim($line);
+				}
+				else
+				if ($line_counter == 1) {
+					$senderHref = trim($line);
+				}
+				else
 				if ($line_counter == 2) {
 					$sender = trim($line);
+				}
+				else
+				if ($line_counter == 3) {
+					$senderFN = trim($line);
+				}
+				else
+				if ($line_counter == 4) {
+					$senderLN = trim($line);
 				}
 				else
 				if ($line_counter == 5) {
 					$passCode = trim($line);
 					break;
 				}
+				/*
+				else
+				if ($line_counter == 6) {
+					$senderMail = trim($line);
+				}
+				else
+				if ($line_counter == 7) {
+					$senderNotifyOnPost = trim($line);
+				}
+				else
+				if ($line_counter == 8) {
+					$senderNotifyOnMessage = trim($line);
+				}
+				*/
 				$line_counter++;
 			}
 			fclose($fd);
@@ -35,28 +65,42 @@
 			if ($pass == $passCode) {
 				$flag = 2;
 				
-				//Check login
-				$fd = fopen("../Authors/$array[1]/LogFlag.txt", "w") or die("Unable to open file.");
-				fwrite($fd, "1");
-				fclose($fd);
+				//Connect to data base
+				$servername = "localhost";
+				$username = "kdkcompu_gero";
+				$password = "Geroepi4";
+				$dbname = "kdkcompu_gero";
 				
-				echo "
-					<html>
-						<head>
-							<script type='text/javascript'>
-								function reSend() {
-									document.getElementById('post').action = 'logedIn.php';
-									document.forms['post'].submit();
-								}
-							</script>
-						</head>
-						<body onload='reSend()'>
-							<form id='post' method='post' style='display: none;'>
-								<input name='sender' value='$sender'></input>
-							</form>
-						</body>
-					</html>
-				";
+				$conn = mysqli_connect($servername, $username, $password, $dbname);
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				} else {
+					//Creatе new TABLE
+					$sql = "CREATE TABLE $sender (
+					AuthorID LONGTEXT,
+					AuthorImg LONGTEXT,
+					AuthorHref LONGTEXT,
+					AuthorFN LONGTEXT,
+					AuthorLN LONGTEXT
+					)";
+					
+					if ($conn->query($sql) === TRUE) {
+						//Add info in the table
+						$sql = "INSERT INTO $sender (AuthorID, AuthorImg, AuthorHref, AuthorFN, AuthorLN)
+						VALUES ('$sender', '$senderImg', '$senderHref', '$senderFN', '$senderLN')";
+						$conn->query($sql);
+						if ($conn->query($sql) === TRUE) {
+							logIn($sender, $senderImg, $senderHref, $senderFN, $senderLN);
+						}
+					} else {
+						logIn($sender, $senderImg, $senderHref, $senderFN, $senderLN);
+					}
+					
+					$conn->close();
+				}
+				
+				/*
+				*/
 			}
 		}
 	}
@@ -70,5 +114,16 @@
 	}
 	
 	fclose($logs);
+	
+	function logIn($sender, $senderImg, $senderHref, $senderFN, $senderLN) {
+		session_start();
+		$_SESSION['sender'] = $sender;
+		$_SESSION['senderImg'] = $senderImg;
+		$_SESSION['senderHref'] = $senderHref;
+		$_SESSION['senderFN'] = $senderFN;
+		$_SESSION['senderLN'] = $senderLN;
+		
+		header('Location: logedIn.php');
+	}
 	die();
 ?>

@@ -81,11 +81,13 @@
 	fwrite($followingphp, $content);
 	fclose($followingphp);
 	
+	/*
 		//Author vision
 	$content = logedTemplate("../Templates/Loged.php");
 	$loged = fopen("../Authors/$fullName/Loged.php", "w") or die("Unable to open file.");
 	fwrite($loged, $content);
 	fclose($loged);
+	*/
 	
 		//Settings
 	$content = settingsTemplate("../Templates/Settings.php");

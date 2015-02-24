@@ -2,6 +2,8 @@
 	$cmd = $_POST['cmd'];
 	$sender = $_POST['sender'];
 	
+	$realoc = (string)NULL;
+	
 	if ($cmd == "0") {
 		$postId = $_POST['postId'];
 		$postImg = $_POST['postImg'];
@@ -21,22 +23,70 @@
 		fclose($writePost);
 	}
 	else
-	if ($cmd == "1") {
-		$senderFirstName = $_POST['fname'];
-		$titlePost = $_POST['title'];
-		$contentPost = trim($_POST['content']);
-		$contentPost = nl2br($contentPost);
-		$postPic = $_POST['photo'];
+	if ($cmd == "1" || $cmd == "2") {
+		if ($cmd == "1") {
+			$senderFirstName = $_POST['fname'];
+			$titlePost = $_POST['title'];
+			$contentPost = trim($_POST['content']);
+			$contentPost = nl2br($contentPost);
+			$postPic = $_POST['photo'];
+			
+			$length = strlen($titlePost);
+			for ($ch = 0; $ch < $length; $ch++) {
+				if ($titlePost[$ch] == chr(34)) {
+					$titlePost[$ch] = "#";
+				}
+				else
+				if ($titlePost[$ch] == chr(39)) {
+					$titlePost[$ch] = "@";
+				}
+			}
+		}
 		
-		$length = strlen($titlePost);
-		for ($ch = 0; $ch < $length; $ch++) {
-			if ($titlePost[$ch] == chr(34)) {
-				$titlePost[$ch] = "#";
-			}
-			else
-			if ($titlePost[$ch] == chr(39)) {
-				$titlePost[$ch] = "@";
-			}
+		if ($cmd == "2") {
+			$senderPic = $_POST['senderImg'];
+			$authorId = $_POST['blogerId'];
+			$senderFirstName = $_POST['authorFN'];
+			$authorLN = $_POST['authorLN'];
+			$authorImg = $_POST['authorImage'];
+			$authorHref = $_POST['authorHref'];
+			$titlePost = "Story of $senderFirstName";
+			$postPic = "";
+			$contentPost = "
+				$+Shared
+					$sender
+					$senderPic
+					$authorId
+					$senderFirstName
+					$authorLN
+					$authorImg
+					$authorHref
+				$-
+			";
+			
+			$realoc = "
+				<html>
+					<head>
+						<script type='text/javascript'>
+							function reSend() {
+								document.getElementById('post').action = 'openBloger.php';
+								document.forms['post'].submit();
+							}
+						</script>
+					</head>
+					<body onload='reSend()'>
+						<form id='post' method='post' style='display: none;'>
+							<input type='password' name='accSender' value='$sender'></input>
+							<input type='password' name='imgSender' value='$senderPic'></input>
+							<input type='password' name='blogSender' value='$authorId'></input>
+							<input type='password' name='blogerFN' value='$senderFirstName'></input>
+							<input type='password' name='blogerLN' value='$authorLN'></input>
+							<input type='password' name='blogerImg' value='$authorImg'></input>
+							<input type='password' name='blogerHref' value='$authorHref'></input>
+						</form>
+					</body>
+				</html>
+			";
 		}
 		
 		$addToStack = fopen("../Authors/$sender/Posts/Stack.txt", "a") or die("Unable to open file.");
@@ -67,10 +117,10 @@
 		fwrite($commitWorld, $titlePost.PHP_EOL);
 		fclose($commitWorld);
 		
-		sendMail($sender, $senderFirstName);
+		sendMail($sender, $senderFirstName, $cmd);
 	}
 	
-	function sendMail($sender, $senderFirstName) {
+	function sendMail($sender, $senderFirstName, $cmd) {
 		$followers = fopen("../Authors/$sender/Followers.html", "r") or die("Unable to open file.");
 		$summary = fread($followers, filesize("../Authors/$sender/Followers.html"));
 		fclose($followers);
@@ -112,8 +162,16 @@
 						$mail = $followerID;
 						$mail = trim($mail);
 						if ($mail != "") {
-							$subject = "New blog in Blogy";
-							$content = "Hello there. $senderFirstName just posted something into Blogy. Check it from here: http://www.blogy.sitemash.net/Library/Authors/$sender/Author.php";
+							if ($cmd == "1") {
+								$subject = "New blog in Blogy";
+								$content = "Hello there. $senderFirstName just posted something into Blogy. Check it from here: http://www.blogy.sitemash.net/Library/Authors/$sender/Author.php";
+							}
+							else
+							if ($cmd == "2") {
+								$subject = "Your story was shared";
+								$content = "Hello $senderFirstName, someone just shared your story.";
+							}
+							
 							mail($mail, $subject, $content);
 						}
 					}
@@ -122,23 +180,11 @@
 		}
 	}
 
-echo "
-	<html>
-		<head>
-			<script type='text/javascript'>
-				function reSend() {
-					document.getElementById('post').action = 'logedIn.php';
-					document.forms['post'].submit();
-				}
-			</script>
-		</head>
-		<body onload='reSend()'>
-			<form id='post' method='post' style='display: none;'>
-				<input name='sender' value='$sender'></input>
-			</form>
-		</body>
-	</html>
-";
+if ($cmd != 2) {
+	header('Location: logedIn.php');
+} else {
+	echo "$realoc";
+}
 
 	die();
 ?>

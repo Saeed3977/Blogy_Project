@@ -1,57 +1,65 @@
 <?php
-	$sender = $_POST['sender'];
-		
+/*
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
+	//$sender = $_POST['sender'];
+*/
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
+	$profilePic = $_SESSION['senderImg'];
+	$profileHref = $_SESSION['senderHref'];
+	$profileFirst = $_SESSION['senderFN'];
+	$profileLast = $_SESSION['senderLN'];
+	
+/*
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$sql = "SELECT AuthorID, AuthorImg, AuthorHref, AuthorFN, AuthorLN FROM $authorLoger";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				$sender = $row['AuthorID'];
+				$profilePic = $row['AuthorImg'];
+				$profileHref = $row['AuthorHref'];
+				$profileFirst = $row['AuthorFN'];
+				$profileLast = $row['AuthorLN'];
+			}
+		}
+	}
+	$conn->close();
+*/
+	
+	$fullName = $sender;
+
 	$followers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
 	$followersCount = fread($followers, filesize("../Authors/$sender/Followers.html"));
 	fclose($followers);
+	$profileName = "$profileFirst $profileLast";
 	
-	$doLine = 0;
-		$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
-		while (! feof($config)) {
-			$line = fgets($config);
-
-			if ($doLine == 0) {
-				$profilePic = $line;
-			}
-			else
-			if ($doLine == 1) {
-				$profileHref = trim($line);
-			}
-			else
-			if ($doLine == 2) {
-				$fullName = trim($line);
-			}
-			else
-			if ($doLine == 3) {
-				$profileFirst = trim($line);
-			}
-			else
-			if ($doLine == 4) {
-				$profileLast = trim($line);
-				break;
-			}
-
-			$doLine++;
+	$stack = array();
+	$loadStack = fopen("../Authors/$sender/Posts/Stack.txt", "r") or die("Unable to load Stack.");
+	while (!feof($loadStack)) {
+		$line = fgets($loadStack);
+		if ($line != "") {
+			array_push($stack, trim($line));
 		}
-		fclose($config);
-		
-		$profileName = "$profileFirst $profileLast";
-		
-		$stack = array();
-		$loadStack = fopen("../Authors/$sender/Posts/Stack.txt", "r") or die("Unable to load Stack.");
-		while (!feof($loadStack)) {
-			$line = fgets($loadStack);
-			if ($line != "") {
-				array_push($stack, trim($line));
-			}
-		}
-		fclose($loadStack);
-		$stack = implode(",", $stack); //Convert from array to int for the JS
-		
-		//Pull notifications
-		$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
-		$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
-		fclose($pullNotifications);
+	}
+	fclose($loadStack);
+	$stack = implode(",", $stack); //Convert from array to int for the JS
+	
+	//Pull notifications
+	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
+	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
+	fclose($pullNotifications);
 		
 echo "
 	<html>
@@ -133,16 +141,11 @@ echo "
 					}
 				}
 				
-				function loadBlogers() {
-					document.getElementById('post').action = '../PHP/loadBlogers.php';
-					document.forms['post'].submit();
-				}
-				
 				function editPost(title) {
 					document.getElementById(title).action = '../PHP/editMethod.php';
 					document.forms[title].submit();
 				}
-				
+
 				function deletePost(title) {
 					document.getElementById(title).action = '../PHP/deleteMethod.php';
 					document.forms[title].submit();
@@ -151,30 +154,6 @@ echo "
 				function logOut() {
 					document.getElementById('post').action = '../PHP/LogOut.php';
 					document.forms['post'].submit();
-				}
-				
-				function openMessages(state) {
-					if (state == 0) {
-						document.getElementById('cmd').value = '0';
-						document.getElementById('post').action = '../PHP/storeMessages.php';
-						document.forms['post'].submit();
-					}
-					else
-					if (state == 1) {
-						document.getElementById('cmd').value = '1';
-						document.getElementById('post').action = '../PHP/storeMessages.php';
-						document.forms['post'].submit();
-					}
-				}
-				
-				function exploreFollowers() {
-					document.getElementById('accountInfo').action = '../PHP/exploreFollowers.php';
-					document.forms['accountInfo'].submit();
-				}
-				
-				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
-					document.forms['accountInfo'].submit();
 				}
 			</script>
 		</head>
@@ -188,19 +167,19 @@ echo "
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 			<div id='menu'>
-				<a href='#' onclick='returnToHome()' class='homeButton'><img src='$profilePic'></a>
+				<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 echo "
-				<a href='#' onclick='openSettings()'>Settings</a>
-				<a href='#' onclick='loadBlogers()'>Blogers</a>
-				<a href='#' onclick='exploreStories()'>Stories</a>
+				<a href='openSettings.php'>Settings</a>
+				<a href='loadBlogers.php'>Blogers</a>
+				<a href='exploreFStories.php'>Stories</a>
 				<a href='#' onclick='logOut()'>Log out</a>
 			</div>
 			
@@ -263,7 +242,7 @@ echo "
 
 echo "
 				<div id='followers'>
-					<a href='#' class='header' onclick='exploreFollowers()'>$followersCount followers</a>
+					<a href='exploreFollowers.php' class='header'>$followersCount followers</a>
 					<br>
 					<a href='#' onclick='doPost()'>Post</a>
 				</div>
@@ -273,6 +252,7 @@ echo "
 						<input type='text' placeholder='Give it title.' id='title' name='title'>
 						<input type='text' placeholder='Place link for an image or to a video.' id='postImg' name='photo'>
 						<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
+						
 						<a href='#' onclick='writePost()'>Post</a>
 						
 						<input type='hidden' name='sender' value='$fullName'></input>
@@ -301,6 +281,8 @@ echo "
 	$flag = 0;
 	$contentPost = (string)NULL;
 	while ($post_count < count($reversed_stack)) {
+		$buildShared = 0;
+		$builder = 0;
 		$count = 0;
 		$fd = fopen("../Authors/$sender/Posts/".$reversed_stack[$post_count].".txt", "r") or die("Unable to open post.");
 		while (!feof($fd)) {
@@ -315,11 +297,67 @@ echo "
 			else
 			if ($count == 2 || $flag == 1) {
 				$line = str_replace("<br />", "", $line);
-				$url = NULL;
-				if(preg_match($reg_exUrl, $line, $url)) {
-					$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+				if (trim($line) == "$+Shared") {
+					$buildShared = 1;
+				} 
+				
+				if ($buildShared == 1) {
+					if ($builder == 1) {
+						$currentSender = trim($line);
+					}
+					else
+					if ($builder == 2) {
+						$currentSenderImg = trim($line);
+					}
+					else
+					if ($builder == 3) {
+						$authorSender = trim($line);
+					}
+					else
+					if ($builder == 4) {
+						$authorSenderFN = trim($line);
+					}
+					else
+					if ($builder == 5) {
+						$authorSenderLN = trim($line);
+					}
+					else
+					if ($builder == 6) {
+						$authorSenderImg = trim($line);
+					}
+					else
+					if ($builder == 7) {
+						$authorSenderHref = trim($line);
+					}
+					
+					$builder++;
+					if (trim($line) == "$-") {
+						$builder = 1;
+						$contentPost = "
+							<a href='#' onclick=\"openBloger('$authorSender')\">
+								<img src='$authorSenderImg' alt='Bad image link :(' />
+							</a>
+							<form id='$authorSender' method='post' style='display: none;'>
+								<input type='password' name='accSender' value='$currentSender'></input>
+								<input type='password' name='imgSender' value='$currentSenderImg'></input>
+								<input type='password' name='blogSender' value='$authorSender'></input>
+								<input type='password' name='blogerFN' value='$authorSenderFN'></input>
+								<input type='password' name='blogerLN' value='$authorSenderLN'></input>
+								<input type='password' name='blogerImg' value='$authorSenderImg'></input>
+								<input type='password' name='blogerHref' value='$authorSenderHref'></input>
+							</form>
+						";
+						$buildShared = 0;
+					}
+				} else {
+					$url = NULL;
+					if(preg_match($reg_exUrl, $line, $url)) {
+						if (!strpos($line, "<img") && !strpos($line, "<a")) {
+							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						}
+					}
+					$contentPost .= $line."<br>";
 				}
-				$contentPost .= $line."<br>";
 				$flag = 1;
 			}
 			$count++;
@@ -329,6 +367,7 @@ echo "
 		if ($contentPost == "NULL<br>") {
 			$contentPost = NULL;
 		}
+		
 		
 		if (is_numeric($titlePost)) {
 			$titleId = "id$titlePost";
@@ -426,34 +465,66 @@ echo "
 		}
 		else
 		if ($postImg == "NULL") {
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
-						<form id='$titleId' method='post'>
-							<input name='sender' value='$fullName'></input>
-							<input name='postId' value='$titlePost'></input>
-							<input name='content' value='$contentPost'></input>
-						</form>
-					<h1>$titlePost</h1>
-					</div>
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
+			if ($builder == 0) {
+				$postBuild = "
+				<tr>
+					<td>
+					</td>
+					<td id='poster'>
+						<div id='quickMenu'>
+							<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
+							<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
+							<form id='$titleId' method='post'>
+								<input name='sender' value='$fullName'></input>
+								<input name='postId' value='$titlePost'></input>
+								<input name='content' value='$contentPost'></input>
+							</form>
+						<h1>$titlePost</h1>
+						</div>
+						<p>
+							$contentPost
+						</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+					</td>
+				</tr>
+				";
+			}
+			else
+			if ($builder == 1) {
+				$postBuild = "
+				<tr>
+					<td>
+					</td>
+					<td id='poster'>
+						<div id='quickMenu'>
+							<a href='#' class='left' style='visibility: hidden;'>Edit<a>
+							<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
+							<form id='$titleId' method='post'>
+								<input name='sender' value='$fullName'></input>
+								<input name='postId' value='$titlePost'></input>
+							</form>
+						<h1>$titlePost</h1>
+						</div>
+						<p>
+							$contentPost
+						</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+					</td>
+				</tr>
+				";
+			}
 		}
 		
 		$post_count++;

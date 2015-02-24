@@ -33,23 +33,13 @@
 	fwrite($fd, $notifyOnMessage);
 	fclose($fd);	
 	
-echo "
-	<html>
-		<head>
-			<script type='text/javascript'>
-				function reSend() {
-					document.getElementById('post').action = 'logedIn.php';
-					document.forms['post'].submit();
-				}
-			</script>
-		</head>
-		<body onload='reSend()'>
-			<form id='post' method='post' style='display: none;'>
-				<input name='sender' value='$dir'></input>
-			</form>
-		</body>
-	</html>
-";
+	session_start();
+	$_SESSION['senderImg'] = $pic;
+	$_SESSION['senderHref'] = $social;
+	$_SESSION['senderFN'] = $fName;
+	$_SESSION['senderLN'] = $lName;
+	
+	header('Location: logedIn.php');
 	
 	die();
 ?>

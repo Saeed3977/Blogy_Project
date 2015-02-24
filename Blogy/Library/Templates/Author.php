@@ -158,6 +158,8 @@ echo "
 	$flag = 0;
 	$contentPost = (string)NULL;
 	while ($post_count < count($reversed_stack)) {
+		$buildShared = 0;
+		$builder = 0;
 		$count = 0;
 		$fd = fopen("Posts/".$reversed_stack[$post_count].".txt", "r") or die("Unable to open post.");
 		while (!feof($fd)) {
@@ -172,11 +174,55 @@ echo "
 			else
 			if ($count == 2 || $flag == 1) {
 				$line = str_replace("<br />", "", $line);
-				$url = NULL;
-				if(preg_match($reg_exUrl, $line, $url)) {
-					$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+				if (trim($line) == "$+Shared") {
+					$buildShared = 1;
+				} 
+				
+				if ($buildShared == 1) {
+					if ($builder == 3) {
+						$authorSender = trim($line);
+					}
+					else
+					if ($builder == 4) {
+						$authorSenderFN = trim($line);
+					}
+					else
+					if ($builder == 5) {
+						$authorSenderLN = trim($line);
+					}
+					else
+					if ($builder == 6) {
+						$authorSenderImg = trim($line);
+					}
+					else
+					if ($builder == 7) {
+						$authorSenderHref = trim($line);
+					}
+					
+					$builder++;
+					if (trim($line) == "$-") {
+						$builder = 1;
+						$contentPost = "
+							<a href='http://www.blogy.sitemash.net/Library/Authors/$authorSender/Author.php' target='_blank'>
+								<img src='$authorSenderImg' alt='Bad image link :(' />
+							</a>
+							<form id='$authorSender' method='post' style='display: none;'>
+								<input type='password' name='blogSender' value='$authorSender'></input>
+								<input type='password' name='blogerFN' value='$authorSenderFN'></input>
+								<input type='password' name='blogerLN' value='$authorSenderLN'></input>
+								<input type='password' name='blogerImg' value='$authorSenderImg'></input>
+								<input type='password' name='blogerHref' value='$authorSenderHref'></input>
+							</form>
+						";
+						$buildShared = 0;
+					}
+				} else {
+					$url = NULL;
+					if(preg_match($reg_exUrl, $line, $url)) {
+						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+					}
+					$contentPost .= $line."<br>";
 				}
-				$contentPost .= $line."<br>";
 				$flag = 1;
 			}
 			$count++;

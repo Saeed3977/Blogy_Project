@@ -1,5 +1,9 @@
 <?php
-	$sender = $_POST['sender'];
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
 
 	$doLine = 0;
 	$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
@@ -105,52 +109,28 @@ echo "
 					document.forms['controlPanel'].submit();
 				}
 			}
-			
-			function loadBlogers() {
-				document.getElementById('accountInfo').action = '../PHP/loadBlogers.php';
-				document.forms['accountInfo'].submit();
-			}
-			
+
 			function logOut() {
 				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
-			
-			function openMessages(state) {
-				if (state == 0) {
-					document.getElementById('cmd').value = '0';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-				else
-				if (state == 1) {
-					document.getElementById('cmd').value = '1';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-			}
-			
-			function exploreStories() {
-				document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 				document.forms['accountInfo'].submit();
 			}
 		</script>
 	</head>
 	<body>
 		<div id='menu'>
-			<a href='#' onclick='returnToHome()' class='homeButton'><img src='$profilePic'></a>
+				<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 echo "
-			<a href='#' onclick='openSettings()'>Settings</a>
-			<a href='#' onclick='loadBlogers()'>Blogers</a>
-			<a href='#' onclick='exploreStories()'>Stories</a>
+			<a href='openSettings.php'>Settings</a>
+			<a href='loadBlogers.php'>Blogers</a>
+			<a href='exploreFStories.php'>Stories</a>
 			<a href='#' onclick='logOut()'>Log out</a>
 		</div>
 		
@@ -161,11 +141,13 @@ echo "
 
 		<div id='body'>
 			<form id='controlPanel' action='../PHP/configBuild.php' method='post'>
-				<h1>
-				<img src='$profilePic' />
-				<br>
-				Profile picture
-				</h1>
+				<div id='pushDownFirefox'>
+					<h1>
+					<img src='$profilePic' />
+					<br>
+					Profile picture
+					</h1>
+				</div>
 				<input type='text' value='$profilePic' id='profilePic' name='profilePic'></input>
 				<br>
 				<h1>Social profile</h1>
@@ -185,9 +167,9 @@ echo "
 					<input type='text' value='$notifyOnMessage' name='notifyOnMessage'>
 				</div>
 				<br>
-				<div class='addMarginSmall'></div>
-				<a href='#' onclick='start()'>Save</a>
-				<div class='addMarginSmall'></div>
+				<div id='marginBottomFirefox'>
+					<a href='#' onclick='start()'>Save</a>
+				</div>
 			</form>
 		</div>
 	</body>

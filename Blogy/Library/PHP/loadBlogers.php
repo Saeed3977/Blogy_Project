@@ -1,9 +1,10 @@
 <?php
-	$sender = $_POST['sender'];
-	
-	$loadSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to load sender.");
-	$senderPic = trim(fgets($loadSender));
-	fclose($loadSender);
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
+	$senderPic = $_SESSION['senderImg'];
 	
 	//Load authors
 	$stack = array();
@@ -32,56 +33,27 @@ echo "
 				<link href='../../fonts.css' rel='stylesheet' type='text/css'>
 				<script type='text/javascript' src='../../java.js'></script>
 				<script type='text/javascript'>
-					function loadBlogers() {
-							document.getElementById('post').action = 'loadBlogers.php';
-							document.forms['post'].submit();
-						}
-
 					function logOut() {
 						document.getElementById('post').action = 'LogOut.php';
 						document.forms['post'].submit();
-					}
-					
-					function openBloger(title) {
-						document.getElementById(title).action = 'openBloger.php';
-						document.forms[title].submit();
-					}
-					
-					function openMessages(state) {
-						if (state == 0) {
-							document.getElementById('cmd').value = '0';
-							document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-							document.forms['accountInfo'].submit();
-						}
-						else
-						if (state == 1) {
-							document.getElementById('cmd').value = '1';
-							document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-							document.forms['accountInfo'].submit();
-						}
-					}
-					
-					function exploreStories() {
-						document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
-						document.forms['accountInfo'].submit();
 					}
 				</script>
 			</head>
 			<body>
 				<div id='menu'>
-					<a href='#' onclick='returnToHome()' class='homeButton'><img src='$senderPic'></a>
+					<a href='logedIn.php' class='homeButton'><img src='$senderPic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 echo "
-					<a href='#' onclick='openSettings()'>Settings</a>
-					<a href='#' onclick='loadBlogers()'>Blogers</a>
-					<a href='#' onclick='exploreStories()'>Stories</a>
+					<a href='openSettings.php'>Settings</a>
+					<a href='loadBlogers.php'>Blogers</a>
+					<a href='exploreFStories.php'>Stories</a>
 					<a href='#' onclick='logOut()'>Log out</a>
 				</div>
 				

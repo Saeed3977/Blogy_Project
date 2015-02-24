@@ -1,39 +1,13 @@
 <?php
-	$sender = $_POST['sender'];
-	
-	$doLine = 0;
-	$config = fopen("../Authors/$sender/config.txt", "r") or die("Unable to open this path.");
-	while (! feof($config)) {
-		$line = fgets($config);
-
-		if ($doLine == 0) {
-			$profilePic = $line;
-		}
-		else
-		if ($doLine == 1) {
-			$profileHref = $line;
-		}
-		else
-		if ($doLine == 2) {
-			$fullName = trim($line);
-		}
-		else
-		if ($doLine == 3) {
-			$profileFirst = trim($line);
-		}
-		else
-		if ($doLine == 4) {
-			$profileLast = trim($line);
-		}
-		else
-		if ($doLine == 5) {
-			$pass = $line;
-			break;
-		}
-
-		$doLine++;
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
 	}
-	fclose($config);
+	$profilePic = $_SESSION['senderImg'];
+	$profileHref = $_SESSION['senderHref'];
+	$profileFirst = $_SESSION['senderFN'];
+	$profileLast = $_SESSION['senderLN'];
 	
 	//Pull notifications
 	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
@@ -51,61 +25,27 @@ echo "
 		<script type='text/javascript' src='../../java.js'></script>
 		
 		<script type = 'text/javascript'> 
-			function loadBlogers() {
-				document.getElementById('accountInfo').action = '../PHP/loadBlogers.php';
-				document.forms['accountInfo'].submit();
-			}
-			
 			function logOut() {
 				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
-			
-			function openMessages(state) {
-				if (state == 0) {
-					document.getElementById('cmd').value = '0';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-				else
-				if (state == 1) {
-					document.getElementById('cmd').value = '1';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-			}
-		
-			function openBloger(title) {
-				document.getElementById(title).action = 'openBloger.php';
-				document.forms[title].submit();
-			}
-			
-			function change() {
-				document.getElementById('accountInfo').action = '../PHP/exploreStories.php';
-				document.forms['accountInfo'].submit();
-			}
-			
-			function exploreStories() {
-				document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
 				document.forms['accountInfo'].submit();
 			}
 		</script>
 	</head>
 	<body>
 		<div id='menu'>
-			<a href='#' onclick='returnToHome()' class='homeButton'><img src='$profilePic'></a>
+			<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 echo "
-			<a href='#' onclick='openSettings()'>Settings</a>
-			<a href='#' onclick='loadBlogers()'>Blogers</a>
-			<a href='#' onclick='exploreStories()'>Stories</a>
+			<a href='openSettings.php'>Settings</a>
+			<a href='loadBlogers.php'>Blogers</a>
+			<a href='exploreFStories.php'>Stories</a>
 			<a href='#' onclick='logOut()'>Log out</a>
 		</div>
 		
@@ -115,9 +55,9 @@ echo "
 		</form>
 		
 		<div id='sub-logo'>
-			<a href='#' class='current'>Following</a>
-			/
-			<a href='#' onclick='change()'>Worldwide</a>
+			<a href='exploreFStories.php' class='current'>Following</a>
+			|
+			<a href='exploreStories.php'>Worldwide</a>
 		</div>
 		<div id='body'>
 			<table id='main-table'>
@@ -151,6 +91,8 @@ echo "
 	if (!empty($todayPosts)) {
 		arsort($todayPosts);
 		foreach(array_keys($todayPosts) as $key) {
+			$buildShared = 0;
+			$builder = 0;
 			$keySplit = explode("`", $key);
 			$post = $keySplit[0];
 			$postAuthor = $keySplit[1];
@@ -169,11 +111,75 @@ echo "
 				else
 				if ($count == 2 || $flag == 1) {
 					$line = str_replace("<br />", "", $line);
-					$url = NULL;
-					if(preg_match($reg_exUrl, $line, $url)) {
-						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+					if (trim($line) == "$+Shared") {
+						$buildShared = 1;
 					}
-					$contentPost .= $line."<br>";
+					
+					if ($buildShared == 1) {
+						if ($builder == 1) {
+							$currentSender = trim($line);
+						}
+						else
+						if ($builder == 2) {
+							$currentSenderImg = trim($line);
+						}
+						else
+						if ($builder == 3) {
+							$authorSender = trim($line);
+						}
+						else
+						if ($builder == 4) {
+							$authorSenderFN = trim($line);
+						}
+						else
+						if ($builder == 5) {
+							$authorSenderLN = trim($line);
+						}
+						else
+						if ($builder == 6) {
+							$authorSenderImg = trim($line);
+						}
+						else
+						if ($builder == 7) {
+							$authorSenderHref = trim($line);
+						}
+						
+						$builder++;
+						if (trim($line) == "$-") {
+							$builder = 1;
+							if ($authorSender == $sender) {
+								$contentPost = "
+									<a href='logedIn.php'>
+										<img src='$authorSenderImg' alt='Bad image link :(' />
+									</a>
+								";
+							}
+							else
+							if ($authorSender != $sender) {
+								$contentPost = "
+									<a href='#' onclick=\"openBloger('$authorSender')\">
+										<img src='$authorSenderImg' alt='Bad image link :(' />
+									</a>
+									<form id='$authorSender' method='post' style='display: none;'>
+										<input type='password' name='accSender' value='$sender'></input>
+										<input type='password' name='imgSender' value='$profilePic'></input>
+										<input type='password' name='blogSender' value='$authorSender'></input>
+										<input type='password' name='blogerFN' value='$authorSenderFN'></input>
+										<input type='password' name='blogerLN' value='$authorSenderLN'></input>
+										<input type='password' name='blogerImg' value='$authorSenderImg'></input>
+										<input type='password' name='blogerHref' value='$authorSenderHref'></input>
+									</form>
+								";
+							}
+							$buildShared = 0;
+						}
+					} else {
+						$url = NULL;
+						if(preg_match($reg_exUrl, $line, $url)) {
+							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						}
+						$contentPost .= $line."<br>";
+					}
 					$flag = 1;
 				}
 				$count++;

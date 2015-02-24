@@ -33,3 +33,8 @@ function openSettings() {
 	document.getElementById('accountInfo').action = '../PHP/openSettings.php';
 	document.forms['accountInfo'].submit();
 }
+
+function openBloger(title) {
+	document.getElementById(title).action = 'openBloger.php';
+	document.forms[title].submit();
+}

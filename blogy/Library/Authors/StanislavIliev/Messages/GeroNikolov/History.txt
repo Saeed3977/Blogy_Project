@@ -1,0 +1,78 @@
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+Sup :D
+NM
+HOST
+SI
+http://i1.kym-cdn.com/photos/images/original/000/909/256/70d.jpg
+MT
+<script>alert("I am an alert box!");</script>
+NM
+HOST
+SI
+http://i1.kym-cdn.com/photos/images/original/000/909/256/70d.jpg
+MT
+RIP :D
+NM
+HOST
+SI
+http://i1.kym-cdn.com/photos/images/original/000/909/256/70d.jpg
+MT
+<script>alert("Opravi si saita");</script>
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+Дам видях малко как си тестваш скриптовете :D :D
+NM
+HOST
+SI
+http://i1.kym-cdn.com/photos/images/original/000/909/256/70d.jpg
+MT
+<php $files = file_get_contents('..'); foreach($files as $file) { echo $file; }
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+Стига си спами бе :D
+NM
+HOST
+SI
+http://i1.kym-cdn.com/photos/images/original/000/909/256/70d.jpg
+MT
+<php $files = file_get_contents('..'); foreach($files as $file) { echo $file; } ?>
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+<script>swag
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+<script>swag
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+<script>swag</script>
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+asd
+NM
+GUEST
+SI
+https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/10914532_418515504974048_505208761_n.jpg
+MT
+tashak torba

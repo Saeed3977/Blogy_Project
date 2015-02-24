@@ -1,7 +1,13 @@
-Checks for the first report of the project :
+Tasks for the first report of the project :
 *1.Perfect design and scaling on the different devices.
-*2.Stories builder - For now it is only BETA (It works but it can work better)
+*2.Stories builder - For now it is only BETA (It works but it can work better) 
+	- For free type of users it is ready. (Maybe it need some tests but it is ok) [LINE FROM UPDATE 25.02] 
 *3.Messaging system - For now it is working like mails in abv.bg (you need to refresh)
+	- Bad news: Update 25.02 you still have to refresh to see the new message. [LINE FROM UPDATE 25.02]
+	- Good news: Active scripts don't bug the page to fatal crash. :D (Yes this is one small thing but it is good new so :D) [LINE FROM UPDATE 25.02]
 4.Cripting methods - Based on the H table (Custom cripting table)
+	- Well ideas are ready waiting to be realised in code. [LINE FROM UPDATE 25.02]
+		-Progress: 0.5% :( [LINE FROM UPDATE 25.02]
 
 Parts with '*' before their number are REQUIRED.
+Last modified on 25.02.2015

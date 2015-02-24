@@ -1,9 +1,11 @@
 <?php
-	$sender = $_POST['sender'];
-	
-	$loadSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to load sender.");
-	$senderPic = trim(fgets($loadSender));
-	fclose($loadSender);
+	session_start();
+	$sender = $_SESSION['sender'];
+	$profilePic = $_SESSION['senderImg'];
+
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
 	
 	$line_count = 0;
 	
@@ -35,6 +37,11 @@
 	//Pull notifications
 	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
 	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
+	fclose($pullNotifications);
+	
+	//Commit notifications
+	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "w") or die("Unable to commit.");
+	fwrite($pullNotifications, "0");
 	fclose($pullNotifications);
 	
 echo "
@@ -86,11 +93,6 @@ echo "
 						imgFlag = 0;
 					}
 				}
-			
-				function loadBlogers() {
-						document.getElementById('post').action = 'loadBlogers.php';
-						document.forms['post'].submit();
-					}
 
 				function logOut() {
 					document.getElementById('post').action = 'LogOut.php';
@@ -101,12 +103,7 @@ echo "
 					document.getElementById('send').action = 'openBloger.php';
 					document.forms['send'].submit();
 				}
-				
-				function readMessage(id) {
-					document.getElementById(id).action = 'readMessage.php';
-					document.forms[id].submit();
-				}
-				
+
 				function sendMessage() {
 					var text = document.getElementById('messageTXT').value;
 					var img = document.getElementById('imgHolder').value;
@@ -126,42 +123,23 @@ echo "
 						document.forms['answer'].submit();
 					}
 				}
-				
-				function openMessages(state) {
-					if (state == 0) {
-						document.getElementById('cmd').value = '0';
-						document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-						document.forms['accountInfo'].submit();
-					}
-					else
-					if (state == 1) {
-						document.getElementById('cmd').value = '1';
-						document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-						document.forms['accountInfo'].submit();
-					}
-				}
-				
-				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
-					document.forms['accountInfo'].submit();
-				}
 			</script>
 		</head>
 		<body onload='hideElement()'>
 			<div id='menu'>
-				<a href='#' onclick='returnToHome()' class='homeButton'><img src='$senderPic'></a>
+				<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
 	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
+		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
 	}
 	else
 	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
+		echo "<a href='storeMessages.php'>Messages</a>";
 	}	
 echo "
-				<a href='#' onclick='openSettings()'>Settings</a>
-				<a href='#' onclick='loadBlogers()'>Blogers</a>
-				<a href='#' onclick='exploreStories()'>Stories</a>
+				<a href='openSettings.php'>Settings</a>
+				<a href='loadBlogers.php'>Blogers</a>
+				<a href='exploreFStories.php'>Stories</a>
 				<a href='#' onclick='logOut()'>Log out</a>
 			</div>
 			
@@ -280,8 +258,13 @@ echo "
 		$count = 0;
 		$reversedMessage = array_reverse($messageTXTarray);
 		while ($count < count($reversedMessage)) {
-			if (!strpos($reversedMessage[$count], "<img")) {
-				$reversedMessage[$count] = str_replace("<br />", "", $reversedMessage[$count]);
+			if (strpos($reversedMessage[$count], "</script>")) {
+				$reversedMessage[$count] = str_replace("<script>", "", $reversedMessage[$count]);
+				$reversedMessage[$count] = str_replace("</script>", "", $reversedMessage[$count]);;
+			}				
+
+			$reversedMessage[$count] = str_replace("<br />", "", $reversedMessage[$count]);
+			if (!strpos($reversedMessage[$count], "Bad image link")) {
 				$url = NULL;
 				if(preg_match($reg_exUrl, $reversedMessage[$count], $url)) {
 					$reversedMessage[$count] = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $reversedMessage[$count]);
