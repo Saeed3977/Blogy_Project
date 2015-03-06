@@ -9,8 +9,8 @@
 <b>*3.Messaging system</b><br>
 	-We translate the idea and we decided that we don't need to make special chat room because with the current design of the messages, you just won't spent more time waiting for answer, so we leave it
 	the way it was and we <b>introduce the quick message option</b>.<br>
-	We believe in that you will feel the real experience only if you try the platform all by yourself.
-	So just click <a href='http://www.blogy.sitemash.net' target='_blank'>here</a>.
+	We believe in that you will feel the real experience only if you try the platform all by yourself.<br>
+	So just click <a href='http://www.blogy.sitemash.net' target='_blank'>here</a>.<br>
 <br>
 <b>Update: 25.02</b><br>
 <b>*1.Perfect design and scaling on the different devices.</b><br>
