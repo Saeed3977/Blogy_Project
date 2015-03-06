@@ -23,7 +23,7 @@ echo "
 		<link href='../../style.css' rel='stylesheet' type='text/css' media='screen' />
 		<link href= '../../fonts.css' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='../../java.js'></script>
-		
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		<script type = 'text/javascript'> 			
 			function logOut() {
 				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
@@ -32,22 +32,10 @@ echo "
 		</script>
 	</head>
 	<body>
-		<div id='menu'>
-			<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
-	if ($countNotifications != "0") {
-		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
-	}
-	else
-	if ($countNotifications == "0") {
-		echo "<a href='storeMessages.php'>Messages</a>";
-	}	
+	include 'loadMenu.php';
+	include 'loadSuggestedBlogers.php';
 echo "
-			<a href='openSettings.php'>Settings</a>
-			<a href='loadBlogers.php'>Blogers</a>
-			<a href='exploreFStories.php'>Stories</a>
-			<a href='#' onclick='logOut()'>Log out</a>
-		</div>
 		
 		<form id='accountInfo' method='post' style='display: none;'>
 			<input type='text' name='sender' value='$sender'></input>
@@ -70,6 +58,10 @@ echo "
 				<a href='socializeSettings.php'>
 					<img src='https://cdn3.iconfinder.com/data/icons/ballicons-free/128/open-box.png' />
 					Statistics
+				</a>
+				<a href='reportSettings.php'>
+					<img src='https://cdn3.iconfinder.com/data/icons/ballicons-free/128/target.png' />
+					Report
 				</a>
 			</div>
 <!--

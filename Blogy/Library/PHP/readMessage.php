@@ -9,7 +9,11 @@
 	
 	$line_count = 0;
 	
-	$messangerId = $_POST['messangerId'];
+	$messangerId = $_COOKIE['messangerId'];
+
+	if (!isset($messengerId)) {
+		echo "<script>window.close();</script>";
+	}
 	$parseMessanger = fopen("../Authors/$messangerId/config.txt", "r") or die("Unable to start parsing.");
 	while (!feof($parseMessanger)) {
 		$line = fgets($parseMessanger);
@@ -33,11 +37,6 @@
 	}
 	fclose($parseMessanger);
 	$line_count = 0;
-	
-	//Pull notifications
-	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
-	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
-	fclose($pullNotifications);
 	
 	//Commit notifications
 	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "w") or die("Unable to commit.");
@@ -98,18 +97,13 @@ echo "
 					document.getElementById('post').action = 'LogOut.php';
 					document.forms['post'].submit();
 				}
-				
-				function openBloger() {
-					document.getElementById('send').action = 'openBloger.php';
-					document.forms['send'].submit();
-				}
 
 				function sendMessage() {
 					var text = document.getElementById('messageTXT').value;
 					var img = document.getElementById('imgHolder').value;
 					
-					if (text == '' && img == '') {
-						alert('Message needs some text.');
+					if (text.trim() == '' && img == '') {
+						alert('Message needs something.');
 					} else {
 						if (text != '' && img != '') {
 							document.getElementById('messageTXT').value +=  '<br /><img src=\"'+img+'\" alt=\"Bad image link :(\" />';
@@ -126,22 +120,10 @@ echo "
 			</script>
 		</head>
 		<body onload='hideElement()'>
-			<div id='menu'>
-				<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
-	if ($countNotifications != "0") {
-		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
-	}
-	else
-	if ($countNotifications == "0") {
-		echo "<a href='storeMessages.php'>Messages</a>";
-	}	
+	include 'loadMenu.php';
+	include 'loadSuggestedBlogers.php';
 echo "
-				<a href='openSettings.php'>Settings</a>
-				<a href='loadBlogers.php'>Blogers</a>
-				<a href='exploreFStories.php'>Stories</a>
-				<a href='#' onclick='logOut()'>Log out</a>
-			</div>
 			
 			<form id='accountInfo' method='post' style='display: none;'>
 				<input type='text' name='sender' value='$sender'></input>
@@ -170,13 +152,11 @@ echo "
 				</form>
 				<div id='message'>
 					<div id='messenger'>
-						<a href='#' onclick='openBloger()'>
+						<a href='openBloger.php' onclick=\"openBloger('send')\">
 							<img src='$messangerImg' alt='Bad image link :('/>
 							$messangerFN $messangerLN
 						</a>
 						<form id='send' method='post' style='display: none;'>
-							<input type='text' name='accSender' value='$sender'></input>
-							<input type='text' name='imgSender' value='$senderPic'></input>
 							<input type='text' name='blogSender' value='$messangerId'></input>
 							<input type='text' name='blogerFN' value='$messangerFN'></input>
 							<input type='text' name='blogerLN' value='$messangerLN'></input>
@@ -261,7 +241,11 @@ echo "
 			if (strpos($reversedMessage[$count], "</script>")) {
 				$reversedMessage[$count] = str_replace("<script>", "", $reversedMessage[$count]);
 				$reversedMessage[$count] = str_replace("</script>", "", $reversedMessage[$count]);;
-			}				
+			}			
+			if (strpos($reversedMessage[$count], "?php")) {
+				$reversedMessage[$count] = str_replace("<?php", "", $reversedMessage[$count]);
+				$reversedMessage[$count] = str_replace("?>", "", $reversedMessage[$count]);
+			}
 
 			$reversedMessage[$count] = str_replace("<br />", "", $reversedMessage[$count]);
 			if (!strpos($reversedMessage[$count], "Bad image link")) {

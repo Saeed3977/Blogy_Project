@@ -2,27 +2,20 @@
 	$line_count = 0;
 	$toSend = (string)NULL;
 	
-	$sender = $_POST['sender'];
-	$parseSender = fopen("../Authors/$sender/config.txt", "r") or die("Unable to start parsing.");
-	while (!feof($parseSender)) {
-		$line = fgets($parseSender);
-		if ($line_count == 0) {
-			$senderImg = trim($line);
-		}
-		else
-		if ($line_count == 3) {
-			$senderFN = trim($line);
-		}
-		else
-		if ($line_count == 4) {
-			$senderLN = trim($line);
-		}
-		$line_count++;
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
 	}
-	fclose($parseSender);
-	$line_count = 0;
+	$senderImg = $_SESSION['senderImg'];
+	$senderHref = $_SESSION['senderHref'];
+	$senderFirst = $_SESSION['senderFN'];
+	$senderLast = $_SESSION['senderLN'];
 	
 	$authorId = $_POST['authorId'];
+	if (!isset($authorId)) {
+		echo "<script>window.close();</script>";
+	}
 	$parseAuthor = fopen("../Authors/$authorId/config.txt", "r") or die("Unable to start parsing.");
 	while (!feof($parseAuthor)) {
 		$line = fgets($parseAuthor);

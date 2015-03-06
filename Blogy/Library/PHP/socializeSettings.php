@@ -23,7 +23,7 @@
 		<link href='../../style.css' rel='stylesheet' type='text/css' media='screen' />
 		<link href= '../../fonts.css' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='../../java.js'></script>
-		
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		<script type = 'text/javascript'> 			
 			function logOut() {
 				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
@@ -32,23 +32,10 @@
 		</script>
 	</head>
 	<body>
-		<div id='menu'>
-			<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
-	if ($countNotifications != "0") {
-		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
-	}
-	else
-	if ($countNotifications == "0") {
-		echo "<a href='storeMessages.php'>Messages</a>";
-	}	
-echo "
-			<a href='openSettings.php'>Settings</a>
-			<a href='loadBlogers.php'>Blogers</a>
-			<a href='exploreFStories.php'>Stories</a>
-			<a href='#' onclick='logOut()'>Log out</a>
-		</div>
-		
+	include 'loadMenu.php';
+	include 'loadSuggestedBlogers.php';
+echo "	
 		<form id='accountInfo' method='post' style='display: none;'>
 			<input type='text' name='sender' value='$sender'></input>
 			<input type='text' id='cmd' name='cmd'></input>
@@ -79,7 +66,7 @@ echo "
 	}
 	
 echo " 
-					<a href='#' onclick='returnToHome()'>
+					<a href='logedIn.php'>
 						<h1>$cmd</h1>
 					</a>
 				</div>
@@ -119,7 +106,7 @@ echo "
 			$authorId = $line;
 			
 			$printMethod .= "
-				<a href='#' onclick=\"openBloger('$authorId')\">
+				<a href='openBloger.php' onclick=\"openBloger('$authorId')\">
 					<img src='$userImg' alt='Bad image link :(' />
 					$userFN $userLN
 					<form id='$authorId' method='post' style='display: none;'>
@@ -182,12 +169,10 @@ echo "
 			$authorId = $line;
 			
 			$printMethod .= "
-				<a href='#' onclick=\"openBloger('$authorId')\">
+				<a href='openBloger.php' onclick=\"openBloger('$authorId')\">
 					<img src='$userImg' alt='Bad image link :(' />
 					$userFN $userLN
 					<form id='$authorId' method='post' style='display: none;'>
-						<input type='text' name='accSender' value='$sender'></input>
-						<input type='text' name='imgSender' value='$profilePic'></input>
 						<input type='text' name='blogSender' value='$authorId'></input>
 						<input type='text' name='blogerFN' value='$userFN'></input>
 						<input type='text' name='blogerLN' value='$userLN'></input>

@@ -17,6 +17,7 @@
 		<title>Blogy</title>
 		<link href='style.css' rel='stylesheet' type='text/css' media='screen' />
 		<link href= 'fonts.css' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='fonts.css' />
 	</head>
 	<body>
 		<div id='menu'>

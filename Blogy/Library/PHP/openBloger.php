@@ -18,22 +18,20 @@
 	}
 	fclose($parseSender);
 	
-	$blogerSender = $_POST['blogSender'];
-	$blogerFN = $_POST['blogerFN'];
-	$blogerLN = $_POST['blogerLN'];
-	$blogerImg = $_POST['blogerImg'];
-	
-	$profileHref = $_POST['blogerHref'];
+	//Get cookies
+	$blogerSender = $_COOKIE['blogSender'];
+	if (!isset($blogerSender) || $blogSender == "") {
+		echo "<script>window.close();</script>";
+	}
+	$blogerFN = $_COOKIE['blogerFN'];
+	$blogerLN = $_COOKIE['blogerLN'];
+	$blogerImg = $_COOKIE['blogerImg'];
+	$blogerHref = $_COOKIE['blogerHref'];
 	$profileName = "$blogerFN $blogerLN";
 	
 	$followersLoad = fopen("../Authors/$blogerSender/Followers.html", "r") or die("Unable to load Followers.");
 	$followersCount = fread($followersLoad, filesize("../Authors/$blogerSender/Followers.html"));
 	fclose($followersLoad);
-	
-	//Pull notifications
-	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
-	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
-	fclose($pullNotifications);
 	
 echo " 
 	<html>
@@ -128,11 +126,6 @@ echo "
 					document.getElementById('share').action = '../PHP/writeMethod.php';
 					document.forms['share'].submit();
 				}
-				
-				function openBloger(title) {
-					document.getElementById(title).action = 'openBloger.php';
-					document.forms[title].submit();
-				}
 			</script>
 		</head>
 		<body>
@@ -144,23 +137,10 @@ echo "
 			  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249236501932040&version=v2.0';
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
-			<div id='menu'>
-				<a href='#' onclick='returnToHome()' class='homeButton'><img src='$senderPic'></a>
 ";
-	if ($countNotifications != "0") {
-		echo "<a href='#' onclick='openMessages(1)' class='notification'>$countNotifications new</a>";
-	}
-	else
-	if ($countNotifications == "0") {
-		echo "<a href='#' onclick='openMessages(0)'>Messages</a>";
-	}	
-echo "
-				<a href='#' onclick='openSettings()'>Settings</a>
-				<a href='#' onclick='loadBlogers()'>Blogers</a>
-				<a href='#' onclick='exploreStories()'>Stories</a>
-				<a href='#' onclick='logOut()'>Log out</a>
-			</div>
-			
+	include 'loadMenu.php';
+	include 'loadSuggestedBlogers.php';
+echo "	
 			<form id='accountInfo' method='post' style='display: none;'>
 				<input type='text' name='sender' value='$sender'></input>
 				<input type='text' id='cmd' name='cmd'></input>
@@ -192,14 +172,12 @@ echo "
 							<img src='$senderPic' />
 						</a>
 						<form id='share' method='post' style='display: none;'>
-							<input type='password' value='$sender' name='sender'>
-							<input type='password' value='$senderPic' name='senderImg'>
 							<input type='password' value='2' name='cmd'>
 							<input type='password' value='$blogerSender' name='blogerId'>
 							<input type='password' value='$blogerFN' name='authorFN'>
 							<input type='password' value='$blogerLN' name='authorLN'>
 							<input type='password' value='$blogerImg' name='authorImage'>
-							<input type='password' value='$profileHref' name='authorHref'>
+							<input type='password' value='$blogerHref' name='authorHref'>
 						</form>
 					</div>
 				</div>
@@ -218,9 +196,9 @@ echo "
 				</div>
 ";
 
-	if ($profileHref != "NULL") {
+	if ($blogerHref != "NULL") {
 		echo "
-			<a href='$profileHref' target='_blank'>
+			<a href='$blogerHref' target='_blank'>
 				<img src='$blogerImg' />
 				<br>
 				$profileName
@@ -228,7 +206,7 @@ echo "
 		";
 	}
 	else
-	if ($profileHref == "NULL") {
+	if ($blogerHref == "NULL") {
 		echo "
 			<a class='inactive'>
 				<img src='$blogerImg' />
@@ -285,17 +263,31 @@ echo "
 			<table id='main-table'>
 ";
 
-	$stack = array();
-	$getStack = fopen("../Authors/$blogerSender/Posts/Stack.txt", "r") or die("Stack not found.");
-	while (! feof($getStack)) {
-		$line = fgets($getStack);
-		$line = trim($line);
-		if ($line != "") {
-			array_push($stack, $line);
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
+	$history = array();
+	
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$sql = "SELECT STACK, BUILD FROM stack$blogerSender";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				$postId = $row['STACK'];
+				$postId = str_replace("6996", " ", $postId);
+				array_push($history, $postId);
+			}
 		}
 	}
+	$conn->close();
 	
-	$reversed_stack = array_reverse($stack);
+	$reversed_stack = array_reverse($history);
 	
 	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 	$post_count = 0;
@@ -357,7 +349,7 @@ echo "
 						$builder = 1;
 						if ($authorSender == $sender) {
 							$contentPost = "
-								<a href='#' onclick=\"returnToHome()\">
+								<a href='logedIn.php'>
 									<img src='$authorSenderImg' alt='Bad image link :(' />
 								</a>
 							";
@@ -365,12 +357,10 @@ echo "
 						else
 						if ($authorSender != $sender) {
 							$contentPost = "
-								<a href='#' onclick=\"openBloger('$authorSender')\">
+								<a href='openBloger.php' onclick=\"openBloger('$authorSender')\">
 									<img src='$authorSenderImg' alt='Bad image link :(' />
 								</a>
 								<form id='$authorSender' method='post' style='display: none;'>
-									<input type='password' name='accSender' value='$sender'></input>
-									<input type='password' name='imgSender' value='$senderPic'></input>
 									<input type='password' name='blogSender' value='$authorSender'></input>
 									<input type='password' name='blogerFN' value='$authorSenderFN'></input>
 									<input type='password' name='blogerLN' value='$authorSenderLN'></input>
@@ -500,7 +490,7 @@ echo "
 		echo "$postBuild";
 		$contentPost = NULL;
 	}
-
+	
 echo "
 			</table>
 		</div>

@@ -1,5 +1,10 @@
 <?php
-	$sender = trim($_POST['sender']);
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+		header('Location: ../../SignIn.html');
+	}
+	
 	$postTitle = $_POST['postId'];
 	
 	$count = 0;
@@ -51,11 +56,6 @@ echo "
 						document.forms['editor'].submit();
 					}
 				}
-				
-				function reSend() {
-					document.getElementById('editor').action = 'logedIn.php';
-					document.forms['editor'].submit();
-				}
 			</script>
 		</head>
 		<body>
@@ -65,7 +65,7 @@ echo "
 					<input type='text' id='img' name='postImg' placeholder='Place link to an image.' value='$postImg'></input><br>
 					<textarea placeholder='What&#39;s up ?' id='content' name='content' value='$postContent'>$postContent</textarea><br>
 					<a href='#' onclick='buildPost()'>Post</a>
-					<a href='#' onclick='reSend()'>Ignore</a>
+					<a href='logedIn.php'>Ignore</a>
 					<br>
 					<div class='addMarginSmall'></div>
 					<input type='text' name='sender' value='$sender' style='display:none;'></input>

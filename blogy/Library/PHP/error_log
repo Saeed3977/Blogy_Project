@@ -231,3 +231,770 @@
 [25-Feb-2015 00:14:22 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 292
 [25-Feb-2015 00:16:33 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 8
 [25-Feb-2015 00:16:45 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 8
+[25-Feb-2015 01:07:09 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 13
+[25-Feb-2015 01:07:18 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 13
+[25-Feb-2015 11:03:48 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadBlogers.php on line 21
+[25-Feb-2015 15:11:57 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[25-Feb-2015 15:12:41 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[25-Feb-2015 15:16:41 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 13
+[25-Feb-2015 15:40:00 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[25-Feb-2015 15:40:15 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[25-Feb-2015 15:40:16 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[25-Feb-2015 20:17:23 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 07:22:43 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 14:25:53 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 14:26:13 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 19:04:25 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 19:36:44 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:36:49 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:37:09 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:42:00 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:43:36 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:43:49 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:45:38 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 29
+[26-Feb-2015 19:50:51 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 513
+[26-Feb-2015 19:50:51 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 515
+[26-Feb-2015 19:50:51 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 517
+[26-Feb-2015 19:50:51 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 519
+[26-Feb-2015 19:50:51 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 521
+[26-Feb-2015 19:52:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 512
+[26-Feb-2015 19:52:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 513
+[26-Feb-2015 19:52:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 514
+[26-Feb-2015 19:52:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 515
+[26-Feb-2015 19:52:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php:149) in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 516
+[26-Feb-2015 19:59:47 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 13
+[26-Feb-2015 21:26:35 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[26-Feb-2015 23:00:01 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[27-Feb-2015 13:01:03 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[27-Feb-2015 14:09:55 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 13
+[27-Feb-2015 14:15:27 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 13
+[27-Feb-2015 14:15:37 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 13
+[27-Feb-2015 14:16:27 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 14:16:30 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 14:16:41 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 14:16:50 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 15:30:23 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 15:31:00 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:23 Europe/Sofia] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 80
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-24 11:39:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 14:36:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 12:43:35 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-20 15:51:46 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:24:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:22:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 22:48:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 21:45:39 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 18:47:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 17:48:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 21:14:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:47 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:49:15 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:52 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:34 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:54:48 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:44:23 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-24 11:39:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 14:36:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 12:43:35 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-20 15:51:46 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:24:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:22:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 22:48:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 21:45:39 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 18:47:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 17:48:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 21:14:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:47 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:49:15 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:52 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:34 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:44:23 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:35 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php:37) in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 104
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-24 11:39:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 14:36:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-23 12:43:35 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-20 15:51:46 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:24:53 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-19 13:22:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 22:48:36 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-18 21:45:39 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 18:47:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-17 17:48:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 21:14:00 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:47 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:50:29 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:49:15 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:52 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:48:34 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  filemtime(): stat failed for 2015-02-16 18:44:23 in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 95
+[27-Feb-2015 15:58:42 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php:37) in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 104
+[27-Feb-2015 21:44:19 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 210
+[27-Feb-2015 21:45:19 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 210
+[27-Feb-2015 21:45:24 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 210
+[27-Feb-2015 22:41:55 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[27-Feb-2015 23:21:04 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 216
+[27-Feb-2015 23:55:54 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[28-Feb-2015 00:13:20 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 13
+[28-Feb-2015 00:13:30 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 13
+[28-Feb-2015 00:37:26 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 10
+[28-Feb-2015 10:41:39 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 117
+[28-Feb-2015 10:49:41 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 99
+[28-Feb-2015 10:49:52 Europe/Sofia] PHP Parse error:  syntax error, unexpected '}' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 141
+[28-Feb-2015 10:49:53 Europe/Sofia] PHP Parse error:  syntax error, unexpected '}' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 141
+[28-Feb-2015 10:49:54 Europe/Sofia] PHP Parse error:  syntax error, unexpected '}' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 141
+[28-Feb-2015 10:49:54 Europe/Sofia] PHP Parse error:  syntax error, unexpected '}' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 141
+[28-Feb-2015 10:56:46 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 409
+[28-Feb-2015 10:56:58 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/editMethod.php on line 8
+[28-Feb-2015 10:57:07 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[28-Feb-2015 10:57:08 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 409
+[28-Feb-2015 10:57:23 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 409
+[28-Feb-2015 10:57:47 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 409
+[28-Feb-2015 10:58:10 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 409
+[28-Feb-2015 11:45:47 Europe/Sofia] PHP Warning:  explode() expects parameter 2 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 142
+[28-Feb-2015 11:45:47 Europe/Sofia] PHP Warning:  min(): When only one parameter is given, it must be an array in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 142
+[28-Feb-2015 11:47:12 Europe/Sofia] PHP Parse error:  syntax error, unexpected ')' in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 143
+[28-Feb-2015 12:06:29 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 10
+[28-Feb-2015 12:10:58 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[28-Feb-2015 17:00:59 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[28-Feb-2015 20:30:01 Europe/Sofia] PHP Warning:  filemtime(): stat failed for ../Authors/MladenKaradimov/Posts/asd.txt in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 132
+[28-Feb-2015 23:19:56 Europe/Sofia] PHP Warning:  filemtime(): stat failed for ../Authors/MladenKaradimov/Posts/asd.txt in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 132
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 116
+[01-Mar-2015 11:03:29 Europe/Sofia] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 125
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 117
+[01-Mar-2015 11:04:08 Europe/Sofia] PHP Warning:  array_reverse() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 126
+[01-Mar-2015 11:18:16 Europe/Sofia] PHP Fatal error:  Call to undefined function buildPosts() in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 151
+[01-Mar-2015 11:34:16 Europe/Sofia] PHP Fatal error:  Call to undefined function buildPosts() in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 109
+[01-Mar-2015 11:34:33 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 237
+[01-Mar-2015 11:34:33 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 237
+[01-Mar-2015 11:34:33 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 237
+[01-Mar-2015 11:34:34 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/exploreStories.php on line 237
+[01-Mar-2015 11:52:50 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 13
+[01-Mar-2015 18:29:40 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[01-Mar-2015 20:45:35 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[01-Mar-2015 21:36:58 Europe/Sofia] PHP Warning:  min(): Array must contain at least one element in /home/kdkcompu/gero/blogy/Library/PHP/exploreFStories.php on line 138
+[01-Mar-2015 22:21:59 Europe/Sofia] PHP Notice:  Undefined index: host in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 385
+[01-Mar-2015 22:21:59 Europe/Sofia] PHP Notice:  Undefined index: host in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 392
+[01-Mar-2015 22:21:59 Europe/Sofia] PHP Notice:  Undefined index: host in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 397
+[01-Mar-2015 22:21:59 Europe/Sofia] PHP Notice:  Undefined index: host in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 403
+[01-Mar-2015 22:21:59 Europe/Sofia] PHP Notice:  Undefined variable: cmd in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 457
+[01-Mar-2015 22:52:39 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 7
+[01-Mar-2015 23:47:09 Europe/Sofia] PHP Warning:  Invalid argument supplied for foreach() in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 45
+[01-Mar-2015 23:48:30 Europe/Sofia] PHP Warning:  Invalid argument supplied for foreach() in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 45
+[01-Mar-2015 23:49:17 Europe/Sofia] PHP Warning:  Invalid argument supplied for foreach() in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 46
+[01-Mar-2015 23:50:15 Europe/Sofia] PHP Warning:  Invalid argument supplied for foreach() in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 46
+[02-Mar-2015 00:01:38 Europe/Sofia] PHP Warning:  array_rand(): Second argument has to be between 1 and the number of elements in the array in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 33
+[02-Mar-2015 00:01:38 Europe/Sofia] PHP Warning:  array_rand(): Second argument has to be between 1 and the number of elements in the array in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 33
+[02-Mar-2015 00:01:38 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 48
+[02-Mar-2015 00:02:30 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 48
+[02-Mar-2015 00:02:53 Europe/Sofia] PHP Warning:  Illegal offset type in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 40
+[02-Mar-2015 00:02:53 Europe/Sofia] PHP Warning:  Illegal offset type in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 40
+[02-Mar-2015 00:02:53 Europe/Sofia] PHP Warning:  Illegal offset type in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 40
+[02-Mar-2015 00:02:53 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 48
+[02-Mar-2015 00:03:12 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 48
+[02-Mar-2015 00:03:52 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 49
+[02-Mar-2015 00:05:27 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 48
+[02-Mar-2015 10:04:22 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 13:17:30 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 15:17:24 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 17:07:56 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 20:40:43 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 21:52:27 Europe/Sofia] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 222
+[02-Mar-2015 21:53:09 Europe/Sofia] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 222
+[02-Mar-2015 22:01:46 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[02-Mar-2015 23:00:55 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/configBuild.php:36) in /home/kdkcompu/gero/blogy/Library/PHP/configBuild.php on line 38
+[02-Mar-2015 23:02:51 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/configBuild.php:36) in /home/kdkcompu/gero/blogy/Library/PHP/configBuild.php on line 38
+[03-Mar-2015 00:24:11 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[03-Mar-2015 11:14:19 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 31
+[03-Mar-2015 11:15:50 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 33
+[03-Mar-2015 11:15:55 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 33
+[03-Mar-2015 11:16:00 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 33
+[03-Mar-2015 11:17:25 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 34
+[03-Mar-2015 11:17:28 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 34
+[03-Mar-2015 11:17:40 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 34
+[03-Mar-2015 11:17:43 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 34
+[03-Mar-2015 11:18:00 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 34
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 78
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 78
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_query(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 77
+[03-Mar-2015 12:10:39 Europe/Sofia] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 78
+[03-Mar-2015 12:14:56 Europe/Sofia] PHP Fatal error:  Call to a member function close() on a non-object in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 145
+[03-Mar-2015 12:21:45 Europe/Sofia] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/kdkcompu/gero/blogy/Library/PHP/loadSuggestedBlogers.php on line 52
+[03-Mar-2015 13:06:06 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:06:10 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:06:58 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 19
+[03-Mar-2015 13:10:12 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:10:18 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:11:22 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:12:40 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:12:54 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:13:01 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:13:45 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:13:48 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:14:45 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:15:29 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:16:05 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:16:08 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:16:10 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:16:49 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 19
+[03-Mar-2015 13:17:39 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 19
+[03-Mar-2015 13:18:07 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 19
+[03-Mar-2015 13:21:02 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:21:08 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:21:32 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:22:10 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:23:50 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:28:38 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:28:40 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:29:01 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:29:04 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:29:24 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:30:06 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:32:45 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:32:48 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:33:07 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:33:10 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 16
+[03-Mar-2015 13:33:25 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:33:28 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:34:03 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:34:06 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:34:21 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:34:53 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:35:50 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:35:54 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[03-Mar-2015 13:39:06 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 19
+[03-Mar-2015 15:25:26 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 32
+[03-Mar-2015 15:26:05 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 32
+[03-Mar-2015 18:17:22 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[03-Mar-2015 19:45:24 Europe/Sofia] PHP Fatal error:  Call to undefined function php_info() in /home/kdkcompu/gero/blogy/Library/PHP/loadOnlineFriends.php on line 6
+[03-Mar-2015 20:26:58 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[03-Mar-2015 21:02:47 Europe/Sofia] PHP Warning:  fopen(../Authors//Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 13
+[04-Mar-2015 10:57:09 Europe/Sofia] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/kdkcompu/gero/blogy/Library/PHP/sendQuickMessage.php on line 20
+[04-Mar-2015 11:31:44 Europe/Sofia] PHP Warning:  fopen(../Authors/Gero Nikolov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/sendQuickMessage.php on line 23
+[04-Mar-2015 11:38:30 Europe/Sofia] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/kdkcompu/gero/blogy/Library/PHP/sendQuickMessage.php on line 61
+[04-Mar-2015 11:45:51 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[04-Mar-2015 12:05:36 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[04-Mar-2015 13:22:04 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[04-Mar-2015 13:51:30 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[04-Mar-2015 13:51:50 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[05-Mar-2015 13:14:40 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Stack.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 110
+[05-Mar-2015 13:14:54 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Stack.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 110
+[05-Mar-2015 19:02:21 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[05-Mar-2015 19:24:54 Europe/Sofia] PHP Parse error:  syntax error, unexpected ':' in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 112
+[05-Mar-2015 19:27:07 Europe/Sofia] PHP Warning:  fopen(../Authors/AdminAdmin/Stack.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 124
+[05-Mar-2015 19:33:33 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Stack.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 125
+[05-Mar-2015 19:34:56 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 43
+[05-Mar-2015 21:01:03 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Swag.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 131
+[05-Mar-2015 21:01:15 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Swag.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 131
+[05-Mar-2015 21:51:09 Europe/Sofia] PHP Warning:  fopen(../Authors/GeroNikolov/Posts/.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 128
+[05-Mar-2015 21:51:19 Europe/Sofia] PHP Warning:  fopen(../Authors/GeroNikolov/Posts/.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 128
+[05-Mar-2015 21:57:58 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:57:58 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[05-Mar-2015 21:58:46 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:58:46 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[05-Mar-2015 21:59:14 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:59:14 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[05-Mar-2015 21:59:29 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:59:29 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[05-Mar-2015 21:59:48 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:59:48 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 407
+[05-Mar-2015 21:59:48 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:385) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[05-Mar-2015 22:44:40 Europe/Sofia] PHP Parse error:  syntax error, unexpected '"')"' (T_CONSTANT_ENCAPSED_STRING) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:50 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:51 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:52 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:130) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 406
+[05-Mar-2015 22:44:53 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:130) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 414
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 130
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:130) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 406
+[05-Mar-2015 23:06:14 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:130) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 414
+[06-Mar-2015 10:34:34 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:140) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 415
+[06-Mar-2015 10:34:34 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:140) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 423
+[06-Mar-2015 12:09:03 Europe/Sofia] PHP Parse error:  syntax error, unexpected '"' in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 21
+[06-Mar-2015 12:09:52 Europe/Sofia] PHP Parse error:  syntax error, unexpected '"' in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 21
+[06-Mar-2015 12:10:07 Europe/Sofia] PHP Warning:  preg_match(): Empty regular expression in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 100
+[06-Mar-2015 12:10:07 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 159
+[06-Mar-2015 12:11:12 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 158
+[06-Mar-2015 12:12:41 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$buildShared' (T_VARIABLE) in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 42
+[06-Mar-2015 12:13:08 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 158
+[06-Mar-2015 12:14:00 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 161
+[06-Mar-2015 12:15:00 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 164
+[06-Mar-2015 12:15:44 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 165
+[06-Mar-2015 12:16:28 Europe/Sofia] PHP Warning:  get_headers(): Filename cannot be empty in /home/kdkcompu/gero/blogy/Library/PHP/loadStories.php on line 166
+[06-Mar-2015 15:47:46 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 421
+[06-Mar-2015 15:47:46 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 429
+[06-Mar-2015 15:48:10 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 421
+[06-Mar-2015 15:48:10 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 429
+[06-Mar-2015 15:50:39 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting more special than the one under
+.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 164
+[06-Mar-2015 15:52:54 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 421
+[06-Mar-2015 15:52:54 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 429
+[06-Mar-2015 15:54:44 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 421
+[06-Mar-2015 15:54:44 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:141) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 429
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:56 Europe/Sofia] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 129
+[06-Mar-2015 16:06:58 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:129) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 420
+[06-Mar-2015 16:06:58 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:129) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 428
+[06-Mar-2015 16:08:45 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting_more_special_than_the_one_under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 163
+[06-Mar-2015 16:15:40 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 32
+[06-Mar-2015 16:15:50 Europe/Sofia] PHP Warning:  fopen(../Authors//Followers.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 32
+[06-Mar-2015 18:26:49 Europe/Sofia] PHP Warning:  fopen(../Authors/GeroNikolov/Posts/Brother6996from6996another6996mother.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 162
+[06-Mar-2015 18:55:06 Europe/Sofia] PHP Warning:  fopen(../Authors//Posts/Someting more special than the one under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/editMethod.php on line 8
+[06-Mar-2015 19:30:25 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 49
+[06-Mar-2015 19:51:09 Europe/Sofia] PHP Warning:  require(helpFunctions.php): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 2
+[06-Mar-2015 19:51:09 Europe/Sofia] PHP Fatal error:  require(): Failed opening required 'helpFunctions.php' (include_path='.:/usr/local/php5.5/lib/php') in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 2
+[06-Mar-2015 20:00:46 Europe/Sofia] PHP Warning:  get_headers(http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/10865032_1517546285163929_1026475992_a.jpg): failed to open stream: Connection timed out in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 135
+[06-Mar-2015 20:00:46 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php:135) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 155
+[06-Mar-2015 20:00:46 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php:135) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 163
+[06-Mar-2015 20:11:44 Europe/Sofia] PHP Warning:  get_headers(http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/10865032_1517546285163929_1026475992_a.jpg): failed to open stream: HTTP request failed!  in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 275
+[06-Mar-2015 20:11:45 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:275) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 413
+[06-Mar-2015 20:11:45 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:275) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 421
+[06-Mar-2015 20:15:06 Europe/Sofia] PHP Warning:  require(helpFuntions.php): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 2
+[06-Mar-2015 20:15:06 Europe/Sofia] PHP Fatal error:  require(): Failed opening required 'helpFuntions.php' (include_path='.:/usr/local/php5.5/lib/php') in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 2
+[06-Mar-2015 20:15:34 Europe/Sofia] PHP Fatal error:  Call to undefined function postBuild() in /home/kdkcompu/gero/blogy/Library/PHP/writeMethod.php on line 51
+[06-Mar-2015 20:53:52 Europe/Sofia] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 138
+[06-Mar-2015 20:53:52 Europe/Sofia] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:138) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 414
+[06-Mar-2015 20:53:52 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php:138) in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 422
+[06-Mar-2015 21:17:02 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 67
+[06-Mar-2015 21:17:15 Europe/Sofia] PHP Warning:  unlink(../Authors/AdminAdmin/Posts/asd.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 99
+[06-Mar-2015 21:17:15 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:99) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 21:43:56 Europe/Sofia] PHP Warning:  fopen(../Authors/AdminAdmin/Posts/qwer.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/editMethod.php on line 13
+[06-Mar-2015 21:45:38 Europe/Sofia] PHP Warning:  fopen(../Authors/AdminAdmin/Posts/r32.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/editMethod.php on line 13
+[06-Mar-2015 22:04:04 Europe/Sofia] PHP Warning:  unlink(../Authors/AdminAdmin/Posts/dwa.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 99
+[06-Mar-2015 22:04:04 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:99) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:09:03 Europe/Sofia] PHP Warning:  unlink(../Authors/AdminAdmin/Posts/r32.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 99
+[06-Mar-2015 22:09:03 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:99) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:09:06 Europe/Sofia] PHP Warning:  unlink(../Authors/AdminAdmin/Posts/qwer.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 99
+[06-Mar-2015 22:09:06 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:99) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:30:35 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Posts/My6996idol.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 99
+[06-Mar-2015 22:30:35 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:99) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:32:09 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Posts/My6996idol.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:32:09 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:101) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 103
+[06-Mar-2015 22:32:22 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Posts/First6996post6996after6996the6996fasterize.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 101
+[06-Mar-2015 22:32:22 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:101) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 103
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:52:53 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[06-Mar-2015 23:53:14 Europe/Sofia] PHP Warning:  preg_match(): Unknown modifier 'E' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 282
+[07-Mar-2015 00:15:20 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting6996more6996special6996than6996the6996one6996under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 300
+[07-Mar-2015 00:16:20 Europe/Sofia] PHP Parse error:  syntax error, unexpected '{' in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 283
+[07-Mar-2015 00:16:30 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting6996more6996special6996than6996the6996one6996under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 303
+[07-Mar-2015 00:16:50 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting6996more6996special6996than6996the6996one6996under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 303
+[07-Mar-2015 00:17:08 Europe/Sofia] PHP Warning:  fopen(../Authors/MladenKaradimov/Posts/Someting6996more6996special6996than6996the6996one6996under.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 304

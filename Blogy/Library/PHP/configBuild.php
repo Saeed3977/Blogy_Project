@@ -39,7 +39,7 @@
 	$_SESSION['senderFN'] = $fName;
 	$_SESSION['senderLN'] = $lName;
 	
-	header('Location: logedIn.php');
+	header('Location: openSettings.php');
 	
 	die();
 ?>

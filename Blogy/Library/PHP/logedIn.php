@@ -1,4 +1,5 @@
 <?php
+	//error_reporting(0);
 /*
 	//Connect to data base
 	$servername = "localhost";
@@ -17,7 +18,6 @@
 	$profileHref = $_SESSION['senderHref'];
 	$profileFirst = $_SESSION['senderFN'];
 	$profileLast = $_SESSION['senderLN'];
-	
 /*
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	if ($conn->connect_error) {
@@ -55,11 +55,6 @@
 	}
 	fclose($loadStack);
 	$stack = implode(",", $stack); //Convert from array to int for the JS
-	
-	//Pull notifications
-	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
-	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
-	fclose($pullNotifications);
 		
 echo "
 	<html>
@@ -72,6 +67,7 @@ echo "
 			<link href='../../fonts.css' rel='stylesheet' type='text/css'>		
 			<script type='text/javascript' src='../../java.js'></script>
 			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+			<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
 			<script type='text/javascript'> 
 				var stack = '$stack'.split(',');
 				var flag = 0;
@@ -128,7 +124,7 @@ echo "
 							alert('Give title to your post.');
 						}
 						else
-						if (img == '' && content == '') {
+						if (img == '' && content.trim() == '') {
 							alert('Well write something or add a picture.');
 						}
 						else {
@@ -166,23 +162,9 @@ echo "
 			  js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249236501932040&version=v2.0';
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
-			<div id='menu'>
-				<a href='logedIn.php' class='homeButton'><img src='$profilePic'></a>
 ";
-	if ($countNotifications != "0") {
-		echo "<a href='storeMessages.php' class='notification'>$countNotifications new</a>";
-	}
-	else
-	if ($countNotifications == "0") {
-		echo "<a href='storeMessages.php'>Messages</a>";
-	}	
+	include 'loadMenu.php';
 echo "
-				<a href='openSettings.php'>Settings</a>
-				<a href='loadBlogers.php'>Blogers</a>
-				<a href='exploreFStories.php'>Stories</a>
-				<a href='#' onclick='logOut()'>Log out</a>
-			</div>
-			
 			<form id='accountInfo' method='post' style='display: none;'>
 				<input type='text' name='sender' value='$sender'></input>
 			</form>
@@ -247,290 +229,25 @@ echo "
 					<a href='#' onclick='doPost()'>Post</a>
 				</div>
 			</div>
+";
+	include 'loadSuggestedBlogers.php';
+echo "
 			<div id='body'>
 				<form id='post' method='post' style='visibility: hidden; display: none;'>
-						<input type='text' placeholder='Give it title.' id='title' name='title'>
-						<input type='text' placeholder='Place link for an image or to a video.' id='postImg' name='photo'>
-						<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
-						
-						<a href='#' onclick='writePost()'>Post</a>
-						
-						<input type='hidden' name='sender' value='$fullName'></input>
-						<input type='hidden' name='fname' value='$profileFirst'></input>
-						<input type='hidden' id='cmd' name='cmd' value='1'></input>
+					<input type='text' placeholder='Give it title.' id='title' name='title'>
+					<input type='text' placeholder='Place link for an image or to a video.' id='postImg' name='photo'>
+					<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
+					
+					<a href='#' onclick='writePost()'>Post</a>
+					
+					<input type='hidden' name='sender' value='$fullName'></input>
+					<input type='hidden' name='fname' value='$profileFirst'></input>
+					<input type='hidden' id='cmd' name='cmd' value='1'></input>
 				</form>
 				<table id='main-table'>
 ";
 
-	$stack = array();
-	$stack_size = 0;
-	
-	$getStack = fopen("../Authors/$sender/Posts/Stack.txt", "r") or die("Stack not found.");
-	while (! feof($getStack)) {
-		$line = trim(fgets($getStack));
-		if ($line != "") {
-			array_push($stack, $line);
-		}
-	}
-	
-	$reversed_stack = array_reverse($stack);
-	
-	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-	$post_count = 0;
-	$count = 0;
-	$flag = 0;
-	$contentPost = (string)NULL;
-	while ($post_count < count($reversed_stack)) {
-		$buildShared = 0;
-		$builder = 0;
-		$count = 0;
-		$fd = fopen("../Authors/$sender/Posts/".$reversed_stack[$post_count].".txt", "r") or die("Unable to open post.");
-		while (!feof($fd)) {
-			$line = fgets($fd);
-			if ($count == 0) {
-				$titlePost = trim($line);
-			}
-			else
-			if ($count == 1) {
-				$postImg = trim($line);
-			}
-			else
-			if ($count == 2 || $flag == 1) {
-				$line = str_replace("<br />", "", $line);
-				if (trim($line) == "$+Shared") {
-					$buildShared = 1;
-				} 
-				
-				if ($buildShared == 1) {
-					if ($builder == 1) {
-						$currentSender = trim($line);
-					}
-					else
-					if ($builder == 2) {
-						$currentSenderImg = trim($line);
-					}
-					else
-					if ($builder == 3) {
-						$authorSender = trim($line);
-					}
-					else
-					if ($builder == 4) {
-						$authorSenderFN = trim($line);
-					}
-					else
-					if ($builder == 5) {
-						$authorSenderLN = trim($line);
-					}
-					else
-					if ($builder == 6) {
-						$authorSenderImg = trim($line);
-					}
-					else
-					if ($builder == 7) {
-						$authorSenderHref = trim($line);
-					}
-					
-					$builder++;
-					if (trim($line) == "$-") {
-						$builder = 1;
-						$contentPost = "
-							<a href='#' onclick=\"openBloger('$authorSender')\">
-								<img src='$authorSenderImg' alt='Bad image link :(' />
-							</a>
-							<form id='$authorSender' method='post' style='display: none;'>
-								<input type='password' name='accSender' value='$currentSender'></input>
-								<input type='password' name='imgSender' value='$currentSenderImg'></input>
-								<input type='password' name='blogSender' value='$authorSender'></input>
-								<input type='password' name='blogerFN' value='$authorSenderFN'></input>
-								<input type='password' name='blogerLN' value='$authorSenderLN'></input>
-								<input type='password' name='blogerImg' value='$authorSenderImg'></input>
-								<input type='password' name='blogerHref' value='$authorSenderHref'></input>
-							</form>
-						";
-						$buildShared = 0;
-					}
-				} else {
-					$url = NULL;
-					if(preg_match($reg_exUrl, $line, $url)) {
-						if (!strpos($line, "<img") && !strpos($line, "<a")) {
-							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
-						}
-					}
-					$contentPost .= $line."<br>";
-				}
-				$flag = 1;
-			}
-			$count++;
-		}
-		fclose($fd);
-		
-		if ($contentPost == "NULL<br>") {
-			$contentPost = NULL;
-		}
-		
-		
-		if (is_numeric($titlePost)) {
-			$titleId = "id$titlePost";
-		} else {
-			$titleId = $titlePost;
-		}
-		
-		if ($postImg != "NULL") {
-			$parseUrl = parse_url($postImg);
-
-			if ($parseUrl['host'] == 'www.youtube.com') {
-				$query = $parseUrl['query'];
-				$queryParse = explode("=", $query);
-				$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else 
-			if ($parseUrl['host'] == 'vimeo.com') {
-				$query = $parseUrl['path'];
-				$cmd ="<iframe src='//player.vimeo.com/video$query' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.dailymotion.com') {
-				$query = $parseUrl['path'];
-				$src = "//www.dailymotion.com/embed/$query";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.metacafe.com') {
-				$query = $parseUrl['path'];
-				$queryParse = explode("/", $query);
-				$src = "http://www.metacafe.com/embed/$queryParse[2]/";
-				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
-			}
-			else {
-				$url_headers=get_headers($postImg, 1);
-
-				if(isset($url_headers['Content-Type'])){
-					$type=strtolower($url_headers['Content-Type']);
-
-					$valid_image_type=array();
-					$valid_image_type['image/png']='';
-					$valid_image_type['image/jpg']='';
-					$valid_image_type['image/jpeg']='';
-					$valid_image_type['image/jpe']='';
-					$valid_image_type['image/gif']='';
-					$valid_image_type['image/tif']='';
-					$valid_image_type['image/tiff']='';
-					$valid_image_type['image/svg']='';
-					$valid_image_type['image/ico']='';
-					$valid_image_type['image/icon']='';
-					$valid_image_type['image/x-icon']='';
-
-					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
-					} else {
-						$cmd = "<h2>Unsupported player :(</h2>";
-					}
-				}
-			}
-			
-			/*
-			<iframe src="//www.break.com/embed/2820004?embed=1" width="464" height="280" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0">
-			*/
-			
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<div id='quickMenu'>
-						<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
-						<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a><br>
-						<form id='$titleId' method='post'>
-							<input name='sender' value='$fullName'></input>
-							<input name='postId' value='$titlePost'></input>
-							<input name='content' value='$contentPost'></input>
-						</form>
-					<h1>$titlePost</h1>
-					</div>
-					$cmd
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
-		}
-		else
-		if ($postImg == "NULL") {
-			if ($builder == 0) {
-				$postBuild = "
-				<tr>
-					<td>
-					</td>
-					<td id='poster'>
-						<div id='quickMenu'>
-							<a href='#' onclick=\"editPost('$titleId')\" class='left'>Edit<a>
-							<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
-							<form id='$titleId' method='post'>
-								<input name='sender' value='$fullName'></input>
-								<input name='postId' value='$titlePost'></input>
-								<input name='content' value='$contentPost'></input>
-							</form>
-						<h1>$titlePost</h1>
-						</div>
-						<p>
-							$contentPost
-						</p>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br>
-					</td>
-				</tr>
-				";
-			}
-			else
-			if ($builder == 1) {
-				$postBuild = "
-				<tr>
-					<td>
-					</td>
-					<td id='poster'>
-						<div id='quickMenu'>
-							<a href='#' class='left' style='visibility: hidden;'>Edit<a>
-							<a href='#' onclick=\"deletePost('$titleId')\" class='right'>Delete</a>
-							<form id='$titleId' method='post'>
-								<input name='sender' value='$fullName'></input>
-								<input name='postId' value='$titlePost'></input>
-							</form>
-						<h1>$titlePost</h1>
-						</div>
-						<p>
-							$contentPost
-						</p>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br>
-					</td>
-				</tr>
-				";
-			}
-		}
-		
-		$post_count++;
-		echo "$postBuild";
-		$contentPost = NULL;
-	}
+	include 'loadStories.php';
 	
 	echo "
 						<tr>

@@ -1,6 +1,19 @@
 <?php
+	require 'helpFunctions.php';
+
+	session_start();
+	$sender = $_SESSION['sender'];
+	if (!isset($sender)) {
+			header("Location: ../../SignIn.html");
+	}
+	
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
 	$cmd = $_POST['cmd'];
-	$sender = $_POST['sender'];
 	
 	$realoc = (string)NULL;
 	
@@ -9,6 +22,15 @@
 		$postImg = $_POST['postImg'];
 		$postContent = trim($_POST['content']);
 		$postContent = nl2br($postContent);
+		
+		if (strpos($postContent, "</script>")) {
+			$postContent = str_replace("<script>", "", $postContent);
+			$postContent = str_replace("</script>", "", $postContent);;
+		}			
+		if (strpos($postContent, "?php")) {
+			$postContent = str_replace("<?php", "", $postContent);
+			$postContent = str_replace("?>", "", $postContent);
+		}
 		
 		$writePost = fopen("../Authors/$sender/Posts/$postId.txt", "w") or die("Unable to locate post.");
 		fwrite($writePost, $postId.PHP_EOL);
@@ -21,6 +43,21 @@
 		}
 		fwrite($writePost, $postContent);
 		fclose($writePost);
+		
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		} else {
+			$postBuild = buildPost($sender, $postId);
+			$postBuild = str_replace("'", "\'", $postBuild);
+			$postBuild =  htmlentities($postBuild);
+			if (strpos($postId, " ")) {
+				$postId = str_replace(" ", "6996", $postId);
+			}
+			$sql = "UPDATE stack$sender SET BUILD='$postBuild' WHERE STACK='$postId'";
+			$conn->query($sql);
+		}
+		$conn->close();
 	}
 	else
 	if ($cmd == "1" || $cmd == "2") {
@@ -30,6 +67,15 @@
 			$contentPost = trim($_POST['content']);
 			$contentPost = nl2br($contentPost);
 			$postPic = $_POST['photo'];
+			
+			if (strpos($contentPost, "</script>")) {
+				$contentPost = str_replace("<script>", "", $contentPost);
+				$contentPost = str_replace("</script>", "", $contentPost);;
+			}			
+			if (strpos($contentPost, "?php")) {
+				$contentPost = str_replace("<?php", "", $contentPost);
+				$contentPost = str_replace("?>", "", $contentPost);
+			}
 			
 			$length = strlen($titlePost);
 			for ($ch = 0; $ch < $length; $ch++) {
@@ -116,6 +162,21 @@
 		fwrite($commitWorld, $sender.PHP_EOL);
 		fwrite($commitWorld, $titlePost.PHP_EOL);
 		fclose($commitWorld);
+		
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		} else {
+			$postBuild = buildPost($sender, $titlePost);
+			$postBuild = str_replace("'", "\'", $postBuild);
+			$postBuild =  htmlentities($postBuild);
+			if (strpos($titlePost, " ")) {
+				$titlePost = str_replace(" ", "6996", $titlePost);
+			}
+			$sql = "INSERT INTO stack$sender (STACK, BUILD) VALUES ('$titlePost', '$postBuild')";
+			$conn->query($sql);
+		}
+		$conn->close();
 		
 		sendMail($sender, $senderFirstName, $cmd);
 	}
