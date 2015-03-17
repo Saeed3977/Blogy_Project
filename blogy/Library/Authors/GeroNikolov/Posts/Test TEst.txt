@@ -1,0 +1,3 @@
+Test TEst
+C:\fakepath\IOSKO.jpg
+NULL

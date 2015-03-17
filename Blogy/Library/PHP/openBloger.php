@@ -23,15 +23,44 @@
 	if (!isset($blogerSender) || $blogSender == "") {
 		echo "<script>window.close();</script>";
 	}
+	
+	if ($blogerSender == $sender) {
+		echo "<script>window.location='logedIn.php'</script>";
+	}
+	
 	$blogerFN = $_COOKIE['blogerFN'];
 	$blogerLN = $_COOKIE['blogerLN'];
 	$blogerImg = $_COOKIE['blogerImg'];
 	$blogerHref = $_COOKIE['blogerHref'];
 	$profileName = "$blogerFN $blogerLN";
 	
-	$followersLoad = fopen("../Authors/$blogerSender/Followers.html", "r") or die("Unable to load Followers.");
-	$followersCount = fread($followersLoad, filesize("../Authors/$blogerSender/Followers.html"));
-	fclose($followersLoad);
+	$followersCount = -1;
+	$countFollowers =  fopen("../Authors/$blogerSender/FollowersID.html", "r") or die("Fatal: Could not get Followers.");
+	while (!feof($countFollowers)) {
+		$followersCount++;
+		$line = trim(fgets($countFollowers));
+	}
+	fclose($countFollowers);
+	
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$blockedPersons = array();
+		$sql = "SELECT BLOCKEDID FROM blockList$sender";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				array_push($blockedPersons, $row['BLOCKEDID']);
+			}
+		}
+	}
 	
 echo " 
 	<html>
@@ -190,9 +219,55 @@ echo "
 					</a>
 				</div>
 				<div class='right'>
-					<a href='#' onclick='doPost()'>
-						<img src='https://cdn4.iconfinder.com/data/icons/linecon/512/send-128.png' />
+					<a href='#' onclick='showOptions()'>
+						<img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_menu_48px-128.png' />
 					</a>
+					<div class='arrow_box' id='optionsMenu' style='display: none;'>
+";
+	if (!in_array($blogerSender, $blockedPersons)) {
+		echo "
+			<button type='button' class='split' onclick='showMessageBox(\"$blogerSender\")'>Send message</button><br>
+			<form id='$blogerSender' method='post' style='display: none;'>
+				<input type='text' name='blogSender' value='$blogerSender'></input>
+				<input type='text' name='blogerFN' value='$blogerFN'></input>
+				<input type='text' name='blogerLN' value='$blogerLN'></input>
+				<input type='text' name='blogerImg' value='$blogerImg'></input>
+				<input type='text' name='blogerHref' value='$blogerHref'></input>
+			</form>
+		";
+	}
+
+	if (file_exists("../Authors/$sender/Ohana.txt")) {
+		$interupt = 0;
+		$pullOhana = fopen("../Authors/$sender/Ohana.txt", "r") or die("Fatal: Could not get ohana.");
+		while (!feof($pullOhana)) {
+			$line = trim(fgets($pullOhana));
+			if ($line != "") {
+				if ($line == $blogerSender) {
+					$button = "<button type='button' class='split' onclick='removeFromOhana(\"$blogerSender\")'>Remove from Ohana</button><br>";
+					$interupt = 1;
+					break;
+				}
+			}
+		}
+		
+		if ($interupt == 0) {
+			$button = "<button type='button' class='split' onclick='addToOhana(\"$blogerSender\")'>Add to Ohana</button><br>";
+		}
+	} else {
+		$button = "<button type='button' class='split' onclick='addToOhana(\"$blogerSender\")'>Add to Ohana</button><br>";
+	}
+	
+	if (!in_array($blogerSender, $blockedPersons)) {
+		$blockUnblock = "<button type='button' onclick='blockUser(\"$blogerSender\")'>Block user</button></br>";
+	} else {
+		$blockUnblock = "<button type='button' onclick='unBlockUser(\"$blogerSender\")'>Unblock user</button></br>";
+	}
+	
+echo "
+						$button
+						$blockUnblock
+					</div>
 				</div>
 ";
 
@@ -226,7 +301,7 @@ echo "
 	$loadStack = fopen("../Authors/$blogerSender/FollowersID.html", "r") or die("Unable to load stack.");
 	while (!feof($loadStack)) {
 		$line = trim(fgets($loadStack));
-		if ($line == $senderMail) {
+		if (explode("-", $line)[0] == $senderMail) {
 			$isFollower = 1;
 			break;
 		}
@@ -250,24 +325,8 @@ echo "
 			</div>
 		</div>
 		<div id='body'>
-			<form id='messageInput' method='post' style='visibility: hidden; display: none;'>
-				<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
-				<a href='#' onclick='sendMessage()'>Send</a>
-				
-				<div style='display: none;'>
-					<input type='text' name='sender' value='$sender'></input>
-					<input type='text' name='authorId' value='$blogerSender'></input>
-					<input type='text' name='cmd' value='0'></input>
-				</div>
-			</form>
 			<table id='main-table'>
 ";
-
-	//Connect to data base
-	$servername = "localhost";
-	$username = "kdkcompu_gero";
-	$password = "Geroepi4";
-	$dbname = "kdkcompu_gero";
 	
 	$history = array();
 	
@@ -275,221 +334,15 @@ echo "
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} else {
-		$sql = "SELECT STACK, BUILD FROM stack$blogerSender";
+		$sql = "SELECT STACK, BUILD, VIEW FROM stack$blogerSender ORDER BY ID DESC";
 		$pick = $conn->query($sql);
 		if ($pick->num_rows > 0) {
 			while ($row = $pick->fetch_assoc()) {
-				$postId = $row['STACK'];
-				$postId = str_replace("6996", " ", $postId);
-				array_push($history, $postId);
+				echo html_entity_decode($row['VIEW']);
 			}
 		}
 	}
 	$conn->close();
-	
-	$reversed_stack = array_reverse($history);
-	
-	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-	$post_count = 0;
-	$count = 0;
-	$flag = 0;
-	$contentPost = (string)NULL;
-	while ($post_count < count($reversed_stack)) {
-		$buildShared = 0;
-		$builder = 0;
-		$count = 0;
-		$fd = fopen("../Authors/$blogerSender/Posts/".$reversed_stack[$post_count].".txt", "r") or die("Unable to open post.");
-		while (!feof($fd)) {
-			$line = fgets($fd);
-			if ($count == 0) {
-				$titlePost = trim($line);
-			}
-			else
-			if ($count == 1) {
-				$postImg = trim($line);
-			}
-			else
-			if ($count == 2 || $flag == 1) {
-				$line = str_replace("<br />", "", $line);
-				if (trim($line) == "$+Shared") {
-					$buildShared = 1;
-				}
-				
-				if ($buildShared == 1) {
-					if ($builder == 1) {
-						$currentSender = trim($line);
-					}
-					else
-					if ($builder == 2) {
-						$currentSenderImg = trim($line);
-					}
-					else
-					if ($builder == 3) {
-						$authorSender = trim($line);
-					}
-					else
-					if ($builder == 4) {
-						$authorSenderFN = trim($line);
-					}
-					else
-					if ($builder == 5) {
-						$authorSenderLN = trim($line);
-					}
-					else
-					if ($builder == 6) {
-						$authorSenderImg = trim($line);
-					}
-					else
-					if ($builder == 7) {
-						$authorSenderHref = trim($line);
-					}
-					
-					$builder++;
-					if (trim($line) == "$-") {
-						$builder = 1;
-						if ($authorSender == $sender) {
-							$contentPost = "
-								<a href='logedIn.php'>
-									<img src='$authorSenderImg' alt='Bad image link :(' />
-								</a>
-							";
-						}
-						else
-						if ($authorSender != $sender) {
-							$contentPost = "
-								<a href='openBloger.php' onclick=\"openBloger('$authorSender')\">
-									<img src='$authorSenderImg' alt='Bad image link :(' />
-								</a>
-								<form id='$authorSender' method='post' style='display: none;'>
-									<input type='password' name='blogSender' value='$authorSender'></input>
-									<input type='password' name='blogerFN' value='$authorSenderFN'></input>
-									<input type='password' name='blogerLN' value='$authorSenderLN'></input>
-									<input type='password' name='blogerImg' value='$authorSenderImg'></input>
-									<input type='password' name='blogerHref' value='$authorSenderHref'></input>
-								</form>
-							";
-						}
-						$buildShared = 0;
-					}
-				} else {
-					$url = NULL;
-					if(preg_match($reg_exUrl, $line, $url)) {
-						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
-					}
-					$contentPost .= $line."<br>";
-				}
-				$flag = 1;
-			}
-			$count++;
-		}
-		fclose($fd);
-		
-		if ($contentPost == "NULL<br>") {
-			$contentPost = NULL;
-		}
-		
-		if ($postImg != "NULL") {
-			$parseUrl = parse_url($postImg);
-
-			if ($parseUrl['host'] == 'www.youtube.com') {
-				$query = $parseUrl['query'];
-				$queryParse = explode("=", $query);
-				$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else 
-			if ($parseUrl['host'] == 'vimeo.com') {
-				$query = $parseUrl['path'];
-				$cmd ="<iframe src='//player.vimeo.com/video$query' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.dailymotion.com') {
-				$query = $parseUrl['path'];
-				$src = "//www.dailymotion.com/embed/$query";
-				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
-			}
-			else
-			if ($parseUrl['host'] == 'www.metacafe.com') {
-				$query = $parseUrl['path'];
-				$queryParse = explode("/", $query);
-				$src = "http://www.metacafe.com/embed/$queryParse[2]/";
-				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
-			}
-			else {
-				$url_headers=get_headers($postImg, 1);
-
-				if(isset($url_headers['Content-Type'])){
-					$type=strtolower($url_headers['Content-Type']);
-
-					$valid_image_type=array();
-					$valid_image_type['image/png']='';
-					$valid_image_type['image/jpg']='';
-					$valid_image_type['image/jpeg']='';
-					$valid_image_type['image/jpe']='';
-					$valid_image_type['image/gif']='';
-					$valid_image_type['image/tif']='';
-					$valid_image_type['image/tiff']='';
-					$valid_image_type['image/svg']='';
-					$valid_image_type['image/ico']='';
-					$valid_image_type['image/icon']='';
-					$valid_image_type['image/x-icon']='';
-
-					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
-					} else {
-						$cmd = "<h2>Unsupported player :(</h2>";
-					}
-				}
-			}
-			
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<h1>$titlePost</h1>
-					$cmd
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
-		}
-		else
-		if ($postImg == "NULL") {
-			$postBuild = "
-			<tr>
-				<td>
-				</td>
-				<td id='poster'>
-					<h1>$titlePost</h1>
-					<p>
-						$contentPost
-					</p>
-				</td>
-				<td>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<br>
-				</td>
-			</tr>
-			";
-		}
-		
-		$post_count++;
-		echo "$postBuild";
-		$contentPost = NULL;
-	}
 	
 echo "
 			</table>

@@ -1,4 +1,16 @@
 #Update news: 2015
+<b>Update: 17.03</b><br>
+<b>*1.Perfect design and scaling on the different devices.</b><br>
+	-Internet Explorer bugs the fonts. We have an idea how to debug but still bugging.<br>
+<b>*2.Stories builder</b><br>
+	-Everything is okay. We resolve some bugs and we debug it. Check <b>Milestone 2</b> to see<br>
+	what we think to implement in the future.<br>
+<b>*3.Messaging system</b><br>
+	-We include emoticons (emojies) and we change the look of the chat window.<br>
+<br>
+	We believe in that you will feel the real experience only if you try <b>Blogy</b> all by yourself.
+	So just click <a href='http://www.blogy.sitemash.net' target='_blank'>here</a>.
+<br>
 <b>Update: 07.03</b><br>
 <b>*1.Perfect design and scaling on the different devices.</b><br>
 	-We redesigned some parts that were "bugging" and now everything is ok.<br>
@@ -9,7 +21,7 @@
 <b>*3.Messaging system</b><br>
 	-We translate the idea and we decided that we don't need to make special chat room because with the current design of the messages, you just won't spent more time waiting for answer, so we leave it
 	the way it was and we <b>introduce the quick message option</b>.<br>
-	We believe in that you will feel the real experience only if you try the platform all by yourself.
+	We believe in that you will feel the real experience only if you try <b>Blogy</b> all by yourself.
 	So just click <a href='http://www.blogy.sitemash.net' target='_blank'>here</a>.
 <br>
 <b>Update: 25.02</b><br>

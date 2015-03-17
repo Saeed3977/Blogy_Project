@@ -133,7 +133,7 @@ echo "
 			<br>
 			<div id='followers'>
 				<h1>$followersCount followers</h1>
-				<a href='conf_Following.html'>Follow</a>
+				<a href='../../../SignIn.html'>Follow</a>
 			</div>
 		</div>
 		<div id='body'>
@@ -236,10 +236,21 @@ echo "
 		if ($postImg != "NULL") {
 			$parseUrl = parse_url($postImg);
 
-			if ($parseUrl['host'] == 'www.youtube.com') {
+			if ($parseUrl['host'] == 'www.youtube.com' || $parseUrl['host'] == 'm.youtube.com' ||$parseUrl['host'] == 'youtu.be' ) {
 				$query = $parseUrl['query'];
 				$queryParse = explode("=", $query);
-				$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
+				
+				if ($parseUrl['host'] == 'youtu.be') {
+					$queryParse = $parseUrl['path'];
+					$src = "https://www.youtube.com/embed/$queryParse";
+				}
+				else
+				if ($parseUrl['host'] == 'm.youtube.com') {
+					$src = "https://www.youtube.com/embed/$queryParse[1]";
+				} else {
+					$src = "https://".$parseUrl['host']."/embed/$queryParse[1]";
+				}
+				
 				$cmd = "<iframe src='$src' frameborder='0' allowfullscreen></iframe>";
 			}
 			else 

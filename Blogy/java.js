@@ -58,31 +58,38 @@ function reportData() {
 	}
 }
 
-function hideSideBar() {
-	$('#sideBar').fadeToggle();
-	//document.getElementById('sideBar').style.visibility='hidden';
-	document.getElementById('downButton').style.visibility='visible';
-}
 function showSideBar() {
+	var allCookies = document.cookie;
+	if (allCookies.indexOf("sideBar=") != -1) {
+		document.cookie = "sideBar=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	} else {
+		document.cookie="sideBar=1";
+	}
+	
 	//document.getElementById('downButton').style.visibility='hidden';
 	document.getElementById('sideBar').style.visibility='visible'; 
 	$('#sideBar').fadeToggle('fast');
+	$('#rightSideBar').fadeToggle('fast');
 }
 
 function showQuickMenu(id) {
 	document.getElementById('quickMenu'+id).style.visibility='visible'; 
 	$('#quickMenu'+id).slideToggle('fast');
 }
-
-function showMessageBox(receiver) {
-	document.getElementById('receiverId').value = receiver;
-	document.getElementById('receiver').innerHTML = document.getElementById(receiver).elements["blogerFN"].value + " " + document.getElementById(receiver).elements["blogerLN"].value;
-	document.getElementById('messageArea').focus();
-	$('#quickMessageBox').fadeIn('fast');
+function showQuickMenuOhana(id) {
+	document.getElementById('ohanaQuickMenu'+id).style.visibility='visible'; 
+	$('#ohanaQuickMenu'+id).slideToggle('fast');
 }
 
 function hideMessageBox() {
 	$('#quickMessageBox').fadeOut('fast');
+}
+
+function showMessageBox(receiver) {	
+	document.getElementById('receiverId').value = receiver;
+	document.getElementById('receiver').innerHTML = document.getElementById(receiver).elements["blogerFN"].value + " " + document.getElementById(receiver).elements["blogerLN"].value;
+	document.getElementById('messageArea').focus();
+	$('#quickMessageBox').fadeIn('fast');
 }
 
 function checkKey(e) {
@@ -101,5 +108,147 @@ function sendMessageBox() {
 		document.forms['sendArea'].submit();
 	} else {
 		alert("Enter something in this message.");
+	}
+}
+
+function showOptions() {
+	document.getElementById('optionsMenu').style.visibility='visible';
+	$('#optionsMenu').fadeToggle('fast');
+}
+
+function showOhanaMeaning() {
+	document.getElementById('ohanaMeaning').style.visibility='visible';
+	$('#ohanaMeaning').fadeToggle('fast');
+}
+
+function addToOhana(id) {
+	document.getElementById(id).action = "../PHP/addToOhana.php";
+	document.forms[id].submit();
+}
+function removeFromOhana(id) {
+	document.getElementById(id).action = "../PHP/removeFromOhana.php";
+	document.forms[id].submit();
+}
+
+function blockUser(id) {
+	document.getElementById(id).action = "../PHP/blockUser.php";
+	document.forms[id].submit();
+}
+function unBlockUser(id) {
+	openBloger(id);
+	document.getElementById(id).action = "../PHP/unBlockUser.php";
+	document.forms[id].submit();
+}
+
+function showEmojiContainer() {
+	document.getElementById('emojis').style.visibility='visible';
+	$('#emojis').fadeToggle('fast');
+}
+
+function showHideNotifications() {
+	var allCookies = document.cookie;
+	if (allCookies.indexOf("notification=") != -1) {
+		document.cookie = "notification=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	} else {
+		document.cookie="notification=1";
+	}
+	
+	document.getElementById('notifications').style.visibility = 'visible';
+	$('#notifications').slideToggle('fast');
+}
+function closeNotifications() {
+	document.cookie = "pageId="+window.location.href.toString().split('/').pop(-1);
+	document.cookie = "scrollPos="+$(window).scrollTop();
+	
+	window.location = "deleteNotifications.php";
+}
+
+function addEmoji(id) {
+	textArea = document.getElementById("messageTXT");
+	if (id == "lol") {
+		textArea.value += ":D";
+	}
+	else
+	if (id == "smile") {
+		textArea.value += ":)";
+	}
+	else
+	if (id == "sad") {
+		textArea.value += ":(";
+	}
+	else
+	if (id == "ooh") {
+		textArea.value += ":O";
+	}
+	else
+	if (id == "inlove") {
+		textArea.value += "{2369}";
+	}
+	else
+	if (id == "kiss") {
+		textArea.value += ":*";
+	}
+	else
+	if (id == "scare") {
+		textArea.value += "{666}";
+	}
+	else
+	if (id == "cry") {
+		textArea.value += ":'(";
+	}
+	else
+	if (id == "tongue") {
+		textArea.value += ":P";
+	}
+	else
+	if (id == "wat") {
+		textArea.value += "{49}";
+	}
+	else
+	if (id == "wink") {
+		textArea.value += ";)";
+	}
+	else
+	if (id == "mybad") {
+		textArea.value += "{118}";
+	}
+	else
+	if (id == "meh") {
+		textArea.value += "{999}";
+	}
+	else
+	if (id == "lolo") {
+		textArea.value += "{1010}";
+	}
+	else
+	if (id == "muchCry") {
+		textArea.value += "{7428}";
+	}
+}
+
+function showHideHomeMenu() {
+	document.getElementById("dropDownMenu").style.visibility = 'visible';
+	$("#dropDownMenu").fadeToggle("fast");
+}
+
+function openDialog() {
+	document.getElementById("dialogWindow").click();
+}
+function sendLocation() {
+	document.getElementById("postImg").value = document.getElementById("dialogWindow").value;
+	
+	var getObject = document.getElementById("dialogWindow");
+	if (getObject.value != null) {
+		document.cookie = "uploadPicture="+document.getElementById("postImg").value;
+	}
+	else
+	if (getObject.value == null) {
+		document.cookie = "uploadPicture=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	}
+}
+function checkLocation() {
+	var getObject = document.getElementById("postImg");
+	if (getObject.value != document.getElementById("dialogWindow").value) {
+		document.cookie = "uploadPicture=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	}
 }

@@ -64,71 +64,48 @@ echo "
 		$authorId = (string)NULL;
 		$followersCount = 0;
 		$reversedFollowersStack = array_reverse($followersStack);
-		while ($followersCount < count($reversedFollowersStack)) {
+		foreach ($reversedFollowersStack as $follower) {
 			$lines_count = 0;
-			$getInfo = fopen("../Authors/Info.csv", "r") or die("Fatal error: Info.csv corrupted.");
-			while (!feof($getInfo)) {
-				$line = fgetcsv($getInfo);
-				if ($line != "") {
-					if ($reversedFollowersStack[$followersCount] == $line[0]) {
-						$authorId = $line[1];
-						$followersAllCount--;
-						
-						$lines_count = 0;
-						if ($authorId != "" && $authorId != $sender) {
-							$author = fopen("../Authors/$authorId/config.txt", "r") or die("Unable to open author.");
-							while (!feof($author)) {
-								$line = fgets($author);
-								if ($lines_count == 0) {
-									$authorImg = trim($line);
-								}
-								if ($lines_count == 1) {
-									$authorHref = trim($line);
-								}
-								else
-								if ($lines_count == 3) {
-									$authorFN = trim($line);
-								}
-								else
-								if ($lines_count == 4) {
-									$authorLN = trim($line);
-									break;
-								}
-								$lines_count++;
-							}
-							fclose($author);
-							
-							$loadComplete = "
-								<a href='openBloger.php' type='button' onclick=\"openBloger('$authorId')\">
-									<img src='$authorImg' />
-									$authorFN $authorLN
-									<form id='$authorId' method='post' style='display: none;'>
-										<input type='text' name='blogSender' value='$authorId'></input>
-										<input type='text' name='blogerFN' value='$authorFN'></input>
-										<input type='text' name='blogerLN' value='$authorLN'></input>
-										<input type='text' name='blogerImg' value='$authorImg'></input>
-										<input type='text' name='blogerHref' value='$authorHref'></input>
-									</form>
-								</a>
-								<br>
-							";
-							echo "$loadComplete";
-						}
-						
+			$authorId = explode("-", $follower)[1];
+			if ($authorId != "" && $authorId != $sender) {
+				$author = fopen("../Authors/$authorId/config.txt", "r") or die("Unable to open author.");
+				while (!feof($author)) {
+					$line = fgets($author);
+					if ($lines_count == 0) {
+						$authorImg = trim($line);
+					}
+					if ($lines_count == 1) {
+						$authorHref = trim($line);
+					}
+					else
+					if ($lines_count == 3) {
+						$authorFN = trim($line);
+					}
+					else
+					if ($lines_count == 4) {
+						$authorLN = trim($line);
 						break;
 					}
+					$lines_count++;
 				}
+				fclose($author);
+				
+				$loadComplete = "
+					<a href='openBloger.php' onclick=\"openBloger('$authorId')\">
+						<img src='$authorImg' />
+						$authorFN $authorLN
+						<form id='$authorId' method='post' style='display: none;'>
+							<input type='text' name='blogSender' value='$authorId'></input>
+							<input type='text' name='blogerFN' value='$authorFN'></input>
+							<input type='text' name='blogerLN' value='$authorLN'></input>
+							<input type='text' name='blogerImg' value='$authorImg'></input>
+							<input type='text' name='blogerHref' value='$authorHref'></input>
+						</form>
+					</a>
+					<br>
+				";
+				echo "$loadComplete";
 			}
-			fclose($getInfo);
-			$followersCount++;
-		}
-		
-		if ($followersAllCount != 0) {
-			echo "
-				<h1>
-					$followersAllCount non bloger follows you. 
-				</h1>
-			";
 		}
 	} else {
 		echo "

@@ -8,12 +8,7 @@
 	$profileHref = $_SESSION['senderHref'];
 	$profileFirst = $_SESSION['senderFN'];
 	$profileLast = $_SESSION['senderLN'];
-	
-	//Pull notifications
-	$pullNotifications = fopen("../Authors/$sender/Messages/Notification.txt", "r") or die("Unable to pull.");
-	$countNotifications = fread($pullNotifications, filesize("../Authors/$sender/Messages/Notification.txt"));
-	fclose($pullNotifications);
-	
+
 echo "
 	<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -36,7 +31,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "
-		
 		<form id='accountInfo' method='post' style='display: none;'>
 			<input type='text' name='sender' value='$sender'></input>
 			<input type='text' id='cmd' name='cmd'></input>
@@ -58,6 +52,10 @@ echo "
 				<a href='socializeSettings.php'>
 					<img src='https://cdn3.iconfinder.com/data/icons/ballicons-free/128/open-box.png' />
 					Statistics
+				</a>
+				<a href='blockedUsers.php'>
+					<img src='https://cdn0.iconfinder.com/data/icons/shift-free/32/Block-128.png' />
+					Blocked
 				</a>
 				<a href='reportSettings.php'>
 					<img src='https://cdn3.iconfinder.com/data/icons/ballicons-free/128/target.png' />

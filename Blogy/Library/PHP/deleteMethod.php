@@ -23,37 +23,6 @@
 	}
 	fclose($pushStack);
 	
-	//Pull World History
-	$newStack = array();
-	$getStack = fopen("../Authors/World/History.txt", "r") or die("Unable to open stack.");
-	while (!feof($getStack)) {
-		$line = trim(fgets($getStack));
-		if ($line != $sender) {
-			array_push($newStack, $line);
-		}
-		else
-		if ($line == $sender) {
-			array_push($newStack, $line);
-			$line = trim(fgets($getStack));
-			if ($line == $postId) {
-				array_pop($newStack);
-			}
-			else
-			if ($line != $postId) {
-				array_push($newStack, $line);
-			}
-		}
-	}
-	fclose($getStack);
-	
-	$pushStack = fopen("../Authors/World/History.txt", "w") or die("Unable to push stack.");
-	foreach ($newStack as $line) {
-		if ($line != "") {
-			fwrite($pushStack, $line.PHP_EOL);
-		}
-	}
-	fclose($pushStack);
-	
 	//Connect to data base
 	$servername = "localhost";
 	$username = "kdkcompu_gero";
@@ -68,6 +37,8 @@
 			$postId = str_replace(" ", "6996", $postId);
 		}
 		$sql = "DELETE FROM stack$sender WHERE STACK='$postId'";
+		$conn->query($sql);
+		$sql = "DELETE FROM worldStories WHERE AuthorPOST='$sender:$postId'";
 		$conn->query($sql);
 	}
 	$conn->close();

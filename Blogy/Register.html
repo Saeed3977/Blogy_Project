@@ -6,6 +6,10 @@
 		<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href= "fonts.css" rel="stylesheet" type="text/css">
 		
+		<link rel="stylesheet" href="jquery-ui.min.css">
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.min.js"></script>
+		
 		<script type="text/javascript" src="java.js"></script>
 		<script type="text/javascript">
 			function checkKey(e) {
@@ -18,7 +22,7 @@
 				var fName = document.getElementById('fName').value;
 				var lName = document.getElementById('lName').value;
 				var email = document.getElementById('mail').value;
-				var profilePicture = document.getElementById('picture').value;
+				var profilePicture = document.getElementById('picture');
 				var social = document.getElementById('social').value;
 				var pass1 = document.getElementById('pass1').value;
 				var pass2 = document.getElementById('pass2').value;
@@ -49,7 +53,7 @@
 					flag = 1;
 				}
 				else
-				if (profilePicture == "")
+				if (profilePicture is undefined)
 				{
 					var rand = Math.floor((Math.random() * 5) + 1);
 					if (rand == 1) {
@@ -108,6 +112,16 @@
 
 			}
 		</script>
+		
+		<script>
+		   function showDialog(openFileDialog) {
+			   document.getElementById(openFileDialog).click();
+		   }
+		   
+			function imgChange() {
+				document.getElementById("picture").value = document.getElementById("choosePic").value;
+			}
+		</script>
 	</head>
 	<body>
 		<div id="menu">
@@ -122,23 +136,26 @@
 		</div>
 		<div id="body">
 			<div id="form">
-				<form id="register" action="Library/PHP/buildAuthor.php" method="post">
-					<h1>First name</h1>
-					<input type="text" id="fName" name="fName"></input>
-					<h1>Last name</h1>
-					<input type="text" id="lName" name="lName"></input>
-					<h1>E-mail address</h1>
-					<input type="text" id="mail" name="mail"></input>
-					<h1>Link to profile picture</h1>
+					<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+					<input type="text" id="fName" name="fName" placeholder="First name"></input>
+					<br>
+					<input type="text" id="lName" name="lName" placeholder="Last name"></input>
+					<br>
+					<input type="text" style="text-align: center;" id="picture" name="picture" placeholder="Profile picture or link to it"> <!--onclick='showDialog("choosePic")'>
+					<!--<input type="file" style="display: none;" id="choosePic" onchange="imgChange()"/>-->
+					<br>
+					<input type="text" id="mail" name="mail" placeholder="E-mail address"></input>
+					<br>
+					<!--
 					<input type="text" id="picture" name="picture"></input>
-					<h1>Your social network account</h1>
-					<input type="text" id="social" name="social"></input>
-					<h1>Password</h1>
-					<input type="password" id="pass1" name="pass"></input>
-					<h1>Confirm password</h1>
-					<input type="password" id="pass2" onkeypress="checkKey(event)"></input>
+					-->
+					<input type="text" id="social" name="social" placeholder="Link to your social network account"></input>
+					<br>
+					<input type="password" id="pass1" name="pass" placeholder="Password"></input>
+					<br>
+					<input type="password" id="pass2" onkeypress="checkKey(event)" placeholder="Confirm password"></input>
 				</form>
-				<a href="#" onclick="regLoad()">Start blogy</a>
+				<a href="#" onclick="regLoad()">Start</a>
 				<div class="addMargin"></div>
 			</div>
 		</div>

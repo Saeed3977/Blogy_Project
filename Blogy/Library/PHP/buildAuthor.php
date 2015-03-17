@@ -67,11 +67,6 @@
 	fclose($author);
 	
 		//Follow button
-	$content = confFollowTemplate("../Templates/conf_Following.html");
-	$following = fopen("../Authors/$fullName/conf_Following.html", "w") or die("Unable to open file.");
-	fwrite($following, $content);
-	fclose($following);
-	
 	$iFollow = fopen("../Authors/$fullName/Following.txt", "w") or die("Unable to build file.");
 	fclose($iFollow);
 	
@@ -155,14 +150,6 @@
 		fwrite($fd, "1".PHP_EOL);
 		fwrite($fd, "1");
 		fclose($fd);
-		
-		$log = fopen("$path/LogFlag.txt", "w") or die("Unable to open file.");
-		fwrite($log, "0");
-		fclose($log);
-		
-		$followers = fopen("$path/Followers.html", "w") or die("Unable to open file.");
-		fwrite($followers, "0");
-		fclose($followers);
 		
 		$followersID = fopen("$path/FollowersID.html", "w") or die("Unable to open file.");
 		fclose($followersID);

@@ -18,7 +18,7 @@
 	$realoc = (string)NULL;
 	
 	if ($cmd == "0") {
-		$postId = $_POST['postId'];
+		$postId = trim($_POST['postId']);
 		$postImg = $_POST['postImg'];
 		$postContent = trim($_POST['content']);
 		$postContent = nl2br($postContent);
@@ -51,10 +51,23 @@
 			$postBuild = buildPost($sender, $postId);
 			$postBuild = str_replace("'", "\'", $postBuild);
 			$postBuild =  htmlentities($postBuild);
+			$postBuildViewer = buildPostViewer($sender, $postId);
+			$postBuildViewer = str_replace("'", "\'", $postBuildViewer);
+			$postBuildViewer =  htmlentities($postBuildViewer);
+			$postBuildStories = buildPostStories($sender, $postId);
+			$postBuildStories = str_replace("'", "\'", $postBuildStories);
+			$postBuildStories =  htmlentities($postBuildStories);
 			if (strpos($postId, " ")) {
 				$postId = str_replace(" ", "6996", $postId);
 			}
 			$sql = "UPDATE stack$sender SET BUILD='$postBuild' WHERE STACK='$postId'";
+			$conn->query($sql);
+			$sql = "UPDATE stack$sender SET VIEW='$postBuildViewer' WHERE STACK='$postId'";
+			$conn->query($sql);
+			$sql = "UPDATE stack$sender SET PUBLICVIEW='$postBuildStories' WHERE STACK='$postId'";
+			$conn->query($sql);
+			$postId = str_replace("6996", " ", $postId);
+			$sql = "UPDATE worldStories SET POST='$postBuildStories' WHERE AuthorPOST='$sender:$postId'";
 			$conn->query($sql);
 		}
 		$conn->close();
@@ -63,19 +76,16 @@
 	if ($cmd == "1" || $cmd == "2") {
 		if ($cmd == "1") {
 			$senderFirstName = $_POST['fname'];
-			$titlePost = $_POST['title'];
+			$titlePost = trim($_POST['title']);
 			$contentPost = trim($_POST['content']);
 			$contentPost = nl2br($contentPost);
 			$postPic = $_POST['photo'];
 			
-			if (strpos($contentPost, "</script>")) {
-				$contentPost = str_replace("<script>", "", $contentPost);
-				$contentPost = str_replace("</script>", "", $contentPost);;
-			}			
-			if (strpos($contentPost, "?php")) {
-				$contentPost = str_replace("<?php", "", $contentPost);
-				$contentPost = str_replace("?>", "", $contentPost);
-			}
+			$contentPost = str_replace("<script>", "", $contentPost);
+			$contentPost = str_replace("</script>", "", $contentPost);;
+			
+			$contentPost = str_replace("<?php", "", $contentPost);
+			$contentPost = str_replace("?>", "", $contentPost);
 			
 			$length = strlen($titlePost);
 			for ($ch = 0; $ch < $length; $ch++) {
@@ -139,6 +149,28 @@
 		fwrite($addToStack, $titlePost.PHP_EOL);
 		fclose($addToStack);
 		
+/*
+		//Check and upload file
+		if (isset($_COOKIE['uploadPicture'])) {
+			require 'Upload.php';
+			$postFile = $_POST['fileUpload'];
+			$dir = "../Authors/$sender/Album";
+			//$fileName = array_pop(explode("\\", $postPic));
+			if (!file_exists($dir)) {
+				if (mkdir($dir, 0700)) {
+					uploadFile($dir, $_POST['fileUpload']);
+				} else {
+					die("Fatal: Album not created");
+				}
+			} else {
+				$dir = $dir."/";
+				uploadFile($dir, $_POST['fileUpload']);
+			}
+			
+			echo $_POST['fileUpload'];
+		}
+*/	
+		
 		$post = fopen("../Authors/$sender/Posts/$titlePost.txt", "w") or die("Unable to open file");
 		fwrite($post, $titlePost.PHP_EOL);
 		if ($postPic != "") {
@@ -158,91 +190,91 @@
 		}
 		fclose($post);
 		
-		$commitWorld = fopen("../Authors/World/History.txt", "a") or die("Unable to commit.");
-		fwrite($commitWorld, $sender.PHP_EOL);
-		fwrite($commitWorld, $titlePost.PHP_EOL);
-		fclose($commitWorld);
-		
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		} else {
+			$dateTime = date("Y-m-d H:i:s", filemtime("../Authors/$sender/Posts/$titlePost.txt"));
 			$postBuild = buildPost($sender, $titlePost);
 			$postBuild = str_replace("'", "\'", $postBuild);
 			$postBuild =  htmlentities($postBuild);
+			$postBuildViewer = buildPostViewer($sender, $titlePost);
+			$postBuildViewer = str_replace("'", "\'", $postBuildViewer);
+			$postBuildViewer =  htmlentities($postBuildViewer);
+			$postBuildStories = buildPostStories($sender, $titlePost);
+			$postBuildStories = str_replace("'", "\'", $postBuildStories);
+			$postBuildStories =  htmlentities($postBuildStories);
 			if (strpos($titlePost, " ")) {
 				$titlePost = str_replace(" ", "6996", $titlePost);
 			}
-			$sql = "INSERT INTO stack$sender (STACK, BUILD) VALUES ('$titlePost', '$postBuild')";
+			$sql = "INSERT INTO stack$sender (DATE, STACK, BUILD, VIEW, PUBLICVIEW) VALUES ('$dateTime', '$titlePost', '$postBuild', '$postBuildViewer', '$postBuildStories')";
+			$conn->query($sql);
+			$sql = "INSERT INTO worldStories (AuthorPOST, POST) VALUES ('$sender:$titlePost', '$postBuildStories')";
 			$conn->query($sql);
 		}
-		$conn->close();
 		
-		sendMail($sender, $senderFirstName, $cmd);
+		sendMail($sender, $senderFirstName, $cmd, $conn);
 	}
 	
-	function sendMail($sender, $senderFirstName, $cmd) {
-		$followers = fopen("../Authors/$sender/Followers.html", "r") or die("Unable to open file.");
-		$summary = fread($followers, filesize("../Authors/$sender/Followers.html"));
-		fclose($followers);
-		
+	function sendMail($sender, $senderFirstName, $cmd, $conn) {		
 		$followerFullName = (string)NULL;
-		if ($summary != "0") {
-			$followersIDs = fopen("../Authors/$sender/FollowersID.html", "r") or die("Unable to open file.");
-			while (! feof($followersIDs)) {
-				$toSend = (string)NULL;
-				$parseFollowerConfig = (string)NULL;
-				$followerID = trim(fgets($followersIDs));
-				$line_count = 0;
-				$getInfo = fopen("../Authors/Info.csv", "r") or die("Fatal error: Info.csv corrupted.");
-				while (!feof($getInfo)) {
-					$line = fgetcsv($getInfo);
-					if ($line != "") {
-						if ($followerID == $line[0]) {
-							$followerFullName = $line[1];
-							break;
-						}
+		$followersIDs = fopen("../Authors/$sender/FollowersID.html", "r") or die("Unable to open file.");
+		while (! feof($followersIDs)) {
+			$toSend = (string)NULL;
+			$parseFollowerConfig = (string)NULL;
+			$followerID = trim(fgets($followersIDs));
+			$line_count = 0;
+			
+			$mail = explode("-", $followerID)[0];
+			$followerFullName = explode("-", $followerID)[1];
+			
+			$sql = "CREATE TABLE pushTable$followerFullName (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			if ($conn->query($sql) === TRUE) {
+				buildNotification($sender, $followerFullName, $conn);
+			} else {
+				buildNotification($sender, $followerFullName, $conn);				
+			}
+			
+			if ($followerFullName != "") {
+				$count = 0;
+				$parseFollowerConfig = fopen("../Authors/$followerFullName/config.txt", "r") or die("Unable to start parsing.");
+				while (! feof($parseFollowerConfig)) {
+					$pickLine = fgets($parseFollowerConfig);
+					if ($count == 7) {
+						$toSend = trim($pickLine);
+						break;
 					}
+					$count++;
 				}
-				fclose($getInfo);
+				fclose($parseFollowerConfig);
 				
-				if ($followerFullName != "") {
-					$count = 0;
-					$parseFollowerConfig = fopen("../Authors/$followerFullName/config.txt", "r") or die("Unable to start parsing.");
-					while (! feof($parseFollowerConfig)) {
-						$pickLine = fgets($parseFollowerConfig);
-						if ($count == 7) {
-							$toSend = trim($pickLine);
-							break;
+				if ($toSend == "1") {
+					$mail = trim($mail);
+					if ($mail != "") {
+						if ($cmd == "1") {
+							$subject = "New blog in Blogy";
+							$content = "Hello there. $senderFirstName just posted something into Blogy. Check it from here: http://www.blogy.sitemash.net/Library/Authors/$sender/Author.php";
 						}
-						$count++;
-					}
-					fclose($parseFollowerConfig);
-					
-					if ($toSend == "1") {
-						$mail = $followerID;
-						$mail = trim($mail);
-						if ($mail != "") {
-							if ($cmd == "1") {
-								$subject = "New blog in Blogy";
-								$content = "Hello there. $senderFirstName just posted something into Blogy. Check it from here: http://www.blogy.sitemash.net/Library/Authors/$sender/Author.php";
-							}
-							else
-							if ($cmd == "2") {
-								$subject = "Your story was shared";
-								$content = "Hello $senderFirstName, someone just shared your story.";
-							}
-							
-							mail($mail, $subject, $content);
+						else
+						if ($cmd == "2") {
+							$subject = "Your story was shared";
+							$content = "Hello $senderFirstName, someone just shared your story.";
 						}
+						
+						mail($mail, $subject, $content);
 					}
 				}
 			}
 		}
 	}
-
+	
+	function buildNotification($sender, $followerID, $conn) {
+		$sql = "INSERT INTO pushTable$followerID (MEMBER, MESSAGE) VALUES ('$sender', 'just shared a story')";
+		$conn->query($sql);
+	}
+	
 if ($cmd != 2) {
-	header('Location: logedIn.php');
+	echo "<script>window.location='logedIn.php'</script>";
 } else {
 	echo "$realoc";
 }

@@ -20,13 +20,7 @@
 				die("Connection failed: " . $conn->connect_error);
 			} else {
 				//Creatе new TABLE
-				$sql = "CREATE TABLE $sugestion (
-				AuthorID LONGTEXT,
-				AuthorImg LONGTEXT,
-				AuthorHref LONGTEXT,
-				AuthorFN LONGTEXT,
-				AuthorLN LONGTEXT
-				)";
+				$sql = "CREATE TABLE $sugestion (STACK LONGTEXT)";
 				
 				if ($conn->query($sql) === FALSE) {
 					$lineCount = 0;
@@ -63,7 +57,7 @@
 							<img src='$sugestionImg' />
 							$sugestionFN $sugestionLN
 						</button>
-						<div id='quickMenu$sugestion' style='display: none;'>
+						<div id='quickMenu$sugestion' class='ohanaQuickMenu' style='display: none;'>
 							<div id='quickMenu'>
 								<button type='button' onclick=\"openBloger('$sugestion'); window.location=&#39;openBloger.php&#39;\">
 									View story

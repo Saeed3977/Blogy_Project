@@ -14,21 +14,15 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} else {
-		$sql = "SELECT STACK, BUILD FROM stack$sender";
+		$sql = "SELECT STACK, BUILD FROM stack$sender ORDER BY ID DESC";
 		$pick = $conn->query($sql);
 		if ($pick->num_rows > 0) {
 			while ($row = $pick->fetch_assoc()) {
-				$postBuild = html_entity_decode($row['BUILD']);
-				array_push($history, $postBuild);
+				echo html_entity_decode($row['BUILD']);
 			}
 		}
 	}
 	$conn->close();
-	
-	$reverseHistory = array_reverse($history);
-	foreach ($reverseHistory as $postBuild) {
-		echo "$postBuild";
-	}
 	
 	//.................................................
 	function parseContent($contentPost) {

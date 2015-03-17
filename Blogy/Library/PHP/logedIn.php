@@ -40,9 +40,14 @@
 	
 	$fullName = $sender;
 
-	$followers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
-	$followersCount = fread($followers, filesize("../Authors/$sender/Followers.html"));
-	fclose($followers);
+	$followersCount = -1;
+	$countFollowers =  fopen("../Authors/$sender/FollowersID.html", "r") or die("Fatal: Could not get Followers.");
+	while (!feof($countFollowers)) {
+		$followersCount++;
+		$line = trim(fgets($countFollowers));
+	}
+	fclose($countFollowers);
+	
 	$profileName = "$profileFirst $profileLast";
 	
 	$stack = array();
@@ -233,9 +238,10 @@ echo "
 	include 'loadSuggestedBlogers.php';
 echo "
 			<div id='body'>
-				<form id='post' method='post' style='visibility: hidden; display: none;'>
+				<form id='post' method='post' style='visibility: hidden; display: none;' enctype='multipart/form-data'>
 					<input type='text' placeholder='Give it title.' id='title' name='title'>
-					<input type='text' placeholder='Place link for an image or to a video.' id='postImg' name='photo'>
+					<input type='text' placeholder='Place link for an image or a video' id='postImg' name='photo'>
+					<input type='file' style='display:none' id='dialogWindow' name='fileUpload' onchange='sendLocation()'/>
 					<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>
 					
 					<a href='#' onclick='writePost()'>Post</a>

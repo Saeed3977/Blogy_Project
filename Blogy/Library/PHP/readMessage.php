@@ -143,11 +143,35 @@ echo "
 					<a href='#' class='leftOption' onclick='addImg()'>
 						<img id='imgHolder' src='https://cdn4.iconfinder.com/data/icons/adiante-apps-app-templates-incos-in-grey/128/app_type_photographer_512px_GREY.png' alt='Bad link :('>
 					</a>
+					<a href='#' class='rightOption' onclick='showEmojiContainer()'>
+						<img src='https://cdn4.iconfinder.com/data/icons/imoticons/105/imoticon_12-128.png' alt='Bad link :(' />
+					</a>
 					<a href='#' onclick='sendMessage()'>Send</a>
 					<div style='display: none;'>
 						<input type='text' name='sender' value='$sender'></input>
 						<input type='text' name='authorId' value='$messangerId'></input>
 						<input type='text' name='cmd' value='1'></input>
+					</div>
+					<div class='emoji_container' id='emojis'>
+						<button type='button' onclick='addEmoji(\"lol\")'><img src='../images/Emoji/lol.png' title='Laugh' /></button>
+						<button type='button' onclick='addEmoji(\"smile\")'><img src='../images/Emoji/smile.png' title='Smile' /></button>
+						<button type='button' onclick='addEmoji(\"lolo\")'><img src='../images/Emoji/lolo.png' title='Laugh out loud' /></button>
+						<br>
+						<button type='button' onclick='addEmoji(\"tongue\")'><img src='../images/Emoji/tongue.png' title='Tongue' /></button>
+						<button type='button' onclick='addEmoji(\"inlove\")'><img src='../images/Emoji/inlove.png' title='Inlove' /></button>
+						<button type='button' onclick='addEmoji(\"kiss\")'><img src='../images/Emoji/kiss.png' title='Kiss' /></button>
+						<br>
+						<button type='button' onclick='addEmoji(\"scare\")'><img src='../images/Emoji/scare.png' title='Scare' /></button>
+						<button type='button' onclick='addEmoji(\"cry\")'><img src='../images/Emoji/cry.png' title='Cry' /></button>
+						<button type='button' onclick='addEmoji(\"ooh\")'><img src='../images/Emoji/ooh.png' title='Ooh' /></button>
+						<br>
+						<button type='button' onclick='addEmoji(\"wat\")'><img src='../images/Emoji/wat.png' title='What' /></button>
+						<button type='button' onclick='addEmoji(\"wink\")'><img src='../images/Emoji/wink.png' title='Wink' /></button>
+						<button type='button' onclick='addEmoji(\"mybad\")'><img src='../images/Emoji/mybad.png' title='Oops' /></button>
+						<br>
+						<button type='button' onclick='addEmoji(\"meh\")'><img src='../images/Emoji/meh.png' title='Meh' /></button>
+						<button type='button' onclick='addEmoji(\"sad\")'><img src='../images/Emoji/sad.png' title='Sad' /></button>
+						<button type='button' onclick='addEmoji(\"muchCry\")'><img src='../images/Emoji/muchCry.png' title='Very very sad' /></button>
 					</div>
 				</form>
 				<div id='message'>
@@ -172,154 +196,59 @@ echo "
 					<div id='message-text'>
 ";
 	
-	$history = array();
-	$loadHistory = fopen("../Authors/$sender/Messages/$messangerId/History.txt", "r") or die("Unable to load.");
-	$flag = 0;
-	while (!feof($loadHistory)) {
-		$line = fgets($loadHistory);
-		
-		if (trim($line) == "NM") {
-			$flag = 0;
-			array_push($history, trim($line));
-		}
-		else
-		if (trim($line) == "GUEST" || trim($line) == "HOST") {
-			array_push($history, trim($line));
-		}
-		else
-		if (trim($line) == "SI") {
-			array_push($history, trim($line));
-			$line = trim(fgets($loadHistory));
-			array_push($history, $line);
-		}
-		else
-		if ((trim($line) == "MT" || $flag == 1) && !feof($loadHistory)) {
-			if ($flag == 0) {
-				array_push($history, trim($line));
-				$line = fgets($loadHistory);
-				$flag = 1;
-			}
-			if ($line != "") {
-				array_push($history, $line);
-			}
-		}
-	}
-	fclose($loadHistory);
-
-	$currentLine = (string)NULL;
-	$messageTXTarray = array();
-	$messageTXT = (string)NULL;
-	$oldMessageTXT = (string)NULL;
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
 	
-	$line_count = 0;
-	$history_count = 0;
-	$history_reverse = array_reverse($history);
-	while ($history_count < count($history_reverse)) {
-		while ($currentLine != "NM") {
-			if ($currentLine != "MT" && $currentLine != "SI" && $currentLine != "GUEST" && $currentLine != "HOST" && $currentLine != "NM") {
-				if ($currentLine != "") {
-					array_push($messageTXTarray, $currentLine);
-				}
-			}
-			else
-			if ($currentLine == "MT") {
-				$currentLine = $history_reverse[$history_count];
-				$messageIMG = $currentLine;
-				//$history_count += 2;
-				$type = $history_reverse[$history_count + 2];
-				$history_count++;
-			}
-			
-			$currentLine = $history_reverse[$history_count];
-			$history_count++;
-		}
-		
-		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-		$count = 0;
-		$reversedMessage = array_reverse($messageTXTarray);
-		while ($count < count($reversedMessage)) {
-			if (strpos($reversedMessage[$count], "</script>")) {
-				$reversedMessage[$count] = str_replace("<script>", "", $reversedMessage[$count]);
-				$reversedMessage[$count] = str_replace("</script>", "", $reversedMessage[$count]);;
-			}			
-			if (strpos($reversedMessage[$count], "?php")) {
-				$reversedMessage[$count] = str_replace("<?php", "", $reversedMessage[$count]);
-				$reversedMessage[$count] = str_replace("?>", "", $reversedMessage[$count]);
-			}
-
-			$reversedMessage[$count] = str_replace("<br />", "", $reversedMessage[$count]);
-			if (!strpos($reversedMessage[$count], "Bad image link")) {
-				$url = NULL;
-				if(preg_match($reg_exUrl, $reversedMessage[$count], $url)) {
-					$reversedMessage[$count] = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $reversedMessage[$count]);
-				}
-			}
-			$messageTXT .= $reversedMessage[$count]."<br>";
-			$count++;
-		}
-
-		/*
-		// The Regular Expression filter
-		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-		$messageParse = explode(" ", $messageTXT);
-		$messageParseCount = 0;
-
-		while ($messageParseCount < count($messageParse)) {
-			// Check if there is a url in the text
-			$url = NULL;
-			if(preg_match($reg_exUrl, $messageTXT, $url)) {
-				//$messageTXT = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a> ", $messageTXT);
-				if (isValidImage($url[0])) {
-					$messageTXT = preg_replace($reg_exUrl, "<img src='$url[0]' alt='Bad image link :(' />", $messageTXT);
-				} else {
-					$messageTXT = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a> ", $messageTXT);
-				}
-			}
-			
-			$messageParseCount++;
-		}
-		*/
-		
-		if ($messageTXT != $oldMessageTXT) {
-			if ($type == "GUEST") {
-				$print = "
-				<div align='left'>
-					<div id='$type'>
-						<div class='profileimg'>
-							<img src='$messageIMG' alt='Bad image link :(' />
-						</div>
-						<p class='$type'>
-							$messageTXT
-						</p>
-					</div>
-					<br>
-				</div>
-				";
-			}
-			else
-			if ($type == "HOST") {
-				$print = "
-				<div align='right'>
-					<div id='$type'>
-							<div class='profileimg'>
-								<img src='$messageIMG' alt='Bad image link :(' />
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$title = $sender."AND".$messangerId;
+		$sql = "SELECT MESSANGER, MESSAGE FROM $title ORDER BY ID DESC";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				$authorId = $row['MESSANGER'];
+				$message = $row['MESSAGE'];
+				
+				$message = convertMessage($message);
+				
+				if ($authorId == $sender) {
+					echo "
+						<div align='right'>
+							<div id='HOST'>
+								<div class='profileimg'>
+									<img src='$profilePic' alt='Bad image link :(' />
+								</div>
+								<p class='HOST'>
+									$message
+								</p>
 							</div>
-							<p class='$type'>
-								$messageTXT
-							</p>
+							<br>
 						</div>
-						<br>
-				</div>
-				";
+					";
+				}
+				else
+				if ($authorId == $messangerId) {
+					echo "
+						<div align='left'>
+							<div id='GUEST'>
+								<div class='profileimg'>
+									<img src='$messangerImg' alt='Bad image link :(' />
+								</div>
+								<p class='GUEST'>
+									$message
+								</p>
+							</div>
+							<br>
+						</div>
+					";
+				}
 			}
-			
-			echo "$print";
 		}
-		
-		$currentLine = NULL;
-		$oldMessageTXT = $messageTXT;		
-		$messageTXT = NULL;
-		$messageTXTarray = array();
 	}
 	
 echo "
@@ -329,6 +258,63 @@ echo "
 		</body>
 	</html>
 ";
+	
+	function convertMessage($message) {
+		$message = html_entity_decode($message);
+		
+		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+		$message = str_replace("<script>", "", $message);
+		$message = str_replace("</script>", "", $message);;
+		$message = str_replace("<?php", "", $message);
+		$message = str_replace("?>", "", $message);
+		$message = str_replace("<br />", "", $message);
+		if (!strpos($message, "Bad image link")) {
+			$url = NULL;
+			if(preg_match($reg_exUrl, $message, $url)) {
+				$message = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $message);
+			}
+		}
+		
+		//:D
+		$message = str_replace(":D", "<img src='../images/Emoji/lol.png' class='emoji'/>", $message);
+		//:P
+		$message = str_replace(":P", "<img src='../images/Emoji/tongue.png' class='emoji-fixed'/>", $message);
+		$message = str_replace(":p", "<img src='../images/Emoji/tongue.png' class='emoji-fixed'/>", $message);
+		//<3
+		$message = str_replace("<3", "<img src='../images/Emoji/heart.png' class='emoji'/>", $message);
+		//:O
+		$message = str_replace(":O", "<img src='../images/Emoji/ooh.png' class='emoji'/>", $message);
+		//:)
+		$message = str_replace(":)", "<img src='../images/Emoji/smile.png' class='emoji'/>", $message);
+		//;)
+		$message = str_replace(";)", "<img src='../images/Emoji/wink.png' class='emoji'/>", $message);
+		//:(
+		$message = str_replace(":(", "<img src='../images/Emoji/sad.png' class='emoji'/>", $message);
+		//;'(
+		$message = str_replace(":'(", "<img src='../images/Emoji/cry.png' class='emoji'/>", $message);
+		$message = str_replace(";(", "<img src='../images/Emoji/cry.png' class='emoji'/>", $message);
+		//:*
+		$message = str_replace(":*", "<img src='../images/Emoji/kiss.png' class='emoji-fixed'/>", $message);
+		//0.0
+		$message = str_replace("0.0", "<img src='../images/Emoji/wat.png' class='emoji'/>", $message);
+		$message = str_replace("O.O", "<img src='../images/Emoji/wat.png' class='emoji'/>", $message);
+		$message = str_replace("{49}", "<img src='../images/Emoji/wat.png' class='emoji'/>", $message);
+		//Inlove
+		$message = str_replace("{2369}", "<img src='../images/Emoji/inlove.png' class='emoji'/>", $message);
+		//Scare
+		$message = str_replace(":|", "<img src='../images/Emoji/scare.png' class='emoji'/>", $message);
+		$message = str_replace("{666}", "<img src='../images/Emoji/scare.png' class='emoji'/>", $message);
+		//MyBad - Oops
+		$message = str_replace("{118}", "<img src='../images/Emoji/mybad.png' class='emoji'/>", $message);
+		//Meh
+		$message = str_replace("{999}", "<img src='../images/Emoji/meh.png' class='emoji'/>", $message);
+		//Much Cry
+		$message = str_replace("{7428}", "<img src='../images/Emoji/muchCry.png' class='emoji'/>", $message);
+		//LoLo
+		$message = str_replace("{1010}", "<img src='../images/Emoji/lolo.png' class='emoji'/>", $message);
+		
+		return $message;
+	}
 
 	function isValidImage($urlPath) {
 		$url_headers = get_headers($urlPath, 1);

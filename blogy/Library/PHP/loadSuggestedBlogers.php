@@ -1,11 +1,17 @@
 <?php
 	session_start();
 	$sender = $_SESSION['sender'];
+
+	if (isset($_COOKIE['sideBar'])) {
+		$cmd = "style='display: none;'";
+	} else {
+		$cmd = "";
+	}
 	
 echo "
-	<div id='sideBar'>
-				<h1>People you may know</h1>
-					<div id='suggestions'>
+	<div id='sideBar' $cmd>
+			<h1>People you may know</h1>
+				<div id='suggestions'>
 ";
 
 	$scrollPosSidebar = $_POST['scrollPosSidebar'];
@@ -28,6 +34,27 @@ echo "
 	}
 	fclose($followingPull);
 	
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
+	$blockedPersons = array();
+	
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$sql = "SELECT BLOCKEDID FROM blockList$sender";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				array_push($blockedPersons, $row['BLOCKEDID']);
+			}
+		}
+	}
+	
 	if (!empty($pullFollowing)) {
 		$returnStack = array();
 		foreach ($pullFollowing as $authorId) {
@@ -35,13 +62,25 @@ echo "
 				$loadFollowers = fopen("../Authors/$authorId/Following.txt", "r") or die("Fatal: Could not load.");
 				while (!feof($loadFollowers)) {
 					$line = trim(fgets($loadFollowers));
-					if ($line != "" && $line != $sender && !in_array($line, $pullFollowing)) {
-						array_push($returnStack, $line);
+					if ($line != "" && $line != $sender) {
+						$blockedPersonsByFollower = array();
+						$sql = "SELECT BLOCKEDID FROM blockList$line";
+						$pick = $conn->query($sql);
+						if ($pick->num_rows > 0) {
+							while ($row = $pick->fetch_assoc()) {
+								array_push($blockedPersonsByFollower, $row['BLOCKEDID']);
+							}
+						}
+						
+						if (!in_array($line, $pullFollowing) && !in_array($line, $blockedPersons) && !in_array($sender, $blockedPersonsByFollower)) {
+							array_push($returnStack, $line);
+						}
 					}
 				}
 				fclose($loadFollowers);
 			}
 		}
+		
 		$returnStack = array_unique($returnStack);
 		sort($returnStack);
 		foreach ($returnStack as $sugestion) {
@@ -97,6 +136,8 @@ echo "
 		echo "<h2>You don't follow anybody.</h2>";
 	}
 	
+	$conn->close(); //Close SQL Connection
+	
 echo "
 			</div>
 			<div id='friendsOnline'>
@@ -120,6 +161,23 @@ echo "
 				<input type='text' id='receiverId' name='receiverId'>
 			</div>
 		</form>
+	</div>
+";
+
+echo "
+	<div id='rightSideBar' $cmd>
+		<button type='button' onclick='showOhanaMeaning()'>
+			<h1>Ohana</h1>
+		</button>
+		<div id='ohanaMeaning' class='arrow_box_ohana'>
+			<p>
+				<b>Ohana</b> means <b>family</b>.<br>
+				<b>Family</b> means nobody gets left behind - or forgotten.
+			</p>
+		</div>
+";
+	include 'loadOhana.php';
+echo "
 	</div>
 ";
 ?>

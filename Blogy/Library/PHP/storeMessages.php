@@ -70,37 +70,73 @@ echo "
 	fclose($loadStack);
 	$line_count = 0;
 	
+	//Connect to data base
+	$servername = "localhost";
+	$username = "kdkcompu_gero";
+	$password = "Geroepi4";
+	$dbname = "kdkcompu_gero";
+	
+	$blockedPersons = array();
+	
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} else {
+		$sql = "SELECT BLOCKEDID FROM blockList$sender";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				array_push($blockedPersons, $row['BLOCKEDID']);
+			}
+		}
+	}
+	//$conn->close();
+	
 	$stack_reverse = $stack;
 	while ($line_count < count($stack_reverse)) {
-		$file_count = 0;
-		$parseMessenger = fopen("../Authors/$stack_reverse[$line_count]/config.txt", "r") or die("Unable to parse.");
-		while (!feof($parseMessenger)) {
-			$line = fgets($parseMessenger);
-			if ($file_count == 0) {
-				$messengerImg = trim($line);
+		$blockedPersonsByFollower = array();
+		$blockerId = $stack_reverse[$line_count];
+		$sql = "SELECT BLOCKEDID FROM blockList$blockerId";
+		$pick = $conn->query($sql);
+		if ($pick->num_rows > 0) {
+			while ($row = $pick->fetch_assoc()) {
+				array_push($blockedPersonsByFollower, $row['BLOCKEDID']);
 			}
-			else
-			if ($file_count == 2) {
-				$messangerId = trim($line);
-			}
-			$file_count++;
 		}
-		fclose($parseMessenger);
 		
-		$buildMessage = "
-			<button type='button' onclick='readMessage(\"$messangerId\")'>
-				<img src='$messengerImg' alt='Bad image link :'(' />
-			</button>
-			<form id='messages$messangerId' method='post' style='display: none;'>
-				<input type='text' name='messangerId' value='$messangerId'></input>
-			</form>
-			<br>
-		";
-		
-		echo "$buildMessage";
+		if (!in_array($stack_reverse[$line_count], $blockedPersons) && !in_array($sender, $blockedPersonsByFollower)) {
+			$file_count = 0;
+			$parseMessenger = fopen("../Authors/$stack_reverse[$line_count]/config.txt", "r") or die("Unable to parse.");
+			while (!feof($parseMessenger)) {
+				$line = fgets($parseMessenger);
+				if ($file_count == 0) {
+					$messengerImg = trim($line);
+				}
+				else
+				if ($file_count == 2) {
+					$messangerId = trim($line);
+				}
+				$file_count++;
+			}
+			fclose($parseMessenger);
+			
+			$buildMessage = "
+				<button type='button' onclick='readMessage(\"$messangerId\")'>
+					<img src='$messengerImg' alt='Bad image link :'(' />
+				</button>
+				<form id='messages$messangerId' method='post' style='display: none;'>
+					<input type='text' name='messangerId' value='$messangerId'></input>
+				</form>
+				<br>
+			";
+			
+			echo "$buildMessage";
+		}
 		
 		$line_count++;
 	}
+	
+	$conn->close(); //Close SQL connection
 	
 echo "
 				</div>

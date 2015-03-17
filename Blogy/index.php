@@ -37,10 +37,11 @@
 					<td id='element'>
 						<h1>Meet Blogy</h1>
 						<p>
-							<b>Blogy</b> is free network where you can start and learn how to,<br>
-							create your own <b>blog</b> and share your personal moments.<br> 
-							In <b>Blogy</b> you are the author of your personal story.<br>
-							The idea for <b>Blogy</b> comes from <a href='Library/Authors/GeroNikolov/Author.php' class='linker' target='_blank'>@Gero Nikolov</a>.
+							<b>Blogy</b> is your own <b>story</b> where	to share your <b>personal</b> moments.<br>
+							CEO / Founder: <a href='Library/Authors/GeroNikolov/Author.php' class='linker' target='_blank'>Gero Nikolov</a><br>
+							Co-Founder: <a href='Library/Authors/MladenKaradimov/Author.php' class='linker' target='_blank'>Mladen Karadimov</a><br>
+							Design lead: <a href='Library/Authors/DimitarGeorgiev/Author.php' class='linker' target='_blank'>Dimitar Georgiev</a><br>
+							Test lead: Valentin Varbanov<br>
 						</p>
 					</td>
 					<td>
@@ -48,10 +49,11 @@
 					<td id='element'>
 						<h1>How it works ?</h1>
 						<p>
-							If you know what <b>HTML</b> & <b>CSS</b> code means you can<br>
-							choose and download the style you've liked and start editing it.<br>
-							But if you only want to have your own blog where to share your <b>personal moments</b><br>
-							You have just to register in <b>Blogy</b> and start <b>blogy</b>-ing.
+							<b>Blogy</b> is one big library of information<br>
+							Information for all of its users.<br>
+							With the time stories get more and more<br>
+							and this create unique connection between all <b>blogers</b>. <br>
+							<br>
 						</p>
 						<div class='addMargin'></div>
 					</td>
@@ -76,12 +78,11 @@
 					<td id='element'>
 						<h1>Be a part of the project</h1>
 						<p>
-							<b>Blogy</b> is free network for blogers.<br>
-							Here you can share stories and photos with your followers.<br>
-							Once you create an account in <b>Blogy</b> you become an author.<br>
-							The <b>authors</b> are very important for the <b>ecosystem</b>.<br>
-							When someone of them post something (post or blogy template) they are building<br>
-							one big library of information which is the main idea of <b>Blogy</b>.
+							Once you create your account just start <b>blogy</b>-ing.<br>
+							Share all thinks, all around the web that you like or you are interested at.<br>
+							Building your story makes our world bigger and more interesting.<br>
+							It will be a pleasure for us to call you <b>friend</b><br>
+							we are waiting for <b>your unique character</b>, welcome to <b>Blogy</b>.
 						</p>
 						<div class='addMargin'></div>
 						<br>

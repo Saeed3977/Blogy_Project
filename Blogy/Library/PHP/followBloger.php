@@ -68,7 +68,7 @@
 			array_push($followersStack, trim($line));
 		}
 		
-		if (trim($line) == $senderMail) {
+		if (trim(explode("-", $line)[0]) == $senderMail) {
 			$followerFound = 1;
 		}
 	}
@@ -83,28 +83,35 @@
 		}
 	}
 	fclose($getFollowing);
-	
-	//Get followers count
-	$followersCountLoad = fopen("../Authors/$bloger/Followers.html", "r") or die("Unable to load followers.");
-	$followersCount = fread($followersCountLoad, filesize("../Authors/$bloger/Followers.html"));
-	fclose($followersCountLoad);
-	
+		
 	if ($followerFound == 0) {
-		$count = (int)$followersCount + 1;
-		array_push($followersStack, $senderMail);
+		array_push($followersStack, $senderMail."-".$sender);
 		array_push($iFollowStack, $bloger);
+		
+		//Connect to data base
+		$servername = "localhost";
+		$username = "kdkcompu_gero";
+		$password = "Geroepi4";
+		$dbname = "kdkcompu_gero";
+		
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		} else {
+			$sql = "CREATE TABLE pushTable$bloger (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			if ($conn->query($sql) === TRUE) {
+				buildNotification($sender, $bloger, $conn);
+			} else {
+				buildNotification($sender, $bloger, $conn);				
+			}
+		}
+		$conn->close();
 	}
 	else
 	if ($followerFound == 1) {
-		$count = (int)$followersCount - 1;
-		$followersStack = array_merge(array_diff($followersStack, array("$senderMail")));
+		$followersStack = array_merge(array_diff($followersStack, array("$senderMail-$sender")));
 		$iFollowStack = array_merge(array_diff($iFollowStack, array("$bloger")));
 	}
-	
-	//Save counter
-	$followersCountSave = fopen("../Authors/$bloger/Followers.html", "w") or die("Unable to open file.");
-	fwrite($followersCountSave, $count);
-	fclose($followersCountSave);
 	
 	//Build stack
 	$followersCount = 0;
@@ -152,6 +159,11 @@ echo "
 		</body>
 	</html>
 ";
+
+	function buildNotification($sender, $bloger, $conn) {
+		$sql = "INSERT INTO pushTable$bloger (MEMBER, MESSAGE) VALUES ('$sender', 'started following you')";
+		$conn->query($sql);
+	}
 
 	die();
 ?>
