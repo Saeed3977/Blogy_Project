@@ -34,4 +34,3 @@
 	- For free type of users it is ready. (Maybe it need some tests but it is ok)<br>
 <b>*3.Messaging system</b><br>
 	- Bad news: Update 25.02 you still have to refresh to see the new message.<br>
-	- Good news: Active scripts don't bug the page to fatal crash. :D (Yes this is one small thing but it is good new so :D)<br>
