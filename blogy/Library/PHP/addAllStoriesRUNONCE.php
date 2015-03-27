@@ -1,33 +1,23 @@
 <?php //Add all stories into global database algorithm - RUN ONCE
 	//Pull stack
+	$paths = scandir("../Authors");
 	$stack = array();
-	$pullStack = fopen("../Authors/World/History.txt", "r") or die("Unable to pull");
-	while (! feof($pullStack)) {
-		$line = trim(fgets($pullStack));
-		if ($line != "") {
-			array_push($stack, $line);
+	
+	foreach ($paths as $path) {
+		if ($path != "World" && $path != "Info.csv" && $path != "." && $path != "..") {
+			$pullStack = fopen("../Authors/$path/Posts/Stack.txt", "r") or die("Unable to pull");
+			while (! feof($pullStack)) {
+				$line = trim(fgets($pullStack));
+				if ($line != "") {
+					$stack = array_merge($stack, array("$line`$path" => date("Y-m-d H:i:s", filemtime("../Authors/$path/Posts/$line.txt"))));
+				}
+			}
+			fclose($pullStack);
 		}
 	}
-	fclose($pullStack);
-	
-	$allPosts = array();
-	
-	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-	$stackCount = 0;
-	$reversStack = array_reverse($stack);
-	while ($stackCount < count($reversStack)) {
-		$postId = $reversStack[$stackCount];
-		$stackCount++;
-		$postAuthor = $reversStack[$stackCount];
-		$stackCount++;
-		
-		if (file_exists("../Authors/$postAuthor/Posts/$postId.txt") == 1) {
-			$allPosts = array_merge($allPosts, array("$postId`$postAuthor" => date("Y-m-d H:i:s", filemtime("../Authors/$postAuthor/Posts/$postId.txt"))));
-		}
-	}
-	
-	arsort($allPosts);
-	$allPosts = array_reverse($allPosts);
+
+	arsort($stack);
+	$allPosts = array_reverse($stack);
 	
 	//Connect to data base
 	$servername = "localhost";
@@ -140,7 +130,9 @@
 				} else {
 					$url = NULL;
 					if(preg_match($reg_exUrl, $line, $url)) {
-						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						if (!strpos($line, "<img") && !strpos($line, "<a")) {
+							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						}
 					}
 					$contentPost .= $line."<br>";
 				}
@@ -218,8 +210,10 @@
 				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
 			}
 			else {
-				$url_headers=get_headers($postImg, 1);
-
+				if (filter_var($postImg, FILTER_VALIDATE_URL)) {
+					$url_headers=get_headers($postImg, 1);
+				}
+				
 				if(isset($url_headers['Content-Type'])){
 					$type=strtolower($url_headers['Content-Type']);
 
@@ -237,10 +231,20 @@
 					$valid_image_type['image/x-icon']='';
 
 					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+						$cmd = "
+							<a href='$postImg' data-lightbox='roadtrip'>
+								<img src='$postImg' alt='Image link is broken :('/>
+							</a>
+						";
 					} else {
 						$cmd = "<h2>Unsupported player :(</h2>";
 					}
+				}  else {
+					$cmd = "
+						<a href='$postImg' data-lightbox='roadtrip'>
+							<img src='$postImg' alt='Image link is broken :('/>
+						</a>
+					";
 				}
 			}
 			

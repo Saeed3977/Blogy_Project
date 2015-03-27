@@ -41,7 +41,7 @@
 							CEO / Founder: <a href='Library/Authors/GeroNikolov/Author.php' class='linker' target='_blank'>Gero Nikolov</a><br>
 							Co-Founder: <a href='Library/Authors/MladenKaradimov/Author.php' class='linker' target='_blank'>Mladen Karadimov</a><br>
 							Design lead: <a href='Library/Authors/DimitarGeorgiev/Author.php' class='linker' target='_blank'>Dimitar Georgiev</a><br>
-							Test lead: Valentin Varbanov<br>
+							Test lead: <a href='Library/Authors/ValentinVarbanov/Author.php' class='linker' target='_blank'>Valentin Varbanov</a><br>
 						</p>
 					</td>
 					<td>

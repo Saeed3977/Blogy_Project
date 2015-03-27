@@ -1,15 +1,18 @@
-*1.Albums
-	-Place where everyone can share their own pictures and videos
-	-Free space: 100mb
-		-500mb for 0.99$
-		-1GB for 1.99$
-		-Payment method: PayPal
+*1.Album
+	-Place where everyone can share their own pictures
+	-Free space: 100mb (For now only 100mb will be avaible)
 	-With the pictures :
 		-Make stories of them
 		-Send pictures in the message
-*2.Liking system
-	-Maybe heart icon or still have no idea for the vision of the button.
-*3.Debug methods form Milestone 1
+		-Set as profile picture
+		-Watch on slideshow
+*2.Notes
+	-Make notes which will popup when their time comes.
+	-Possibilities :
+		-Choose date
+		-Share with friends
+*3.Search fields
+*4.Debug methods from Milestone 1
 
 4.Cripting methods - Based on the H table (Custom cripting table)
 

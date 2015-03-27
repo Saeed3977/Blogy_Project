@@ -79,35 +79,6 @@ echo "
 			
 				document.forms['controlPanel'].submit();
 			}
-			
-			function loadBlogers() {
-				document.getElementById('accountInfo').action = '../PHP/loadBlogers.php';
-				document.forms['accountInfo'].submit();
-			}
-			
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
-			
-			function openMessages(state) {
-				if (state == 0) {
-					document.getElementById('cmd').value = '0';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-				else
-				if (state == 1) {
-					document.getElementById('cmd').value = '1';
-					document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-					document.forms['accountInfo'].submit();
-				}
-			}
-			
-			function exploreStories() {
-				document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
-				document.forms['accountInfo'].submit();
-			}
 		</script>
 	</head>
 	<body>
@@ -121,12 +92,7 @@ echo "
 		$isChecked = NULL;
 	}
 	
-echo "	
-		<form id='accountInfo' method='post' style='display: none;'>
-			<input type='text' name='sender' value='$sender'></input>
-			<input type='text' id='cmd' name='cmd'></input>
-		</form>
-		
+echo "
 		<div id='body'>
 			<form id='controlPanel' action='../PHP/configBuild.php' method='post'>
 				<h1>Notify me by e-mail, when someone I follow posts a story.</h1>

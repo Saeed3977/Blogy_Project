@@ -23,12 +23,11 @@ echo "
 		<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		
+		<link href='../../LightBox/css/lightbox.css' type='text/css' rel='stylesheet' />
+		<script src='../../LightBox/js/jquery-1.11.0.min.js'></script>
+		<script src='../../LightBox/js/lightbox.min.js'></script>
+		
 		<script type = 'text/javascript'> 			
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
-			
 			function loadAll() {		
 				document.getElementById('scrollPos').value = $(window).scrollTop();
 				document.getElementById('reSend').action = '../PHP/exploreStories.php';
@@ -41,11 +40,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "	
-		<form id='accountInfo' method='post' style='display: none;'>
-			<input type='text' name='sender' value='$sender'></input>
-			<input type='text' id='cmd' name='cmd'></input>
-		</form>
-		
 		<div id='sub-logo'>
 			<a href='exploreFStories.php'>Following</a>
 			or

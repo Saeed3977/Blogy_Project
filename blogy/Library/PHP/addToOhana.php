@@ -31,7 +31,7 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		} else {
-			$sql = "CREATE TABLE pushTable$newMemeber (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			$sql = "CREATE TABLE pushTable$newMemeber (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
 			if ($conn->query($sql) === TRUE) {
 				buildNotification($sender, $newMemeber, $conn);
 			} else {
@@ -44,7 +44,8 @@
 	}
 	
 	function buildNotification($sender, $newMemeber, $conn) {
-		$sql = "INSERT INTO pushTable$newMemeber (MEMBER, MESSAGE) VALUES ('$sender', 'added you in Ohana')";
+		$date = date("d.M.Y");
+		$sql = "INSERT INTO pushTable$newMemeber (MEMBER, MESSAGE, DATE) VALUES ('$sender', 'just added you in Ohana', '$date')";
 		$conn->query($sql);
 	}
 ?>

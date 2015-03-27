@@ -48,6 +48,13 @@
 		} else {
 			sendMessage($sender, $conn, $message, $title);
 		}
+		
+		$sql = "CREATE TABLE pushTable$authorId (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
+		if ($conn->query($sql) === TRUE) {
+			buildNotification($sender, $authorId, $conn);
+		} else {
+			buildNotification($sender, $authorId, $conn);				
+		}
 	}
 	$conn->close();
 	
@@ -67,6 +74,12 @@
 		$subject = "New message in Blogy";
 		$content = "Hello there. $senderFN just send you a message. Check it from here: http://www.blogy.sitemash.net/SignIn.html";
 		mail($authorMail, $subject, $content);
+	}
+	
+	function buildNotification($sender, $followerID, $conn) {
+		$date = date("d.M.Y");
+		$sql = "INSERT INTO pushTable$followerID (MEMBER, MESSAGE, DATE) VALUES ('$sender', 'just send you a message', '$date')";
+		$conn->query($sql);
 	}
 	
 	function reCordinateStack($sender, $authorId) {

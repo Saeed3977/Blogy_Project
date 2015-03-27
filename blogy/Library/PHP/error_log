@@ -1274,3 +1274,236 @@
 [17-Mar-2015 12:39:04 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
 [17-Mar-2015 16:25:04 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 10
 [17-Mar-2015 17:43:46 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[17-Mar-2015 21:05:23 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[17-Mar-2015 21:08:39 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[17-Mar-2015 21:40:38 Europe/Sofia] PHP Warning:  move_uploaded_file(../Authors/GeroNikolov/Album/DSAS.jpg): failed to open stream: Permission denied in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 44
+[17-Mar-2015 21:40:38 Europe/Sofia] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpQzULYq' to '../Authors/GeroNikolov/Album/DSAS.jpg' in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 44
+[17-Mar-2015 21:57:45 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/Upload.php:16) in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 41
+[17-Mar-2015 21:58:01 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/Upload.php:16) in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 45
+[18-Mar-2015 00:12:28 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[18-Mar-2015 09:06:39 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[18-Mar-2015 09:15:01 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:16 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:18 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:18 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:18 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:18 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:36 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:37 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:37 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 09:15:37 Europe/Sofia] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 37
+[18-Mar-2015 10:31:13 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/): Is a directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 10:32:36 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/): Is a directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 42
+[18-Mar-2015 17:38:32 Europe/Sofia] PHP Warning:  fopen(../Authors//Following.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 50
+[18-Mar-2015 20:52:29 Europe/Sofia] PHP Warning:  fopen(../Authors//Following.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 50
+[18-Mar-2015 20:52:43 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[18-Mar-2015 21:55:32 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 72
+[18-Mar-2015 21:55:37 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[18-Mar-2015 21:55:37 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 21:58:29 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 72
+[18-Mar-2015 21:58:32 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[18-Mar-2015 21:58:32 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/../Authors/GeroNikolov/Album/1557311_10200559856758296_1747707602_o.jpg): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 21:59:02 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/122 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 72
+[18-Mar-2015 22:03:40 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/122 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[18-Mar-2015 22:03:40 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/122): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 22:09:41 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 78
+[18-Mar-2015 22:09:55 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[18-Mar-2015 22:09:55 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/image.jpg2): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 22:10:19 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg3 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 78
+[18-Mar-2015 22:11:55 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg4 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 78
+[18-Mar-2015 22:12:48 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg3 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[18-Mar-2015 22:12:48 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/image.jpg3): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[18-Mar-2015 22:15:40 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[18-Mar-2015 22:17:34 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/image.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[18-Mar-2015 22:29:08 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[18-Mar-2015 22:52:01 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[18-Mar-2015 22:53:27 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[18-Mar-2015 22:53:32 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[19-Mar-2015 10:39:21 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[19-Mar-2015 11:09:03 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[19-Mar-2015 15:15:16 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 145
+[19-Mar-2015 15:15:16 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 413
+[19-Mar-2015 15:15:16 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 651
+[19-Mar-2015 15:20:54 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 145
+[19-Mar-2015 15:20:54 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 413
+[19-Mar-2015 15:20:54 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 651
+[19-Mar-2015 15:28:48 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 145
+[19-Mar-2015 15:28:48 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 413
+[19-Mar-2015 15:28:48 Europe/Sofia] PHP Warning:  get_headers(): This function may only be used against URLs in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 651
+[19-Mar-2015 20:45:05 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[19-Mar-2015 20:45:06 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[19-Mar-2015 21:03:44 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 08:37:30 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 13:27:26 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 13:29:40 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 15:00:19 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 15:52:02 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10805487_612797932176620_277230014_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:52:20 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10805487_612797932176620_277230014_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:52:20 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10805487_612797932176620_277230014_n.jpg1): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:52:26 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:52:31 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:52:31 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:52:47 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:53:43 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:53:43 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:53:45 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:53:45 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:54:08 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:54:29 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:54:29 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:54:34 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:54:53 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:54:53 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:55:08 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg3 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 15:56:26 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg3 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:56:26 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg3): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 15:56:28 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 15:56:28 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 17:25:14 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 17:30:51 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[20-Mar-2015 17:36:25 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 17:36:30 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 79
+[20-Mar-2015 17:36:34 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 17:36:34 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg2): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 17:36:36 Europe/Sofia] PHP Warning:  filesize(): stat failed for ../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1 in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 33
+[20-Mar-2015 17:36:36 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Album/10822504_612798018843278_1033140168_n.jpg1): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteAlbumObject.php on line 41
+[20-Mar-2015 17:39:38 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 150
+[20-Mar-2015 17:39:40 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 430
+[20-Mar-2015 17:39:41 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 680
+[20-Mar-2015 23:38:43 Europe/Sofia] PHP Warning:  fopen(../Authors/AdminAdmin/Stack.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/addAllStoriesRUNONCE.php on line 8
+[21-Mar-2015 00:26:15 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[21-Mar-2015 10:24:09 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 11:12:15 Europe/Sofia] PHP Warning:  strip_tags() expects at most 2 parameters, 3 given in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 266
+[21-Mar-2015 13:44:19 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[21-Mar-2015 14:57:07 Europe/Sofia] PHP Warning:  fopen(../Authors//Following.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 53
+[21-Mar-2015 23:25:57 Europe/Sofia] PHP Parse error:  syntax error, unexpected '}' in /home/kdkcompu/gero/blogy/Library/PHP/setNewProfilePic.php on line 29
+[21-Mar-2015 23:29:18 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$newPicture' (T_VARIABLE) in /home/kdkcompu/gero/blogy/Library/PHP/setNewProfilePic.php on line 56
+[22-Mar-2015 00:21:37 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 01:16:33 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 11:31:46 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 12:41:38 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 12:52:58 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 14:40:17 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 15:12:40 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 15:33:37 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 16:03:03 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 10
+[22-Mar-2015 16:39:36 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 18:27:11 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 18:28:27 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[22-Mar-2015 19:34:15 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 00:53:56 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 10:54:58 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 10:58:01 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 11:12:11 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 11:35:54 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 11:55:51 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 21:32:00 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 21
+[23-Mar-2015 21:32:03 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[23-Mar-2015 21:38:38 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 00:02:15 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$getSizeInMB' (T_VARIABLE) in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 00:02:42 Europe/Sofia] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 00:02:51 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$decimals' (T_VARIABLE), expecting ']' in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 00:03:02 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$decimals' (T_VARIABLE), expecting ']' in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 00:03:37 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$getSizeInMB' (T_VARIABLE) in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 00:03:51 Europe/Sofia] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 42
+[24-Mar-2015 10:17:12 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 11:56:39 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 18:27:04 Europe/Sofia] PHP Warning:  fopen(../Authors/BaiGanio/Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 13
+[24-Mar-2015 18:27:12 Europe/Sofia] PHP Warning:  fopen(../Authors/BaiGanio/Messages/Notification.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadMenu.php on line 12
+[24-Mar-2015 18:27:15 Europe/Sofia] PHP Warning:  fopen(../Authors/BaiGanio/FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 18:27:20 Europe/Sofia] PHP Warning:  fopen(../Authors/BaiGanio/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 21
+[24-Mar-2015 18:27:41 Europe/Sofia] PHP Warning:  fopen(../Authors/BaiGanio/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 21
+[24-Mar-2015 20:44:16 Europe/Sofia] PHP Warning:  fopen(../Authors/BabaGanya/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadBlogers.php on line 83
+[24-Mar-2015 20:44:23 Europe/Sofia] PHP Warning:  fopen(../Authors/BabaGanya/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadBlogers.php on line 83
+[24-Mar-2015 20:44:31 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[24-Mar-2015 20:44:41 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[24-Mar-2015 21:00:34 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:01:35 Europe/Sofia] PHP Warning:  fopen(../Authors/BabaGanya/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadBlogers.php on line 83
+[24-Mar-2015 21:01:40 Europe/Sofia] PHP Warning:  fopen(../Authors/BabaGanya/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadBlogers.php on line 83
+[24-Mar-2015 21:16:16 Europe/Sofia] PHP Warning:  fopen(../Authors/�������/FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/openBloger.php on line 38
+[24-Mar-2015 21:16:36 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 151
+[24-Mar-2015 21:16:37 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 434
+[24-Mar-2015 21:16:37 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 687
+[24-Mar-2015 21:16:53 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 151
+[24-Mar-2015 21:16:53 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 434
+[24-Mar-2015 21:16:53 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 620
+[24-Mar-2015 21:17:11 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:17:15 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:17:16 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:17:20 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 151
+[24-Mar-2015 21:17:20 Europe/Sofia] PHP Warning:  strtolower() expects parameter 1 to be string, array given in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 434
+[24-Mar-2015 21:17:20 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/helpFunctions.php on line 620
+[24-Mar-2015 21:17:31 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadMenu.php on line 12
+[24-Mar-2015 21:18:09 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:18:10 Europe/Sofia] PHP Warning:  : failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 21:58:46 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/buildAuthor.php:10) in /home/kdkcompu/gero/blogy/Library/PHP/buildAuthor.php on line 166
+[24-Mar-2015 22:00:33 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 22:01:10 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[24-Mar-2015 23:02:05 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 00:08:51 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 00:11:28 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 00:50:04 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 00:50:04 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 00:57:02 Europe/Sofia] PHP Warning:  imagejpeg() expects parameter 1 to be resource, string given in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 86
+[25-Mar-2015 00:57:15 Europe/Sofia] PHP Warning:  imagejpeg() expects parameter 1 to be resource, string given in /home/kdkcompu/gero/blogy/Library/PHP/Upload.php on line 86
+[25-Mar-2015 01:19:33 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 01:24:22 Europe/Sofia] PHP Warning:  fopen(../Authors//Following.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 52
+[25-Mar-2015 10:44:32 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 11:12:19 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[25-Mar-2015 11:51:04 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[25-Mar-2015 11:53:21 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[25-Mar-2015 11:53:23 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[25-Mar-2015 11:57:47 Europe/Sofia] PHP Warning:  fopen(../Authors/BokoBokov/config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/storeMessages.php on line 100
+[25-Mar-2015 12:07:03 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[25-Mar-2015 21:31:35 Europe/Sofia] PHP Warning:  unlink(../Authors/GeroNikolov/Posts/Мъдро.txt): No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 71
+[25-Mar-2015 21:31:35 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php:71) in /home/kdkcompu/gero/blogy/Library/PHP/deleteMethod.php on line 73
+[25-Mar-2015 23:58:11 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 00:44:04 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 00:59:10 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 00:59:20 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/checkLog.php on line 21
+[26-Mar-2015 00:59:23 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 06:35:07 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 08:45:45 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 18:30:57 Europe/Sofia] PHP Warning:  fopen(../Authors//config.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/readMessage.php on line 17
+[26-Mar-2015 18:59:36 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 19:37:31 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 19:37:33 Europe/Sofia] PHP Warning:  fopen(../Authors//Following.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/loadAlbum.php on line 52
+[26-Mar-2015 19:40:40 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 23:35:15 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[26-Mar-2015 23:42:49 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44
+[27-Mar-2015 12:19:33 Europe/Sofia] PHP Warning:  fopen(../Authors//FollowersID.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/PHP/logedIn.php on line 44

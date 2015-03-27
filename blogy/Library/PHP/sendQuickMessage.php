@@ -49,6 +49,13 @@
 		} else {
 			sendMessage($sender, $conn, $message, $title);
 		}
+		
+		$sql = "CREATE TABLE pushTable$authorId (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
+		if ($conn->query($sql) === TRUE) {
+			buildNotification($sender, $authorId, $conn);
+		} else {
+			buildNotification($sender, $authorId, $conn);				
+		}
 	}
 	$conn->close();
 	
@@ -71,6 +78,12 @@
 	header($realoc);
 	
 //..........................................//	
+	function buildNotification($sender, $followerID, $conn) {
+		$date = date("d.M.Y");
+		$sql = "INSERT INTO pushTable$followerID (MEMBER, MESSAGE, DATE) VALUES ('$sender', 'just send you a message', '$date')";
+		$conn->query($sql);
+	}
+
 	function reCordinateStack($sender, $authorId) {
 		$stack = array();
 		$loadStack = fopen("../Authors/$sender/Messages/Stack.txt", "r") or die("Unable to load stack.");

@@ -42,6 +42,12 @@
 	}
 	fclose($countFollowers);
 	
+	if ($followersCount == "1") {
+		$cmdFollowers = "$followersCount follower";
+	} else {
+		$cmdFollowers = "$followersCount followers";
+	}
+	
 	//Connect to data base
 	$servername = "localhost";
 	$username = "kdkcompu_gero";
@@ -72,7 +78,12 @@ echo "
 			<link href='../../style.css' rel='stylesheet' type='text/css' media='screen'>
 			<link href='../../fonts.css' rel='stylesheet' type='text/css'>
 			<script type='text/javascript' src='../../java.js'></script>
-			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>			
+			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>	
+			
+			<link href='../../LightBox/css/lightbox.css' type='text/css' rel='stylesheet' />
+			<script src='../../LightBox/js/jquery-1.11.0.min.js'></script>
+			<script src='../../LightBox/js/lightbox.min.js'></script>
+			
 			<script type='text/javascript'>
 				var flag = 0;
 				
@@ -90,20 +101,6 @@ echo "
 						shareFlag = 0;
 					}
 				}
-				
-				function doPost() {
-					if (flag == 0) {
-						document.getElementById('messageInput').style.visibility='visible'; 
-						$('#messageInput').slideDown('fast');
-						flag = 1;
-					}
-					else
-					if (flag == 1) {
-						$('#messageInput').slideUp('fast');
-						document.getElementById('messageInput').style.visibility='hidden'; 
-						flag = 0;
-					}
-				}
 			
 				function sendMessage() {
 					var text = document.getElementById('content').value;
@@ -116,41 +113,12 @@ echo "
 						document.forms['messageInput'].submit();
 					}
 				}
-			
-				function loadBlogers() {
-					document.getElementById('post').action = 'loadBlogers.php';
-					document.forms['post'].submit();
-				}
-
-				function logOut() {
-					document.getElementById('post').action = 'LogOut.php';
-					document.forms['post'].submit();
-				}
 				
 				function followAuthor() {
 					document.getElementById('post').action = 'followBloger.php';
 					document.forms['post'].submit();
 				}
-				
-				function openMessages(state) {
-					if (state == 0) {
-						document.getElementById('cmd').value = '0';
-						document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-						document.forms['accountInfo'].submit();
-					}
-					else
-					if (state == 1) {
-						document.getElementById('cmd').value = '1';
-						document.getElementById('accountInfo').action = '../PHP/storeMessages.php';
-						document.forms['accountInfo'].submit();
-					}
-				}
-				
-				function exploreStories() {
-					document.getElementById('accountInfo').action = '../PHP/exploreFStories.php';
-					document.forms['accountInfo'].submit();
-				}
-				
+
 				function shareStory() {
 					document.getElementById('share').action = '../PHP/writeMethod.php';
 					document.forms['share'].submit();
@@ -273,9 +241,13 @@ echo "
 
 	if ($blogerHref != "NULL") {
 		echo "
+			<div id='profilePictureImg'>
+				<a href='$blogerImg' class='profilePicture' data-lightbox='roadtrip'>
+					<img src='$blogerImg' />
+				</a>
+			</div>
+			<br>
 			<a href='$blogerHref' target='_blank'>
-				<img src='$blogerImg' />
-				<br>
 				$profileName
 			</a>
 		";
@@ -283,9 +255,13 @@ echo "
 	else
 	if ($blogerHref == "NULL") {
 		echo "
+			<div id='profilePictureImg'>
+				<a href='$blogerImg' class='profilePicture' data-lightbox='roadtrip'>
+					<img src='$blogerImg' />
+				</a>
+			</div>
+			<br>
 			<a class='inactive'>
-				<img src='$blogerImg' />
-				<br>
 				$profileName
 			</a>
 		";
@@ -294,7 +270,7 @@ echo "
 echo "
 			<br>
 			<div id='followers'>
-				<h1>$followersCount followers</h1>
+				<h1>$cmdFollowers</h1>
 ";
 
 	$isFollower = 0;

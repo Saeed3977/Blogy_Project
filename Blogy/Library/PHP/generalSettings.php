@@ -104,11 +104,6 @@ echo "
 					document.forms['controlPanel'].submit();
 				}
 			}
-
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
 		</script>
 	</head>
 	<body>
@@ -116,11 +111,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "
-		<form id='accountInfo' method='post' style='display: none;'>
-			<input type='text' name='sender' value='$sender'></input>
-			<input type='text' id='cmd' name='cmd'></input>
-		</form>
-
 		<div id='body'>
 			<form id='controlPanel' action='../PHP/configBuild.php' method='post'>
 				<div id='pushDownFirefox'>

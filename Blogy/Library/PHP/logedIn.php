@@ -48,6 +48,12 @@
 	}
 	fclose($countFollowers);
 	
+	if ($followersCount == "1") {
+		$cmdFollowers = "$followersCount follower";
+	} else {
+		$cmdFollowers = "$followersCount followers";
+	}
+	
 	$profileName = "$profileFirst $profileLast";
 	
 	$stack = array();
@@ -73,7 +79,13 @@ echo "
 			<script type='text/javascript' src='../../java.js'></script>
 			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 			<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
-			<script type='text/javascript'> 
+			<script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+			
+			<link href='../../LightBox/css/lightbox.css' type='text/css' rel='stylesheet' />
+			<script src='../../LightBox/js/jquery-1.11.0.min.js'></script>
+			<script src='../../LightBox/js/lightbox.min.js'></script>
+			
+			<script type='text/javascript'> 			
 				var stack = '$stack'.split(',');
 				var flag = 0;
 				
@@ -112,7 +124,7 @@ echo "
 				}
 				
 				function writePost() {
-					var title = document.getElementById('title').value;
+					var title = document.getElementById('titleIdCode').value;
 					var isHere = 0;
 					
 					for (var i = 0; i < stack.length; i++) {
@@ -151,11 +163,6 @@ echo "
 					document.getElementById(title).action = '../PHP/deleteMethod.php';
 					document.forms[title].submit();
 				}
-				
-				function logOut() {
-					document.getElementById('post').action = '../PHP/LogOut.php';
-					document.forms['post'].submit();
-				}
 			</script>
 		</head>
 		<body onload='hideElement()'>
@@ -170,10 +177,6 @@ echo "
 ";
 	include 'loadMenu.php';
 echo "
-			<form id='accountInfo' method='post' style='display: none;'>
-				<input type='text' name='sender' value='$sender'></input>
-			</form>
-			
 			<div id='shareMethod' style='display: none;'>
 				<div id='buttons'>
 					<div id='facebook'>
@@ -209,9 +212,13 @@ echo "
 	
 	if ($profileHref != "NULL") {
 		echo "
+			<div id='profilePictureImg'>
+				<a href='$profilePic' class='profilePicture' data-lightbox='roadtrip'>
+					<img src='$profilePic' />
+				</a>
+			</div>
+			<br>
 			<a href='$profileHref' target='_blank'>
-				<img src='$profilePic' />
-				<br>
 				$profileName
 			</a>
 		";
@@ -219,9 +226,13 @@ echo "
 	else
 	if ($profileHref == "NULL") {
 		echo "
+			<div id='profilePictureImg'>
+				<a href='$profilePic' class='profilePicture' data-lightbox='roadtrip'>
+					<img src='$profilePic' />
+				</a>
+			</div>
+			<br>
 			<a class='inactive'>
-				<img src='$profilePic' />
-				<br>
 				$profileName
 			</a>
 		";
@@ -229,7 +240,7 @@ echo "
 
 echo "
 				<div id='followers'>
-					<a href='exploreFollowers.php' class='header'>$followersCount followers</a>
+					<a href='exploreFollowers.php' class='header'>$cmdFollowers</a>
 					<br>
 					<a href='#' onclick='doPost()'>Post</a>
 				</div>
@@ -239,7 +250,7 @@ echo "
 echo "
 			<div id='body'>
 				<form id='post' method='post' style='visibility: hidden; display: none;' enctype='multipart/form-data'>
-					<input type='text' placeholder='Give it title.' id='title' name='title'>
+					<input type='text' placeholder='Give it title.' id='titleIdCode' name='title'>
 					<input type='text' placeholder='Place link for an image or a video' id='postImg' name='photo'>
 					<input type='file' style='display:none' id='dialogWindow' name='fileUpload' onchange='sendLocation()'/>
 					<textarea placeholder='What&#39;s up ?' id='content' name='content'></textarea>

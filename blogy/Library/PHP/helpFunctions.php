@@ -1,5 +1,5 @@
 <?php
-	function buildPost($sender, $post) {
+	function buildPost($sender, $post) {		
 		$postBuild = (string)NULL;
 		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
 		$count = 0;
@@ -16,6 +16,7 @@
 		$fd = fopen("../Authors/$sender/Posts/$post.txt", "r") or die("Unable to open post.");
 		while (!feof($fd)) {
 			$line = fgets($fd);
+			$line = strip_tags($line);
 			if ($count == 0) {
 				$titlePost = trim($line);
 			}
@@ -142,8 +143,10 @@
 				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
 			}
 			else {
-				$url_headers=get_headers($postImg, 1);
-
+				if (filter_var($postImg, FILTER_VALIDATE_URL)) {
+					$url_headers=get_headers($postImg, 1);
+				}
+					
 				if(isset($url_headers['Content-Type'])){
 					$type=strtolower($url_headers['Content-Type']);
 
@@ -161,10 +164,20 @@
 					$valid_image_type['image/x-icon']='';
 
 					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+						$cmd = "
+							<a href='$postImg' data-lightbox='roadtrip'>
+								<img src='$postImg' alt='Image link is broken :('/>
+							</a>
+						";
 					} else {
 						$cmd = "<h2>Unsupported player :(</h2>";
 					}
+				} else {
+					$cmd = "
+						<a href='$postImg' data-lightbox='roadtrip'>
+							<img src='$postImg' alt='Image link is broken :('/>
+						</a>
+					";
 				}
 			}
 			
@@ -284,6 +297,7 @@
 		$fd = fopen("../Authors/$sender/Posts/".$post.".txt", "r") or die("Unable to open post.");
 		while (!feof($fd)) {
 			$line = fgets($fd);
+			$line = strip_tags($line);
 			if ($count == 0) {
 				$titlePost = trim($line);
 			}
@@ -357,7 +371,9 @@
 				} else {
 					$url = NULL;
 					if(preg_match($reg_exUrl, $line, $url)) {
-						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						if (!strpos($line, "<img") && !strpos($line, "<a")) {
+							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						}
 					}
 					$contentPost .= $line."<br>";
 				}
@@ -410,7 +426,9 @@
 				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
 			}
 			else {
-				$url_headers=get_headers($postImg, 1);
+				if (filter_var($postImg, FILTER_VALIDATE_URL)) {
+					$url_headers=get_headers($postImg, 1);
+				}
 
 				if(isset($url_headers['Content-Type'])){
 					$type=strtolower($url_headers['Content-Type']);
@@ -429,10 +447,20 @@
 					$valid_image_type['image/x-icon']='';
 
 					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+						$cmd = "
+							<a href='$postImg' data-lightbox='roadtrip'>
+								<img src='$postImg' alt='Image link is broken :('/>
+							</a>
+						";
 					} else {
 						$cmd = "<h2>Unsupported player :(</h2>";
 					}
+				} else {
+					$cmd = "
+						<a href='$postImg' data-lightbox='roadtrip'>
+							<img src='$postImg' alt='Image link is broken :('/>
+						</a>
+					";
 				}
 			}
 			
@@ -497,6 +525,7 @@
 		$fd = fopen("../Authors/$postAuthor/Posts/$post.txt", "r") or die("Unable to open post.");
 		while (!feof($fd)) {
 			$line = fgets($fd);
+			$line = strip_tags($line);
 			if ($count == 0) {
 				$titlePost = trim($line);
 			}
@@ -570,7 +599,9 @@
 				} else {
 					$url = NULL;
 					if(preg_match($reg_exUrl, $line, $url)) {
-						$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						if (!strpos($line, "<img") && !strpos($line, "<a")) {
+							$line = preg_replace($reg_exUrl, "<a href='$url[0]' target='_blank'>$url[0]</a>", $line);
+						}
 					}
 					$contentPost .= $line."<br>";
 				}
@@ -648,8 +679,10 @@
 				$cmd = "<iframe src='$src' allowFullScreen frameborder=0></iframe>";
 			}
 			else {
-				$url_headers=get_headers($postImg, 1);
-
+				if (filter_var($postImg, FILTER_VALIDATE_URL)) {
+					$url_headers=get_headers($postImg, 1);
+				}
+				
 				if(isset($url_headers['Content-Type'])){
 					$type=strtolower($url_headers['Content-Type']);
 
@@ -667,10 +700,20 @@
 					$valid_image_type['image/x-icon']='';
 
 					if(isset($valid_image_type[$type])) {
-						$cmd = "<img src='$postImg' alt='Image link is broken :('/>";
+						$cmd = "
+							<a href='$postImg' data-lightbox='roadtrip'>
+								<img src='$postImg' alt='Image link is broken :('/>
+							</a>
+						";
 					} else {
 						$cmd = "<h2>Unsupported player :(</h2>";
 					}
+				} else {
+					$cmd = "
+						<a href='$postImg' data-lightbox='roadtrip'>
+							<img src='$postImg' alt='Image link is broken :('/>
+						</a>
+					";
 				}
 			}
 			

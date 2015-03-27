@@ -20,10 +20,6 @@ echo "
 		<script type='text/javascript' src='../../java.js'></script>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		<script type = 'text/javascript'> 			
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
 		</script>
 	</head>
 	<body>
@@ -31,11 +27,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "
-		<form id='accountInfo' method='post' style='display: none;'>
-			<input type='text' name='sender' value='$sender'></input>
-			<input type='text' id='cmd' name='cmd'></input>
-		</form>
-		
 		<div id='sub-logo'>
 			<h1>Settings</h1>
 		</div>

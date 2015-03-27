@@ -9,7 +9,7 @@
 	
 	$line_count = 0;
 	
-	$messangerId = $_COOKIE['messangerId'];
+	$messangerId = $_COOKIE['receiverId'];
 
 	if (!isset($messengerId)) {
 		echo "<script>window.close();</script>";
@@ -93,11 +93,6 @@ echo "
 					}
 				}
 
-				function logOut() {
-					document.getElementById('post').action = 'LogOut.php';
-					document.forms['post'].submit();
-				}
-
 				function sendMessage() {
 					var text = document.getElementById('messageTXT').value;
 					var img = document.getElementById('imgHolder').value;
@@ -124,15 +119,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "
-			
-			<form id='accountInfo' method='post' style='display: none;'>
-				<input type='text' name='sender' value='$sender'></input>
-				<input type='text' id='cmd' name='cmd'></input>
-			</form>
-			<form id='post' method='post' style='display: none;'>
-				<input name='sender' value='$sender'></input>
-			</form>
-			
 			<div id='body'>
 				<form id='answer' method='post' style='visibility: hidden; display: none;'>
 					<textarea id='messageTXT' name='content' placeholder='What&#39;s up'></textarea><br>
@@ -263,11 +249,7 @@ echo "
 		$message = html_entity_decode($message);
 		
 		$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-		$message = str_replace("<script>", "", $message);
-		$message = str_replace("</script>", "", $message);;
-		$message = str_replace("<?php", "", $message);
-		$message = str_replace("?>", "", $message);
-		$message = str_replace("<br />", "", $message);
+		$message = strip_tags($message, "<br><br /><img>");
 		if (!strpos($message, "Bad image link")) {
 			$url = NULL;
 			if(preg_match($reg_exUrl, $message, $url)) {

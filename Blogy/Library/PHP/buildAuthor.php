@@ -6,6 +6,11 @@
 	$profile = $_POST['social'];
 	$pass = $_POST['pass'];
 	
+	if (!ctype_alnum($fName) || !ctype_alnum($lName)) {
+		echo "<script>window.location='../Errors/E12.html'</script>";
+		die();
+	}
+	
 	if ($profile == "") {
 		$profile = "NULL";
 	}
@@ -59,6 +64,16 @@
 	
 	//Build Author
 	mkdir("../Authors/$fullName", 0755, true);
+	
+	//Create security index
+	$buildSecurity = fopen("../Authors/$fullName/index.php", "w") or die("Fatal: Unable to build security.");
+	$input = "
+		<?php
+			header('Location: ../../../SignIn.html');
+		?>
+	";
+	fwrite($buildSecurity, $input);
+	fclose($buildSecurity);
 		
 		//User vision
 	$content = authorTemplate("../Templates/Author.php");

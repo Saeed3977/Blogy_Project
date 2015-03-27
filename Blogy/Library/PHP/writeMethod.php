@@ -81,11 +81,8 @@
 			$contentPost = nl2br($contentPost);
 			$postPic = $_POST['photo'];
 			
-			$contentPost = str_replace("<script>", "", $contentPost);
-			$contentPost = str_replace("</script>", "", $contentPost);;
-			
-			$contentPost = str_replace("<?php", "", $contentPost);
-			$contentPost = str_replace("?>", "", $contentPost);
+			$titlePost = strip_tags($titlePost);
+			$content = strip_tags($contentPost);
 			
 			$length = strlen($titlePost);
 			for ($ch = 0; $ch < $length; $ch++) {
@@ -228,7 +225,7 @@
 			$mail = explode("-", $followerID)[0];
 			$followerFullName = explode("-", $followerID)[1];
 			
-			$sql = "CREATE TABLE pushTable$followerFullName (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			$sql = "CREATE TABLE pushTable$followerFullName (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
 			if ($conn->query($sql) === TRUE) {
 				buildNotification($sender, $followerFullName, $conn);
 			} else {
@@ -269,7 +266,8 @@
 	}
 	
 	function buildNotification($sender, $followerID, $conn) {
-		$sql = "INSERT INTO pushTable$followerID (MEMBER, MESSAGE) VALUES ('$sender', 'just shared a story')";
+		$date = date("d.M.Y");
+		$sql = "INSERT INTO pushTable$followerID (MEMBER, MESSAGE, DATE) VALUES ('$sender', 'just shared a story', '$date')";
 		$conn->query($sql);
 	}
 	

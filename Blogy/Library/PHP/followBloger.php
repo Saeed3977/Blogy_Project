@@ -132,7 +132,7 @@
 	
 	if ($followerFound == 0) {
 		$subject = "New follower";
-		$content = "Hello there. $senderFN $senderLN with e-mail: $senderMail, just start following you. ";
+		$content = "Hello there. $senderFN $senderLN with e-mail: $senderMail, just started following you. ";
 		mail($blogerMail, $subject, $content);
 	}
 

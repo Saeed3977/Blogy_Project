@@ -26,14 +26,9 @@ echo "
 			<script type='text/javascript' src='../../java.js'></script>
 			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 			<script type='text/javascript'>
-				function logOut() {
-					document.getElementById('post').action = 'LogOut.php';
-					document.forms['post'].submit();
-				}
-				
 				function readMessage(id) {
-					document.cookie = \"messangerId=\"+id;
-					 window.location=\"readMessage.php\";
+					document.cookie = \"receiverId=\"+id;
+					window.location=\"readMessage.php\";
 				}
 			</script>
 		</head>
@@ -42,10 +37,6 @@ echo "
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
 echo "
-			<form id='accountInfo' method='post' style='display: none;'>
-				<input type='text' name='sender' value='$sender'></input>
-				<input type='text' id='cmd' name='cmd'></input>
-			</form>
 			<form id='post' method='post' style='display: none;'>
 				<input name='sender' value='$sender'></input>
 			</form>
@@ -56,7 +47,7 @@ echo "
 			<div id='body'>
 				<div id='messages'>
 ";
-	
+
 	$line_count = 0;
 	$stack = array();
 	$loadStack = fopen("../Authors/$sender/Messages/Stack.txt", "r") or die("Unable to load stack.");

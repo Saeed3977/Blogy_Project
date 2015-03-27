@@ -103,7 +103,7 @@ function sendMessageBox() {
 	var messageText = document.getElementById('messageArea').value;
 	if (messageText.trim() != "") {
 		document.getElementById('pageId').value = window.location.href.toString().split('/').pop(-1);
-		document.getElementById('scrollPosSidebar').value =  $(window).scrollTop();
+		document.getElementById('scrollPosSidebar').value = $(window).scrollTop();
 		document.getElementById('sendArea').action = "sendQuickMessage.php";
 		document.forms['sendArea'].submit();
 	} else {
@@ -232,8 +232,15 @@ function showHideHomeMenu() {
 }
 
 function openDialog() {
-	document.getElementById("dialogWindow").click();
+	document.getElementById("fileToUpload").click();
 }
+function startToUpload() {
+	if (document.getElementById('fileToUpload').value != "") {
+		document.getElementById('toUpload').action = 'Upload.php';
+		document.forms['toUpload'].submit();
+	}
+}
+
 function sendLocation() {
 	document.getElementById("postImg").value = document.getElementById("dialogWindow").value;
 	
@@ -251,4 +258,45 @@ function checkLocation() {
 	if (getObject.value != document.getElementById("dialogWindow").value) {
 		document.cookie = "uploadPicture=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	}
+}
+
+function logMeOut() {
+	window.location = "LogOut.php";
+}
+
+//Read message from notification
+function readMessage(id) {
+	document.cookie = "receiverId="+id;
+	window.location="readMessage.php";
+}
+
+//Album options
+function setAsProfilePic(id) {
+	document.cookie = "newProfilePicture="+id;
+	window.location = 'setNewProfilePic.php';
+}
+function showContainerPost(id, sender) {
+	document.getElementById("imgToPost").src = '../../../Library/Authors/'+sender+'/Album/'+id;
+	document.getElementById("postImg").value = '../../../Library/Authors/'+sender+'/Album/'+id;
+	
+	$("#makePost").fadeIn('fast');
+}
+function hideContainerPost(id) {
+	$("#makePost").fadeOut('fast');
+}
+function shareAlbumObject(userId) {
+	document.cookie = "sharePictureWith="+userId;
+	window.location = 'sendAlbumImage.php';
+}
+function showContainerFriends(id) {
+	$("#storeFriends").fadeIn("fast");
+	document.cookie = "sharePicture="+id;
+}
+function hideContainerFriends() {
+	$("#storeFriends").fadeOut("fast");
+	document.cookie = "sharePicture=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+}
+function deleteObjectFromAlbum(id) {
+	document.getElementById("picture"+id).action = 'deleteAlbumObject.php';
+	document.forms["picture"+id].submit();
 }

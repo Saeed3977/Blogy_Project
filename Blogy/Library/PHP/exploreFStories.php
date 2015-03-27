@@ -28,12 +28,11 @@ echo "
 		<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		
+		<link href='../../LightBox/css/lightbox.css' type='text/css' rel='stylesheet' />
+		<script src='../../LightBox/js/jquery-1.11.0.min.js'></script>
+		<script src='../../LightBox/js/lightbox.min.js'></script>
+		
 		<script type = 'text/javascript'> 
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
-			
 			function loadAll() {				
 				document.getElementById('scrollPos').value = $(window).scrollTop();
 				document.getElementById('reSend').action = '../PHP/exploreFStories.php';

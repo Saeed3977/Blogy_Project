@@ -20,10 +20,6 @@ echo "
 		<script type='text/javascript' src='../../java.js'></script>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		<script type = 'text/javascript'> 			
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
 		</script>
 	</head>
 	<body>

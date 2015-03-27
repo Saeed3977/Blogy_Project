@@ -20,7 +20,8 @@ echo "
 					<button type='button' class='homeButton' onclick='showHideHomeMenu()'><img src='$profilePic'></button>
 					<div id='dropDownMenu' class='dropDown' style='display: none;'>
 						<a href='logedIn.php' class='split'>Home</a>
-						<a href='loadAlbum.php'>Album</a>
+						<a href='loadAlbum.php' class='split'>Album</a>
+						<a href='../Errors/M2.html' target='_blank'>Notes</a>
 					</div>
 				</div>
 ";
@@ -35,7 +36,7 @@ echo "
 				<a href='openSettings.php'>Settings</a>
 				<a href='loadBlogers.php'>Bloggers</a>
 				<a href='exploreFStories.php'>Stories</a>
-				<button type='button' class='logOut' onclick='logOut()'>Log out</button>
+				<button type='button' class='logOut' onclick='logMeOut()'>Log out</button>
 			</div>
 			<div id='click-container' onclick='showHideNotifications()'>
 				<h1>Notifications</h1>
@@ -55,13 +56,14 @@ echo "
 	
 	//Check push notifications
 	$pushNotifications = array();
-	$sql = "SELECT MEMBER, MESSAGE FROM pushTable$sender";
+	$sql = "SELECT MEMBER, MESSAGE, DATE FROM pushTable$sender";
 	$pick = $conn->query($sql);
 	if ($pick->num_rows > 0) {
 		while ($row = $pick->fetch_assoc()) {
 			$member = $row['MEMBER'];
 			$message = $row['MESSAGE'];
-			array_push($pushNotifications, "$member-$message");
+			$date = $row['DATE'];
+			array_push($pushNotifications, "$member-$message-$date");
 		}
 	}
 
@@ -114,6 +116,7 @@ echo "
 		foreach ($pushNotifications as $notification) {
 			$member = explode("-", $notification)[0];
 			$message = explode("-", $notification)[1];
+			$date = explode("-", $notification)[2];
 			$lineCount = 0;
 			$pullInfo = fopen("../Authors/$member/config.txt", "r") or die("Fatal: Could not load.");
 			while (!feof($pullInfo)) {
@@ -140,8 +143,17 @@ echo "
 			}
 			fclose($pullInfo);
 			
-			$build = "
-				<div id='notification'>
+			$date = str_replace(".", "-", $date);
+			
+			if (strpos($message, "you a message")) {
+				$message = "just send you a <a href='#' onclick='readMessage(\"$member\")'>message</a>";
+			}
+			
+			echo "
+				<div id='notification'>					
+					<div id='notificationDateContainer'>
+						$date
+					</div>
 					<p>
 						<a href='openBloger.php' onclick=\"openBloger('$member')\">
 							<img src='$memberImg' />
@@ -158,8 +170,6 @@ echo "
 					</form>
 				</div>
 			";
-			
-			echo "$build";
 		}
 	echo"
 			</div>

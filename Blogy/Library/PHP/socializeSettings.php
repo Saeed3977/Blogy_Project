@@ -25,22 +25,13 @@
 		<script type='text/javascript' src='../../java.js'></script>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 		<script type = 'text/javascript'> 			
-			function logOut() {
-				document.getElementById('accountInfo').action = '../PHP/LogOut.php';
-				document.forms['accountInfo'].submit();
-			}
 		</script>
 	</head>
 	<body>
 ";
 	include 'loadMenu.php';
 	include 'loadSuggestedBlogers.php';
-echo "	
-		<form id='accountInfo' method='post' style='display: none;'>
-			<input type='text' name='sender' value='$sender'></input>
-			<input type='text' id='cmd' name='cmd'></input>
-		</form>
-		
+echo "
 		<div id='sub-logo'>
 			<h1>Statistics</h1>
 		</div>
@@ -188,9 +179,13 @@ echo "
 	}
 	fclose($loadFollowing);
 	
-	$loadFollowers =  fopen("../Authors/$sender/Followers.html", "r") or die('Unable to open file !');
-	$followersCount = fread($loadFollowers, filesize("../Authors/$sender/Followers.html"));
-	fclose($loadFollowers);
+	$followersCount = -1;
+	$countFollowers =  fopen("../Authors/$sender/FollowersID.html", "r") or die("Fatal: Could not get Followers.");
+	while (!feof($countFollowers)) {
+		$followersCount++;
+		$line = trim(fgets($countFollowers));
+	}
+	fclose($countFollowers);
 	
 	if ($followersCount == "1") {
 		$cmd = "$followersCount follower";

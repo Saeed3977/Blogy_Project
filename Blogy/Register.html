@@ -9,51 +9,51 @@
 		<link rel="stylesheet" href="jquery-ui.min.css">
 		<script src="external/jquery/jquery.js"></script>
 		<script src="jquery-ui.min.js"></script>
-		
-		<script type="text/javascript" src="java.js"></script>
-		<script type="text/javascript">
+		<script src="java.js"></script>
+		<script>
 			function checkKey(e) {
 				if (e.keyCode == 13) {
 					regLoad();
 				}
 			}
-		
+		</script>
+		<script>
 			function regLoad() {
-				var fName = document.getElementById('fName').value;
-				var lName = document.getElementById('lName').value;
-				var email = document.getElementById('mail').value;
+				var fName = document.getElementById('fName');
+				var lName = document.getElementById('lName');
+				var email = document.getElementById('mail');
 				var profilePicture = document.getElementById('picture');
-				var social = document.getElementById('social').value;
-				var pass1 = document.getElementById('pass1').value;
-				var pass2 = document.getElementById('pass2').value;
+				var social = document.getElementById('social');
+				var pass1 = document.getElementById('pass1');
+				var pass2 = document.getElementById('pass2');
 				
-				document.getElementById('fName').value = document.getElementById('fName').value.toLowerCase();
-				document.getElementById('fName').value = document.getElementById('fName').value.charAt(0).toUpperCase() + document.getElementById('fName').value.substring(1);
-				document.getElementById('lName').value = document.getElementById('lName').value.toLowerCase();
-				document.getElementById('lName').value = document.getElementById('lName').value.charAt(0).toUpperCase() + document.getElementById('lName').value.substring(1);
-				document.getElementById('mail').value = document.getElementById('mail').value.toLowerCase();
+				fName.value = document.getElementById('fName').value.toLowerCase();
+				fName.value = document.getElementById('fName').value.charAt(0).toUpperCase() + document.getElementById('fName').value.substring(1);
+				lName.value = document.getElementById('lName').value.toLowerCase();
+				lName.value = document.getElementById('lName').value.charAt(0).toUpperCase() + document.getElementById('lName').value.substring(1);
+				email.value = document.getElementById('mail').value.toLowerCase();
 				
 				var flag = 0;
 				
-				if (fName == "")
+				if (fName.value == "")
 				{
 					alert("Enter your first name please.");
 					flag = 1;
 				}
 				else
-				if (lName == "")
+				if (lName.value == "")
 				{
 					alert("Enter your last name please.");
 					flag = 1;
 				}
 				else
-				if (email == "")
+				if (email.value == "")
 				{
 					alert("Enter your e-mail please.");
 					flag = 1;
 				}
 				else
-				if (profilePicture is undefined)
+				if (profilePicture.value == "")
 				{
 					var rand = Math.floor((Math.random() * 5) + 1);
 					if (rand == 1) {
@@ -77,49 +77,25 @@
 					}
 				}
 				else
-				if (pass1 == "")
+				if (pass1.value == "")
 				{
 					alert("Choose your password.");
 					flag = 1;
 				}
 				
 				if (flag == 0) {
-					if (!isValidEmailAddress(email)) {
+					if (!isValidEmailAddress(document.getElementById('mail').value)) {
 						alert("Enter valid e-mail address !");
 					} else {
-						if (pass1 == pass2) {
+						if (pass1.value == pass2.value) {
 							document.forms['register'].submit();
 						}
 						else
-						if (pass1 != pass2) {
+						if (pass1.value != pass2.value) {
 							alert("Passwords don't match !");
 						}
 					}
 				}
-				
-				/*
-				if (pass1 == pass2 && pass1 != "")
-				{
-					//var link = 'mailto:vtm.sunrise@gmail.com?subject=New Author&body=First name: ' + fName + '%0D%0ALast name: ' + lName + '%0D%0AE-mail: ' + email + '%0D%0AProfile picture: ' + profilePicture + '%0D%0ASocial network: ' + social + '%0D%0APassword: ' + pass1 + '%0D%0A%0D%0AYou are almost ready, just add link to your blogy style.';  
-					//window.location.href = link;
-				}
-				else
-				if (pass1 != pass2)
-				{
-					alert("Passwords don't match.");
-				}
-				*/
-
-			}
-		</script>
-		
-		<script>
-		   function showDialog(openFileDialog) {
-			   document.getElementById(openFileDialog).click();
-		   }
-		   
-			function imgChange() {
-				document.getElementById("picture").value = document.getElementById("choosePic").value;
 			}
 		</script>
 	</head>
@@ -132,11 +108,11 @@
 			<a href='SignIn.html'>Log in</a>
 		</div>
 		<div id="sub-logo">
-			<h1>Registration form</h1>
+			<h1>Register</h1>
 		</div>
 		<div id="body">
 			<div id="form">
-					<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+				<form id="register" action="Library/PHP/buildAuthor.php" method="post">
 					<input type="text" id="fName" name="fName" placeholder="First name"></input>
 					<br>
 					<input type="text" id="lName" name="lName" placeholder="Last name"></input>
