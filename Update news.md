@@ -12,7 +12,8 @@
 		5.View all his uploads on slideshow<br>
 	</b>
 	<br>
-<b>*2.Notes<br>
+<b>
+*2.Notes<br>
 *3.Search<br>
 *4.Debug methods from Milestone 1</b><br>
 	-In the process of making we found old bugs and we resolve them.<br>
