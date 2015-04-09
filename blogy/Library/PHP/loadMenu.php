@@ -16,13 +16,13 @@
 echo "
 			<div id='menu'>
 				<button type='button' class='hvr-push' onclick='showSideBar()'></button>
-				<div id='homeMenu'>
-					<button type='button' class='homeButton' onclick='showHideHomeMenu()'><img src='$profilePic'></button>
-					<div id='dropDownMenu' class='dropDown' style='display: none;'>
-						<a href='logedIn.php' class='split'>Home</a>
-						<a href='loadAlbum.php' class='split'>Album</a>
-						<a href='../Errors/M2.html' target='_blank'>Notes</a>
-					</div>
+				<div id='homeMenu' onmouseover='$(\"#dropDownMenu\").fadeIn(\"fast\");' onmouseleave='$(\"#dropDownMenu\").fadeOut(\"fast\");'>
+					<button type='button' class='homeButton'><img src='$profilePic'></button>
+						<div id='dropDownMenu' class='dropDown'>
+							<a href='logedIn.php' class='split'>Home</a>
+							<a href='loadAlbum.php' class='split'>Album</a>
+							<a href='loadNotes.php'>Notes</a>
+						</div>
 				</div>
 ";
 	if ($countNotifications != "0") {
@@ -34,9 +34,10 @@ echo "
 	}	
 echo "
 				<a href='openSettings.php'>Settings</a>
-				<a href='loadBlogers.php'>Bloggers</a>
+				<a href='loadFriends.php'>Bloggers</a>
 				<a href='exploreFStories.php'>Stories</a>
 				<button type='button' class='logOut' onclick='logMeOut()'>Log out</button>
+				<button type='button' class='searchButton' title='Search' onclick='window.location=\"searchInFriends.php\"; '><img src='../images/search.png' /></button>
 			</div>
 			<div id='click-container' onclick='showHideNotifications()'>
 				<h1>Notifications</h1>
@@ -118,75 +119,89 @@ echo "
 			$message = explode("-", $notification)[1];
 			$date = explode("-", $notification)[2];
 			$lineCount = 0;
-			$pullInfo = fopen("../Authors/$member/config.txt", "r") or die("Fatal: Could not load.");
-			while (!feof($pullInfo)) {
-				$line = trim(fgets($pullInfo));
-				if ($line != "") {
-					if ($lineCount == 0) {
-						$memberImg = $line;
+			if (!strpos($member, "is*")) {
+				$pullInfo = fopen("../Authors/$member/config.txt", "r") or die("Fatal: Could not load.");
+				while (!feof($pullInfo)) {
+					$line = trim(fgets($pullInfo));
+					if ($line != "") {
+						if ($lineCount == 0) {
+							$memberImg = $line;
+						}
+						else
+						if ($lineCount == 1) {
+							$memberHref = $line;
+						}
+						else
+						if ($lineCount == 3) {
+							$memberFN = $line;
+						}
+						else
+						if ($lineCount == 4) {
+							$memberLN = $line;
+							break;
+						}
 					}
-					else
-					if ($lineCount == 1) {
-						$memberHref = $line;
-					}
-					else
-					if ($lineCount == 3) {
-						$memberFN = $line;
-					}
-					else
-					if ($lineCount == 4) {
-						$memberLN = $line;
-						break;
-					}
+					$lineCount++;
 				}
-				$lineCount++;
-			}
-			fclose($pullInfo);
+				fclose($pullInfo);
+				
+				$date = str_replace(".", "-", $date);
 			
-			$date = str_replace(".", "-", $date);
-			
-			if (strpos($message, "you a message")) {
-				$message = "just send you a <a href='#' onclick='readMessage(\"$member\")'>message</a>";
-			}
-			
-			echo "
-				<div id='notification'>					
-					<div id='notificationDateContainer'>
-						$date
+				if (strpos($message, "you a message")) {
+					$message = "just send you a <a href='#' onclick='readMessage(\"$member\")'>message</a>";
+				}
+				
+				$build = "
+					<div id='notification'>					
+						<div id='notificationDateContainer'>
+							$date
+						</div>
+						<p>
+							<a href='openBloger.php' onclick=\"openBloger('$member')\">
+								<img src='$memberImg' />
+								$memberFN $memberLN
+							</a>
+							$message.
+						</p>
+						<form id='$member' method='post' style='display: none;'>
+							<input type='text' name='blogSender' value='$member'></input>
+							<input type='text' name='blogerFN' value='$memberFN'></input>
+							<input type='text' name='blogerLN' value='$memberLN'></input>
+							<input type='text' name='blogerImg' value='$memberImg'></input>
+							<input type='text' name='blogerHref' value='$memberHref'></input>
+						</form>
 					</div>
-					<p>
-						<a href='openBloger.php' onclick=\"openBloger('$member')\">
+				";
+			} else {
+				$memberImg = "https://cdn4.iconfinder.com/data/icons/Mobile-Icons/128/07_note.png";
+				$message = "<a href='loadNotes.php'>".$message."</a>";
+			
+				$build = "
+					<div id='notification'>					
+						<div id='notificationDateContainer'>
+							$date
+						</div>
+						<p>
 							<img src='$memberImg' />
-							$memberFN $memberLN
-						</a>
-						$message.
-					</p>
-					<form id='$member' method='post' style='display: none;'>
-						<input type='text' name='blogSender' value='$member'></input>
-						<input type='text' name='blogerFN' value='$memberFN'></input>
-						<input type='text' name='blogerLN' value='$memberLN'></input>
-						<input type='text' name='blogerImg' value='$memberImg'></input>
-						<input type='text' name='blogerHref' value='$memberHref'></input>
-					</form>
-				</div>
-			";
+							It is
+							$message.
+						</p>
+						<form id='$member' method='post' style='display: none;'>
+							<input type='text' name='blogSender' value='$member'></input>
+							<input type='text' name='blogerFN' value='$memberFN'></input>
+							<input type='text' name='blogerLN' value='$memberLN'></input>
+							<input type='text' name='blogerImg' value='$memberImg'></input>
+							<input type='text' name='blogerHref' value='$memberHref'></input>
+						</form>
+					</div>
+				";
+			}		
+			
+			
+			echo "$build";
 		}
 	echo"
 			</div>
 		</div>
 	";
-	
-	if (isset($_COOKIE['scrollPos'])) {
-		$scrollPos = $_COOKIE['scrollPos'];
-		echo "
-			<script>
-				var head = document.getElementsByTagName('head')[0];
-				var script = document.createElement('script');
-				script.src = 'https://code.jquery.com/jquery-1.10.2.js';
-				head.appendChild(script);
-				$(window).scrollTop($scrollPos);
-			</script>
-		";
-		 unset($_COOKIE['scrollPos']);
-	}
 ?>

@@ -5,7 +5,7 @@
 		header('Location: ../../SignIn.html');
 	}
 	
-	$authorId = $_COOKIE['sharePictureWith'];
+	$authorIds = explode(",", $_COOKIE['shareWith']);
 	$elementId = $_COOKIE['sharePicture'];
 	
 	$message = "
@@ -24,46 +24,48 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} else {
-		$title = $sender."AND".$authorId;
-		$sql = "CREATE TABLE $title (ID int NOT NULL AUTO_INCREMENT, MESSANGER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
-		if ($conn->query($sql) === TRUE) {
-			sendMessage($sender, $conn, $message, $title);
-		} else {
-			sendMessage($sender, $conn, $message, $title);
-		}
-		
-		$title = $authorId."AND".$sender;
-		$sql = "CREATE TABLE $title (ID int NOT NULL AUTO_INCREMENT, MESSANGER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
-		if ($conn->query($sql) === TRUE) {
-			sendMessage($sender, $conn, $message, $title);
-		} else {
-			sendMessage($sender, $conn, $message, $title);
-		}
-		
-		$sql = "CREATE TABLE pushTable$authorId (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
-		if ($conn->query($sql) === TRUE) {
-			buildNotification($sender, $authorId, $conn);
-		} else {
-			buildNotification($sender, $authorId, $conn);				
+		foreach ($authorIds as $authorId) {
+			$title = $sender."AND".$authorId;
+			$sql = "CREATE TABLE $title (ID int NOT NULL AUTO_INCREMENT, MESSANGER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			if ($conn->query($sql) === TRUE) {
+				sendMessage($sender, $conn, $message, $title);
+			} else {
+				sendMessage($sender, $conn, $message, $title);
+			}
+			
+			$title = $authorId."AND".$sender;
+			$sql = "CREATE TABLE $title (ID int NOT NULL AUTO_INCREMENT, MESSANGER LONGTEXT, MESSAGE LONGTEXT, PRIMARY KEY (ID))";
+			if ($conn->query($sql) === TRUE) {
+				sendMessage($sender, $conn, $message, $title);
+			} else {
+				sendMessage($sender, $conn, $message, $title);
+			}
+			
+			$sql = "CREATE TABLE pushTable$authorId (ID int NOT NULL AUTO_INCREMENT, MEMBER LONGTEXT, MESSAGE LONGTEXT, DATE LONGTEXT, PRIMARY KEY (ID))";
+			if ($conn->query($sql) === TRUE) {
+				buildNotification($sender, $authorId, $conn);
+			} else {
+				buildNotification($sender, $authorId, $conn);				
+			}
+			
+			reCordinateStack($sender, $authorId);
+			reCordinateStack($authorId, $sender);
+			
+			$pullNotification = fopen("../Authors/$authorId/Messages/Notification.txt", "r") or die("Bad request for pull.");
+			$pullCount = fread($pullNotification, filesize("../Authors/$authorId/Messages/Notification.txt"));
+			$count = (int)$pullCount + 1;
+			fclose($pullNotification);
+			
+			$commitNotification = fopen("../Authors/$authorId/Messages/Notification.txt", "w") or die("Unable to commit.");
+			fwrite($commitNotification, $count);
+			fclose($commitNotification);
 		}
 	}
 	$conn->close();
 	
-	reCordinateStack($sender, $authorId);
-	reCordinateStack($authorId, $sender);
-	
-	$pullNotification = fopen("../Authors/$authorId/Messages/Notification.txt", "r") or die("Bad request for pull.");
-	$pullCount = fread($pullNotification, filesize("../Authors/$authorId/Messages/Notification.txt"));
-	$count = (int)$pullCount + 1;
-	fclose($pullNotification);
-	
-	$commitNotification = fopen("../Authors/$authorId/Messages/Notification.txt", "w") or die("Unable to commit.");
-	fwrite($commitNotification, $count);
-	fclose($commitNotification);
-	
 	echo "
 		<script>
-			document.cookie = 'sharePictureWith=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+			document.cookie = 'shareWith=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
 			document.cookie = 'sharePicture=; expires=Thu, 01 Jan 1970 00:00:00 UTC';
 			window.location = 'loadAlbum.php';
 		</script>

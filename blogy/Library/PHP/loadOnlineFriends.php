@@ -62,18 +62,18 @@
 								<button type='button' onclick=\"openBloger('$sugestion'); window.location=&#39;openBloger.php&#39;\">
 									View story
 								</button>
+								<form id='$sugestion' method='post' style='display: none;'>
+									<input type='text' name='blogSender' value='$sugestion'>
+									<input type='text' name='blogerFN' value='$sugestionFN'>
+									<input type='text' name='blogerLN' value='$sugestionLN'>
+									<input type='text' name='blogerImg' value='$sugestionImg'>
+									<input type='text' name='blogerHref' value='$sugestionHref'>
+								</form>
 								<button type='button' onclick=\"showMessageBox('$sugestion')\">
 									Quick message
 								</button>
 							</div>
 						</div>
-						<form id='$sugestion' method='post' style='display: none;'>
-							<input type='text' name='blogSender' value='$sugestion'></input>
-							<input type='text' name='blogerFN' value='$sugestionFN'></input>
-							<input type='text' name='blogerLN' value='$sugestionLN'></input>
-							<input type='text' name='blogerImg' value='$sugestionImg'></input>
-							<input type='text' name='blogerHref' value='$sugestionHref'></input>
-						</form>
 						<br>
 					";
 					array_push($onlineStack, $buildOnline);

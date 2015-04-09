@@ -14,16 +14,6 @@ echo "
 				<div id='suggestions'>
 ";
 
-	$scrollPosSidebar = $_POST['scrollPosSidebar'];
-	if (!isset($scrollPosSidebar)) {
-		$scrollPosSidebar = 0;
-	}
-	echo "
-		<script>
-			$(window).scrollTop($scrollPosSidebar);
-		</script>
-	";
-	
 	$pullFollowing = array();
 	$followingPull = fopen("../Authors/$sender/Following.txt", "r") or die("Fatal: Could not start opening.");
 	while (!feof($followingPull)) {
@@ -113,16 +103,16 @@ echo "
 								
 				//Build and print
 				echo "
-					<a href='openBloger.php' type='button' onclick=\"openBloger('$sugestion')\">
+					<button onclick=\"exploreBloger('$sugestion');\">
 						<img src='$sugestionImg' />
 						$sugestionFN $sugestionLN
-					</a>
+					</button>
 					<form id='$sugestion' method='post' style='display: none;'>
-						<input type='text' name='blogSender' value='$sugestion'></input>
-						<input type='text' name='blogerFN' value='$sugestionFN'></input>
-						<input type='text' name='blogerLN' value='$sugestionLN'></input>
-						<input type='text' name='blogerImg' value='$sugestionImg'></input>
-						<input type='text' name='blogerHref' value='$sugestionHref'></input>
+						<input type='text' name='blogSender' value='$sugestion'>
+						<input type='text' name='blogerFN' value='$sugestionFN'>
+						<input type='text' name='blogerLN' value='$sugestionLN'>
+						<input type='text' name='blogerImg' value='$sugestionImg'>
+						<input type='text' name='blogerHref' value='$sugestionHref'>
 					</form>
 					<br>
 				";
@@ -142,9 +132,11 @@ echo "
 			</div>
 			<div id='friendsOnline'>
 				<h1>Friends online</h1>
+				<div id='onlineFriends'>
 ";
 	include 'loadOnlineFriends.php';
 echo "
+				</div>
 			</div>
 	</div>
 	<div id='quickMessageBox' style='display: none;'>

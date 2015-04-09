@@ -60,6 +60,7 @@ echo "
 				}
 			
 				function displayNextImage() {
+					clearTimeout(intervalId);
 					x++;
 					if (x > images.length - 1) {
 						x = 0;
@@ -73,11 +74,12 @@ echo "
 				function nextImage() {
 					$('#img').fadeIn('medium');
 					document.getElementById('img').src = '../Authors/$sender/Album/'+images[x];
-					document.getElementById('counter').innerHTML = 'Slide '+count+' of '+images.length;
-					interval = 3500;					
+					document.getElementById('counter').innerHTML = 'Slide '+count+' of '+images.length;		
+					intervalId = setInterval(displayNextImage, interval);		
 				}
 				
 				function displayPreviousImage() {
+					clearTimeout(intervalId);
 					x--;
 					if (x < 0) {
 						x = images.length - 1;
@@ -92,20 +94,21 @@ echo "
 					$('#img').fadeIn('medium');
 					document.getElementById('img').src = '../Authors/$sender/Album/'+images[x];
 					document.getElementById('counter').innerHTML = 'Slide '+count+' of '+images.length;
-					interval = 3500;
+					intervalId = setInterval(displayNextImage, interval);
 				}
 
 				function startTimer() {
 					if (images[0] !== null) {	
 						document.getElementById('img').src = '../Authors/$sender/Album/'+images[x];
 						document.getElementById('counter').innerHTML = 'Slide '+count+' of '+images.length;
-						setInterval(displayNextImage, interval);
+						intervalId = setInterval(displayNextImage, interval);
 					} else {
 						alert('You don\' have picture yet.');
 					}
 				}
 
-				var interval = 3500;
+				var intervalId;
+				var interval = 3000;
 				var images = '$stackOrder'.split(',');
 				var x = 0;
 				var count = 1;

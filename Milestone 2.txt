@@ -10,11 +10,8 @@
 	-Make notes which will popup when their time comes.
 	-Possibilities :
 		-Choose date
-		-Share with friends
 *3.Search fields
 *4.Debug methods from Milestone 1
-
-4.Cripting methods - Based on the H table (Custom cripting table)
 
 Parts with '*' before their number are REQUIRED.
 Last modified on 17.03.2015

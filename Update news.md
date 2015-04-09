@@ -1,6 +1,17 @@
 #Update news: 2015
+<b>Update: 09.04 - Milestone 2</b><br>
+<b>*1.Album</b><br>
+	-Slideshow feature timing fixed.<br>
+<b>*2.Notes</b><br>
+	-Notes feature is here and it is ready to be used.<br>
+<b>*3.Search</b><br>
+	-Ok we experienced some problems with the JS but now everything is ok.<br>
+	-In search you are able to search in: <b>Friends & Authors</b><br>
+<b>*4.Debug methods from Milestone 1</b><br>
+	-Well in the process of making we constantly found bugs some of them are big others are small.<br>
+	-But once we found a bug we resolve it.<br>
 <b>Update: 27.03 - Milestone 2</b><br>
-<b>*1.Album</b>
+<b>*1.Album</b><br>
 	-Album feature is now available.<br>
 	-User can upload : <b>Picture</b><br>
 	-With his pictures user can :<br>
@@ -12,8 +23,7 @@
 		5.View all his uploads on slideshow<br>
 	</b>
 	<br>
-<b>
-*2.Notes<br>
+<b>*2.Notes<br>
 *3.Search<br>
 *4.Debug methods from Milestone 1</b><br>
 	-In the process of making we found old bugs and we resolve them.<br>

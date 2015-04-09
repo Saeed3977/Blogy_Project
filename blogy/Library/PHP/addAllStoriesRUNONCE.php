@@ -4,7 +4,7 @@
 	$stack = array();
 	
 	foreach ($paths as $path) {
-		if ($path != "World" && $path != "Info.csv" && $path != "." && $path != "..") {
+		if ($path != "World" && $path != "Info.csv" && $path != "." && $path != ".." && $path != "index.php") {
 			$pullStack = fopen("../Authors/$path/Posts/Stack.txt", "r") or die("Unable to pull");
 			while (! feof($pullStack)) {
 				$line = trim(fgets($pullStack));

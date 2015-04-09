@@ -123,6 +123,13 @@
 								<button type='button' onclick=\"openBloger('$member'); window.location=&#39;openBloger.php&#39;\">
 									View story
 								</button>
+								<form id='$member' method='post' style='display: none;'>
+									<input type='text' name='blogSender' value='$member'>
+									<input type='text' name='blogerFN' value='$memberFN'>
+									<input type='text' name='blogerLN' value='$memberLN'>
+									<input type='text' name='blogerImg' value='$memberImg'>
+									<input type='text' name='blogerHref' value='$memberHref'>
+								</form>
 					";
 						if (!in_array($member, $blockedPersons)) {
 							echo "
@@ -134,13 +141,6 @@
 					echo "
 							</div>
 						</div>
-						<form id='$member' method='post' style='display: none;'>
-							<input type='text' name='blogSender' value='$member'></input>
-							<input type='text' name='blogerFN' value='$memberFN'></input>
-							<input type='text' name='blogerLN' value='$memberLN'></input>
-							<input type='text' name='blogerImg' value='$memberImg'></input>
-							<input type='text' name='blogerHref' value='$memberHref'></input>
-						</form>
 						<br>
 					";
 				}

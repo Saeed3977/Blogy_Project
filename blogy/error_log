@@ -4,3 +4,36 @@
 [23-Feb-2015 21:28:18 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
 [23-Feb-2015 21:28:38 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
 [23-Feb-2015 21:28:49 Europe/Sofia] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'dimitarnestorov.com' (110) in /home/kdkcompu/gero/blogy/test.php on line 7
+[06-Apr-2015 14:43:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 6
+[06-Apr-2015 14:45:24 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 6
+[06-Apr-2015 14:45:45 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:47 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:48 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:45:49 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:46:00 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:46:49 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:47:53 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:48:56 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:51:00 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 8
+[06-Apr-2015 14:51:11 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 8
+[06-Apr-2015 14:51:35 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:51:38 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:53:10 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:53:17 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 7
+[06-Apr-2015 14:53:58 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:53:58 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:53:59 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:53:59 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:53:59 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:54:04 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:54:25 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:54:32 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:54:43 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[06-Apr-2015 14:55:09 Europe/Sofia] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/kdkcompu/gero/blogy/downloadBlogy.php:15) in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 16
+[06-Apr-2015 14:56:25 Europe/Sofia] PHP Warning:  fopen(Library/Documentation/Blogy_.html): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/downloadBlogy.php on line 5
+[07-Apr-2015 00:25:58 Europe/Sofia] PHP Fatal error:  Class 'Thread' not found in /home/kdkcompu/gero/blogy/Threads.php on line 3

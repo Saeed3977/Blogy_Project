@@ -12,6 +12,9 @@
 	$checkPath = "../Authors/$sender/Album";
 	if (!file_exists($checkPath)) {
 		mkdir($checkPath, 0777);
+		$buildSecurity = fopen("../Authors/$fullName/index.php", "w") or die("Fatal: Unable to build security.");
+		fwrite($buildSecurity, "<?php header('Location: ../../../../SignIn.html');?>");
+		fclose($buildSecurity);
 	}
 	
 	//Connect to data base
@@ -120,6 +123,30 @@ echo "
 						alert(message);
 					}
 				}
+				
+				var sendTo = [];
+				function shareAlbumObject(userId, id) {
+					if (sendTo.indexOf(userId) > -1) {
+						document.getElementById(\"friend\"+id).style.webkitFilter = 'grayscale(1)';
+						var index = sendTo.indexOf(userId);
+						sendTo.splice(index, 1);
+					} else {
+						document.getElementById(\"friend\"+id).style.webkitFilter = 'grayscale(0)';
+						sendTo.push(userId);
+					}
+					
+					if (sendTo.length > 0) {
+						document.getElementById('sendButton').style.visibility= 'visible';
+					} else {
+						document.getElementById('sendButton').style.visibility= 'hidden';
+					}
+				}
+				
+				function sendImage() {
+					var shareWith = sendTo.toString();
+					document.cookie = 'shareWith='+shareWith;
+					window.location = 'sendAlbumImage.php';
+				}
 			</script>
 		</head>
 		<body>
@@ -134,11 +161,16 @@ echo "
 		echo "<button type='button' class='slideShow' title='Slides' onclick='window.open(\"startSlideShow.php\")'><img src='http://cdn.flaticon.com/png/256/61433.png' /></button>";
 	}
 	
+	if ($getSizeInMB >= 5.00) {
+		echo "
+			<button type='button' class='uploadButton' title='Upload' onclick='openDialog()'><img src='https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/upload-128.png'></button>
+			<form id='toUpload' style='display: none;' method='post' enctype='multipart/form-data'>
+				<input type='file' name='fileToUpload' id='fileToUpload' onchange='startToUpload()'>
+			</form>
+		";
+	}
+	
 echo "
-				<button type='button' class='uploadButton' title='Upload' onclick='openDialog()'><img src='https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/upload-128.png'></button>
-				<form id='toUpload' style='display: none;' method='post' enctype='multipart/form-data'>
-					<input type='file' name='fileToUpload' id='fileToUpload' onchange='startToUpload()'>
-				</form>
 			</div>
 ";
 	include "loadMenu.php";
@@ -146,10 +178,13 @@ echo "
 
 echo "
 			<div id='storeFriends'>
+				<button class='sendButton' id='sendButton' onclick='sendImage()'>Send</button>
 				<button class='hideButton' onclick='hideContainerFriends()'></button>
-				<h1>Send to :</h1>
+				<h1>Choose friends :</h1>
+				<div id='chooseToSend'>
 ";
-
+	
+	$friendId = 0;
 	foreach ($friendsStack as $friend) {
 		$pickUpCount = 0;
 		$parseUser = fopen("../Authors/$friend/config.txt", "r") or die("Unable to start parsing.");
@@ -175,9 +210,10 @@ echo "
 		}
 		fclose($parseUser);
 		
+		$friendId++;
 		$build = "
-			<button type='button' onclick=' shareAlbumObject(\"$friend\")'>
-				<img src='$friendImg' />
+			<button type='button' onclick='shareAlbumObject(\"$friend\", \"$friendId\")'>
+				<img id='friend$friendId' src='$friendImg' />
 				$friendFN $friendLN
 			</button>
 		";
@@ -186,6 +222,7 @@ echo "
 	}
 
 echo "
+				</div>
 			</div>
 			<div id='makePost'>
 				<button class='hideButton' onclick='hideContainerPost()'></button>
@@ -208,19 +245,23 @@ echo "
 			<div id='albumImages'>
 ";
 	
+	$countId = 0;
 	foreach ($stackOrder as $picture) {
+		$countId++;
 		$src = "../Authors/$sender/Album/$picture";
 		$buildImg = "
-			<div id='imgContainer'>
+			<div id='imgContainer' onmouseover='$(\"#$countId\").fadeIn(\"fast\");' onmouseleave='$(\"#$countId\").fadeOut(\"fast\");'>
 				<img id='$picture' src='$src' alt='Bad image link :('>
-				<div id='imgOptions'>
-					<a href='$src' data-lightbox='roadtrip'>
-						<button type='button' class='split'>View</button>
-					</a>
-					<button type='button' class='split' onclick='showContainerPost(\"$picture\", \"$sender\")'>Make a story</button>
-					<button type='button' class='split' onclick='showContainerFriends(\"$picture\")'>Send to a friend</button>
-					<button type='button' class='split' onclick='setAsProfilePic(\"$picture\")'>Set as profile pic.</button>
-					<button type='button' onclick='deleteObjectFromAlbum(\"$picture\")'>Delete</button>
+				<div id='$countId' style='display: none;'>
+					<div id='imgOptions'>
+						<a href='$src' data-lightbox='roadtrip'>
+							<button type='button' class='split'>View</button>
+						</a>
+						<button type='button' class='split' onclick='showContainerPost(\"$picture\", \"$sender\")'>Make a story</button>
+						<button type='button' class='split' onclick='showContainerFriends(\"$picture\")'>Send to a friend</button>
+						<button type='button' class='split' onclick='setAsProfilePic(\"$picture\")'>Set as profile pic.</button>
+						<button type='button' onclick='deleteObjectFromAlbum(\"$picture\")'>Delete</button>
+					</div>
 				</div>
 				<form id='picture$picture' method='post' style='display: none'>
 					<input id='pictureId' name='pictureId' value='$picture'>
