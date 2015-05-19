@@ -1,3 +1,0 @@
-Pool
-../../../Library/Authors/MladenKaradimov/Album/pool.jpg
-NULL
