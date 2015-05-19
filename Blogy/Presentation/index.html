@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel='shortcut icon' href='../Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='../Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<title>Blogy</title>
+		<link href='style.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= '../fonts.css' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='../fonts.css' />
+
+		<link href='../LightBox/css/lightbox.css' type='text/css' rel='stylesheet' />
+		<script src='../LightBox/js/jquery-1.11.0.min.js'></script>
+		<script src='../LightBox/js/lightbox.min.js'></script>
+			
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			var slideNum = 1; 
+			var slides = 7;
+			var backgrounds = ["EMPTY", "#001E4E", "#004b5f", "#14992A", "#E46C19", "#B61A1B", "#671AB6", "#1B58B8"];
+
+			function resetPresentation() {
+				document.body.style.backgroundColor = backgrounds[1];
+
+				$('#slides').fadeOut('fast');
+				$('#page1').fadeIn('fast');
+				slideNum = 1;
+
+				for (i = 1; i <= slides; i++) {
+					document.getElementById('slide'+i).style.display='none';
+				}
+
+				setTimeout(function(){document.getElementById('hint-message').style.display='block';}, 500);
+			}
+
+			function nextSlide() {
+				if (slideNum + 1 <= slides) {
+					$('#slide'+slideNum).fadeOut('fast');
+					slideNum++;
+					document.body.style.backgroundColor = backgrounds[slideNum];
+					$('#slide'+slideNum).fadeIn('fast');
+				} else {
+					alert("It looks that there are no more slides.");
+				}
+			}
+
+			function previousSlide() {
+				if (slideNum > 1) {
+					$('#slide'+slideNum).fadeOut('fast');
+					slideNum--;
+					document.body.style.backgroundColor = backgrounds[slideNum];
+					$('#slide'+slideNum).fadeIn('fast');
+				} else {
+					alert("This is the first slide.");
+				}
+			}
+
+			function checkKey(e) {
+				if (e.keyCode == 37) {
+					previousSlide();
+				}
+				else
+				if (e.keyCode == 39) {
+					nextSlide();
+				}
+				else
+				if (e.keyCode == 27) {
+					resetPresentation();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="page1">
+			<div id="title">
+				<h1>Blogy</h1>
+				<h2>#Presentation</h2>
+				<button onclick="$('#page1').fadeOut('fast'); $('#slides').fadeIn('fast'); document.getElementById('slide1').style.display='block';">Start</button>
+			</div>
+		</div>
+		<div id="slides">
+			<!--SLIDE 1-->
+			<div id="slide1">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();"  title="Stop presentation" class="stop-button"></button>
+							<h1>Meet Blogy</h1>
+							<iframe src="https://www.youtube.com/embed/u1XxM4Ytz-Q" frameborder="0" allowfullscreen></iframe>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+				<div id="hint-message">
+					<table id="body">
+						<tr>
+							<td id="row-left" class="left-hint">
+								<button class="previous-button">Previous page</button>
+							</td>
+							<td id="row-middle">
+								<div class="top-hint">
+									<button class="stop-button">Stop presentation</button>
+								</div>
+								<p>
+									Click on the left or the right side of the page to go through the presentation.
+									Or if you want to stop the presentation just hit on the top of your page.
+									Also we included some "live" elements in the presentation find them if you can :-)
+								</p>
+								<button onclick="$('#hint-message').fadeOut('fast');" class="close-hint">Ok, I got it</button>
+							</td>
+							<td id="row-right" class="right-hint">
+								<button class="next-button">Next page</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--SLIDE 2-->
+			<div id="slide2">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>Who are we ?</h1>
+							<div id="crew">
+								<div id="left">
+									<a href="http://www.blogy.sitemash.net/Library/Authors/GeroNikolov/Author.php" target="_blank">
+										<img src="https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/e15/11033024_899849446724236_1429096255_n.jpg" />
+										<h1>Gergan (Gero) Nikolov</h1>
+									</a>
+									<h2>CEO / Founder / Dev-lead</h2>
+								</div>
+								<div id="middle">
+									<a href="http://www.blogy.sitemash.net/Library/Authors/MladenKaradimov/Author.php" target="_blank">
+										<img src="https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/10727305_791211770944614_636064868_a.jpg" />
+										<h1>Mladen Karadimov</h1>
+									</a>
+									<h2>Co-Founder / Test-lead</h2>
+								</div>
+								<div id="right">
+									<a href="http://www.blogy.sitemash.net/Library/Authors/ValentinVarbanov/Author.php" target="_blank">
+										<img src="http://www.blogy.sitemash.net/Library/Authors/GeroNikolov/Album/11002642_878309862212425_382001128581858047_n%20(2).jpg" />
+										<h1>Valentin Varbanov</h1>
+									</a>
+									<h2>Co-Founder / Testing</h2>
+								</div>
+							</div>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--SLIDE 3-->
+			<div id="slide3">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>What is Blogy ?</h1>
+							<div id="img-text">
+								<div id="left">
+									<a href="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11232855_834309243289561_299277655_n.jpg" data-lightbox="roadtrip">
+										<img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11232855_834309243289561_299277655_n.jpg" />
+									</a>
+								</div>
+								<div id="right">
+									<p>
+										Blogy is the place where you can share your own story.
+										It is a place where everyone is connected and everyone
+										has the possibility to share everything that they like.
+									</p>
+									<!--<p>
+										it is a plece where wveryone can share 
+									</p> -->
+									<a href="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11235883_817774884980589_432326876_n.jpg" data-lightbox="roadtrip">
+										<img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11235883_817774884980589_432326876_n.jpg" />
+									</a>
+								</div>
+							</div>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--SLIDE 4-->
+			<div id="slide4">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>How it works ?</h1>
+							<div id="middle-content">
+								<p>
+									Well actually it is pretty simple.<br>
+									Just <a href="http://www.blogy.sitemash.net" target="_blank">register</a> and start <i>blogy-ing</i>.
+								</p>
+								<div id="move-down-50">
+									<a href="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11201712_957970870920323_954561220_n.jpg" data-lightbox="roadtrip">
+										<img src="https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/11201712_957970870920323_954561220_n.jpg" class="left" />
+									</a>
+									<a href="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11189714_1422924218017099_578972792_n.jpg" data-lightbox="roadtrip">
+										<img src="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11189714_1422924218017099_578972792_n.jpg" class="right" />
+									</a>
+								</div>
+							</div>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--SLIDE 5-->
+			<div id="slide5">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>What is the difference ?</h1>
+							<p>
+								Blogy is for the bloggers, for the people with stories.<br>
+								For those who want to share their <i>#unique</i> and <i>#personal</i> stories with others.<br>
+								You have to try and feel the experience that makes the difference between Blogy and others.
+							</p>
+							<a href="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11263669_1571922999739303_689160460_n.jpg" data-lightbox="roadtrip">
+								<img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11263669_1571922999739303_689160460_n.jpg" alt="Bad image link :(" />
+							</a>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--SLIDE 6-->
+			<div id="slide6">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>Be a part of the project</h1>
+							<p>
+								Well we have a lot of open positions at the moment.<br>
+								Mostly for <a href="http://www.blogy.sitemash.net" class="tutos" target="_blank"><i>#bloggers</i></a>.<br>
+								<br>
+								But we also offer positions of :<br>
+								-<a href="http://en.wikipedia.org/wiki/PHP" class="tutos" target="_blank">PHP</a> and <a href="http://en.wikipedia.org/wiki/JavaScript" class="tutos" target="_blank">JavaScript</a> programmers<br>
+								-Desktop / Mobile designers<br>
+								-Idea leaders<br>
+								-Testing services<br>
+								<br>
+								After you choose what would you like to do just mail us: <i>vtm.sunrise@gmail.com<i><br>
+							</p>
+						</td>
+						<td id="row-right">
+							<button onclick="nextSlide()" title="Next" class="next-button"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--SLIDE 7-->
+			<div id="slide7">
+				<table id="body">
+					<tr>
+						<td id="row-left">
+							<button onclick="previousSlide()" title="Previous" class="previous-button"></button>
+						</td>
+						<td id="row-middle">
+							<button onclick="resetPresentation();" title="Stop presentation" class="stop-button"></button>
+							<h1>#BeUnique</h1>
+							<p>
+								Everybody in this country should learn to program a computer.<br>
+								Because it teaches you how to think.<br>
+								-Steve Jobs
+							</p>
+							<a href="http://www.blogy.sitemash.net" target="_blank">Go blogy-ing</a>
+							<span>or</span>
+							<a href="https://www.facebook.com/theblogy?ref=hl" target="_blank">Facebook us</a>
+							<div id="img-container">
+								<a href="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11184635_1439946472985433_1879328119_n.jpg" data-lightbox="roadtrip">
+									<img class="left" src="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/11184635_1439946472985433_1879328119_n.jpg" />
+								</a>
+								<a href="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10261040_1563881943872276_1838017491_n.jpg" data-lightbox="roadtrip">
+									<img class="right" src="https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10261040_1563881943872276_1838017491_n.jpg" />
+								</a>
+							</div>
+						</td>
+						<td id="row-right">
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,353 @@
+<html>
+	<head>
+		<link rel='shortcut icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<title>Blogy</title>
+		<link href='style-index.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= 'fonts.css' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='fonts.css' />
+		
+		<script type='text/javascript' src='java.js'></script>
+		<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+<!--	
+		<script>
+			var getRandom = Math.floor((Math.random() * 3) + 1);
+			if (getRandom == 3) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background3.jpg') no-repeat center center fixed";
+			}
+			else
+			if (getRandom == 2) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background2.jpg') no-repeat center center fixed";
+			}
+			else
+			if (getRandom == 1) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background1.jpg') no-repeat center center fixed";
+			}
+		</script>
+-->
+
+		<script>
+			function checkKey(e) {
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if(code == 13) { //Enter keycode
+					var text = document.getElementById('mail').value.toLowerCase();
+					var pass = document.getElementById('password').value;
+					document.getElementById('mail').value = document.getElementById('mail').value.toLowerCase();
+					
+					if (text == "")
+					{
+						alert("Enter your e-mail please.");
+					}
+					else
+					if (pass == "")
+					{
+						alert("Enter your password please.");
+					}
+					else
+					{
+						if (!isValidEmailAddress(text)) {
+							alert("Enter valid e-mail address please.");
+						}
+						else {
+							document.forms['SignIn'].submit();
+						}
+					}
+				}
+			}
+
+			function checkKey1(e) {
+				if (e.keyCode == 13) {
+					regLoad();
+				}
+			}
+			
+			function start() {
+				var text = document.getElementById('mail').value;
+				var pass = document.getElementById('password').value;
+				document.getElementById('mail').value = document.getElementById('mail').value.toLowerCase();
+				
+				if (text == "")
+				{
+					alert("Enter your e-mail please.");
+				}
+				else
+				if (pass == "")
+				{
+					alert("Enter your password please.");
+				}
+				else
+				{
+					if (!isValidEmailAddress(text)) {
+						alert("Enter valid e-mail address please.");
+					}
+					else {
+						document.forms['SignIn'].submit();
+					}
+				}
+			}
+
+			function checkInput(e, id) {
+				if (e.keyCode == 32) {
+					var object = document.getElementById(id);
+					alert("Spaces are not allowed !");
+					object.value = object.value.substring(0, object.value.length - 1);
+					if (object.value.length == 1) {
+						object.value = "";
+					}
+				}
+			}
+
+			function regLoad() {
+				var fName = document.getElementById('fName');
+				var lName = document.getElementById('lName');
+				var email = document.getElementById('mail-registration');
+				var profilePicture = document.getElementById('picture');
+				var social = document.getElementById('social');
+				var pass1 = document.getElementById('pass1');
+				var pass2 = document.getElementById('pass2');
+
+				fName.value = document.getElementById('fName').value.toLowerCase();
+				fName.value = document.getElementById('fName').value.charAt(0).toUpperCase() + document.getElementById('fName').value.substring(1);
+				lName.value = document.getElementById('lName').value.toLowerCase();
+				lName.value = document.getElementById('lName').value.charAt(0).toUpperCase() + document.getElementById('lName').value.substring(1);
+				email.value = document.getElementById('mail-registration').value.toLowerCase();
+				
+				var flag = 0;
+				
+				if (fName.value == "")
+				{
+					alert("Enter your first name please.");
+					flag = 1;
+				}
+				
+				if (lName.value == "")
+				{
+					alert("Enter your last name please.");
+					flag = 1;
+				}
+				
+				if (email.value == "")
+				{
+					alert("Enter your e-mail please.");
+					flag = 1;
+				}
+			
+				if (profilePicture.value == "")
+				{
+					document.getElementById('picture').value = "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png";
+				}
+				
+
+				if (pass1.value == "")
+				{
+					alert("Choose your password.");
+					flag = 1;
+				}
+				
+				if (flag == 0) {
+					if (!isValidEmailAddress(document.getElementById('mail-registration').value)) {
+						alert("Enter valid e-mail address !");
+					} else {
+						if (pass1.value == pass2.value) {
+							document.forms['register'].submit();
+						}
+						else
+						if (pass1.value != pass2.value) {
+							alert("Passwords don't match !");
+						}
+					}
+				}
+			}
+
+			function notEmpty() {
+				var mail = document.getElementById("mail");
+				var confMail = document.getElementById("confMail");
+				
+				if (mail.value == "") {
+					alert("Enter your email first.");
+				}
+				else
+				if (mail.value != "") {
+					if (mail.value == confMail.value) {
+						document.getElementById("passwordReset").action = 'Library/PHP/resendPassword.php';
+						document.forms["passwordReset"].submit();
+					} 
+					else
+					if (mail.value != confMail.value) {
+						alert("Email don't match.");
+					}
+				}
+			}
+
+			function sendLetter() {
+				var message = "Finish the subject with the job you want to do.%0DAnd then tell us what do you preffer to do in your free time.%0DAlso tells us why do you preffer to do this and why you are the best !";
+				window.open('mailto:vtm.sunrise@gmail.com?subject=I want to&body='+message);
+			}
+		</script>
+	</head>
+	<body>
+		<!--<script type="text/javascript">
+			if (screen.width <= 800) {
+				window.location = "http://google.com"; //-- SET TO REDIRECT TO MOBILE
+			}
+		</script>-->
+
+		<!--MAIN CONTAINER-->
+		<div id='first-main'>
+			<div id='blur-container'>
+				<div id='logIn-container'>
+					<h1>Blogy</h1>
+					<h2>#BeUnique</h2>
+					<form id='SignIn' action="Library/PHP/checkLog.php" method="post">
+						<input type='text' name="mail" id="mail" placeholder="E-mail">
+						<input type='password' name="password" id="password" onkeypress="checkKey(event, 0)" placeholder="Password">
+					</form>
+					<button type='button' onclick="start()">Log in</button>
+					<div id='sub-options'>
+						<button type='button' onclick="$('#logIn-container').fadeOut('fast'); $('#forgottenPassword').fadeIn('fast');">Forgotten password</button>
+						<button type='button' onclick="$('#logIn-container').fadeOut('fast'); $('#termsConditions').fadeIn('fast');">Terms and conditions</button>
+					</div>
+					<!--<button type='button' class="storeButton" onclick="">Store</button>-->
+				</div>
+
+				<!--FORGOTEN PASSWORD-->
+				<div id='forgottenPassword'>
+					<h1>Forgotten password</h1>
+					<form id='passwordReset' method='post'>
+						<input type='text' id='mail' name='mail' placeholder='Enter your e-mail'></input>
+						<input type='text' id='confMail' placeholder='Confirm your e-mail'></input>
+					</form>
+					<button type='button' onclick='notEmpty()'>Get password</button>
+					<div id='sub-options'>
+						<button type='button' onclick="$('#forgottenPassword').fadeOut('fast'); $('#logIn-container').fadeIn('fast');">Log in</button>
+					</div>
+				</div>
+
+				<!--TERMS AND CONDITIONS-->
+				<div id='termsConditions' onclick="$('#termsConditions').fadeOut('fast'); $('#logIn-container').fadeIn('fast');">
+					<button type='button' onclick="$('#termsConditions').fadeOut('fast'); $('#logIn-container').fadeIn('fast');">Log in</button>
+					<div id='container'>
+						<h1>Your content</h1>
+						<p>
+							<b>Blogy</b> is a free-opened social network.<br>
+							That means <b>your story</b> will be public and everybody will be able to read and see it.<br>
+							<br>
+							<b>But does everything will be public ?</b><br>
+							Of course <b>no</b>.<br>
+							In <b>Blogy</b> we organized the content and we decided to make some sections private.<br>
+							These sections are :<br>
+							<b>
+								1. Your Album<br>
+								2. Your messages<br>
+								3. Your friends<br>
+							</b>
+							<br>
+							<b>What can you share in your story ?</b><br>
+							Here in <b>Blogy</b> we think that
+							everyone can choose what to share.
+							So we let you to choose what is good enough for your story.<br>
+							<b>
+								But we don't allow you to post those kind of stories :<br>
+								1. Stories that harass someone or someones privacy<br>
+								2. Brutal and violent content<br>
+								3. Pornographic materials<br>
+								If you find something inappropriate, report it and we will review it.<br>
+							</b>
+							<br>
+							<b>How we suggest you friends ?</b><br>
+							We get your friends, check their friends and we filter them
+							after that we suggest you the best matches for your.<br>
+						</p>
+						<h1>Other bloggers content</h1>
+						<p>
+							<b>Blogy</b> is a open-free social network.<br>
+							That means you can see <b>everybody's</b> stories.<br>
+							<br>
+							<b>Which sections are you able to see ?</b><br>
+							Just like you, all other <b>bloggers</b> have their own public and private sections.<br>
+							So you will be able to view these sections :<br>
+							<b>
+								1. Story
+							</b>
+						</p>
+						<h1>Friends</h1>
+						<p>
+							In <b>Blogy</b> we believe that when you <b>follow</b> someone you will want him as a friend.<br>
+							<br>
+							<b>What is the "Ohana" ?</b><br>
+							The members in your <b>Ohana</b> must be unique.<br>
+							They will stay in your <b>Ohana</b> even if you block them.
+							Ohana members are just like your "Close friends" in Facebook.
+							So choose your Ohana members carefully.
+						</p>
+					</div>
+				</div>
+
+				<div id='nav-bar'>
+					<button type='button' class="left" onclick="$('#second-main').fadeIn('fast')">Meet Blogy</button>
+					<button type='button' class="right" onclick="$('#third-main').fadeIn('fast')">Register</button>
+				</div>
+			</div>
+		</div>
+		<!--MEET BLOGY CONTAINER-->
+		<div id='second-main'>
+			<div id='nav-bar'>
+				<button type='button' onclick="$('#second-main').fadeOut('fast')">Log in</button>
+			</div>
+			<div id='information-container'>
+				<img src="Library/images/Blogy-ICO.png" />
+				<p>
+					<span id='header'>Blogy is your own story where to share your personal moments.</span>
+
+					<span id='sub-header'>How it works ?</span>
+					Actually it is pretty simple. Just post everything you are interested in.<br>
+					Also read your friends interesting stories.<br>
+					Thats all :)<br>
+
+					<span id='sub-header'>Who are we ?</span>
+					Well, we are small a group of <b>Bulgarian IT</b> students.<br>
+					CEO / Founder: <a href='Library/Authors/GeroNikolov/Author.php' target='_blank'>Gero Nikolov</a><br>
+					Test lead / Co-Founder: <a href='Library/Authors/MladenKaradimov/Author.php' target='_blank'>Mladen Karadimov</a><br>
+					Design lead: <a href='Library/Authors/DimitarGeorgiev/Author.php' target='_blank'>Dimitar Georgiev</a><br>
+					Tester: <a href='Library/Authors/ValentinVarbanov/Author.php' target='_blank'>Valentin Varbanov</a><br>
+				
+					<span id='sub-header'>How the idea came ?</span>
+					Actually, the first idea of <b>Blogy</b> was<br>only a simple web-store for <b>blog templates</b>.<br>
+					And by the time we decided to make it a little bigger and a little different from the first idea.<br>
+					So here we are :)<br> 
+
+					<span id='sub-header'>Become a part of the project ?</span>
+					We are seeking for people who got a lot of free time and know what excactly <b>they want to do</b> !<br>
+					<b>Why you need a lot of free time ?</b><br>
+					Well because, <b>Blogy</b> is <b>free social media</b> and for now we can't offer you pricing for the work you have done.<br>
+					In exchange you will receive a lot of new knowledge and cool experience with our team.<br>  
+					Well if you still want to join our community just click <a href="#" target='_blank' onclick='sendLetter()'>here</a>.<br>
+				</p>
+				<div id='nav-bar1'>
+					<a href="http://blogy.sitemash.net/Presentation/" target="_blank">Check out the presentation</a>
+				</div>
+			</div>
+		</div>
+		<!--REGISTER CONTAINER-->
+		<div id='third-main'>
+			<div id='nav-bar'>
+				<button type='button' onclick="$('#third-main').fadeOut('fast')">Log in</button>
+			</div>
+			<h1>Become a Blogger</h1>
+			<div id='form'>
+				<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+					<input type="text" id="fName" name="fName" class='top' maxlength="60" placeholder="First name"></input>
+					<input type="text" id="lName" name="lName" maxlength="60" placeholder="Last name"></input>
+					<input type="text" id="picture" name="picture" placeholder="Link to profile picture"></input>
+					<input type="text" id="mail-registration" name="mail" placeholder="E-mail address"></input>
+					<input type="text" id="social" name="social" placeholder="Link to your social network account"></input>
+					<input type="password" id="pass1" name="pass" onkeyup="checkInput(event, 'pass1')" placeholder="Password"></input>
+					<input type="password" id="pass2" onkeypress="checkKey1(event)" class="bot" onkeyup="checkInput(event, 'pass2')" placeholder="Confirm password"></input>
+				</form>
+				<button type='button' onclick="regLoad()">Go !</button>
+			</div>
+		</div>
+	</body>
+</html>

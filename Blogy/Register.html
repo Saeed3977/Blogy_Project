@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<link rel="shortcut icon" href="Library/images/Blogy-ICO.png" type="image/x-icon">
+		<link rel="icon" href="Library/images/Blogy-ICO.png" type="image/x-icon">
+		<title>Register</title>
+		<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href= "fonts.css" rel="stylesheet" type="text/css">
+		
+		<link rel="stylesheet" href="jquery-ui.min.css">
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.min.js"></script>
+		<script src="java.js"></script>
+		<script>
+			function checkKey(e) {
+				if (e.keyCode == 13) {
+					regLoad();
+				}
+			}
+
+			function checkInput(e, id) {
+				if (e.keyCode == 32) {
+					var object = document.getElementById(id);
+					alert("Spaces are not allowed !");
+					object.value = object.value.substring(0, object.value.length - 1);
+					if (object.value.length == 1) {
+						object.value = "";
+					}
+				}
+			}
+		</script>
+		<script>
+			function regLoad() {
+				var fName = document.getElementById('fName');
+				var lName = document.getElementById('lName');
+				var email = document.getElementById('mail');
+				var profilePicture = document.getElementById('picture');
+				var social = document.getElementById('social');
+				var pass1 = document.getElementById('pass1');
+				var pass2 = document.getElementById('pass2');
+				
+				fName.value = document.getElementById('fName').value.toLowerCase();
+				fName.value = document.getElementById('fName').value.charAt(0).toUpperCase() + document.getElementById('fName').value.substring(1);
+				lName.value = document.getElementById('lName').value.toLowerCase();
+				lName.value = document.getElementById('lName').value.charAt(0).toUpperCase() + document.getElementById('lName').value.substring(1);
+				email.value = document.getElementById('mail').value.toLowerCase();
+				
+				var flag = 0;
+				
+				if (fName.value == "")
+				{
+					alert("Enter your first name please.");
+					flag = 1;
+				}
+				else
+				if (lName.value == "")
+				{
+					alert("Enter your last name please.");
+					flag = 1;
+				}
+				else
+				if (email.value == "")
+				{
+					alert("Enter your e-mail please.");
+					flag = 1;
+				}
+				else
+				if (profilePicture.value == "")
+				{
+					var rand = Math.floor((Math.random() * 5) + 1);
+					if (rand == 1) {
+						document.getElementById('picture').value = "https://cdn1.iconfinder.com/data/icons/brown-monsters/1024/Brown_Monsters_12-01.png";
+					}
+					else
+					if (rand == 2) {
+						document.getElementById('picture').value = "https://cdn1.iconfinder.com/data/icons/brown-monsters/1024/Brown_Monsters_14-01.png";
+					}
+					else
+					if (rand == 3) {
+						document.getElementById('picture').value = "https://cdn2.iconfinder.com/data/icons/purple-monsters/1024/Purple_Monsters_25-01.png";
+					}
+					else
+					if (rand == 4) {
+						document.getElementById('picture').value = "https://cdn2.iconfinder.com/data/icons/purple-monsters/1024/Purple_Monsters_11-01.png";
+					}
+					else
+					if (rand == 5) {
+						document.getElementById('picture').value = "https://cdn2.iconfinder.com/data/icons/holloweenavatars/PNG/Frankenstein.png";
+					}
+				}
+				else
+				if (pass1.value == "")
+				{
+					alert("Choose your password.");
+					flag = 1;
+				}
+				
+				if (flag == 0) {
+					if (!isValidEmailAddress(document.getElementById('mail').value)) {
+						alert("Enter valid e-mail address !");
+					} else {
+						if (pass1.value == pass2.value) {
+							document.forms['register'].submit();
+						}
+						else
+						if (pass1.value != pass2.value) {
+							alert("Passwords don't match !");
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="http://www.vss.free.bg"  target='_blank' class="logo-button"><img src="Library/images/logo.png" /></a>
+			<a href="index.php">Home</a>
+			<a href="Blogies_index.php">Blogies</a>
+			<a href='Downloads.html'>Downloads</a>
+			<a href='SignIn.html'>Log in</a>
+		</div>
+		<div id="sub-logo">
+			<h1>Register</h1>
+		</div>
+		<div id="body">
+			<div id="form">
+				<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+					<input type="text" id="fName" name="fName" maxlength="60" placeholder="First name"></input>
+					<br>
+					<input type="text" id="lName" name="lName" maxlength="60" placeholder="Last name"></input>
+					<br>
+					<input type="text" style="text-align: center;" id="picture" name="picture" placeholder="Link to profile picture"> <!--onclick='showDialog("choosePic")'>
+					<!--<input type="file" style="display: none;" id="choosePic" onchange="imgChange()"/>-->
+					<br>
+					<input type="text" id="mail" name="mail" placeholder="E-mail address"></input>
+					<br>
+					<!--
+					<input type="text" id="picture" name="picture"></input>
+					-->
+					<input type="text" id="social" name="social" placeholder="Link to your social network account"></input>
+					<br>
+					<input type="password" id="pass1" name="pass" onkeyup="checkInput(event, 'pass1')" placeholder="Password"></input>
+					<br>
+					<input type="password" id="pass2" onkeypress="checkKey(event)" onkeyup="checkInput(event, 'pass2')" placeholder="Confirm password"></input>
+				</form>
+				<a href="#" onclick="regLoad()">Start</a>
+				<div class="addMargin"></div>
+			</div>
+		</div>
+	</body>
+</html>

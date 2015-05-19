@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+@font-face {
+	font-family: OpenSansLight;
+	src: url('fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+	font-family: OpenSansRegular;
+	src: url('fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: OpenSansEmoji;
+	src: url('fonts/OpenSansEmoji.ttf');
+}
+
+@font-face {
+	font-family: Iconic;
+	src: url('fonts/FontAwesome/fonts/FontAwesome.otf');
+}

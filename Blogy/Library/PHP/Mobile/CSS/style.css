@@ -1,0 +1,315 @@
+body {
+  background-color: #e9eaed;
+  overflow: auto; }
+
+a {
+  text-decoration: none; }
+
+textarea {
+  resize: none; }
+
+#menu {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.95);
+  width: 100%;
+  height: 74px;
+  text-align: center; }
+  #menu #homeMenu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 5;
+    width: 100%;
+    height: 72px;
+    font-family: OpenSansRegular;
+    font-size: 32px;
+    font-weight: normal;
+    color: white; }
+    #menu #homeMenu button img {
+      margin: 2.5px 10px auto auto;
+      border-radius: 100%;
+      width: 62px;
+      height: 62px;
+      vertical-align: middle; }
+  #menu #dropDownMenu {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 72;
+    left: 0;
+    width: 100%;
+    height: 99.26%;
+    border-top: 1px solid #333333;
+    background-color: rgba(51, 51, 51, 0.95); }
+    #menu #dropDownMenu a {
+      font-family: OpenSansRegular;
+      font-size: 32px;
+      font-weight: normal;
+      color: white;
+      text-align: left;
+      padding: 10px 10px;
+      display: block;
+      border-bottom: 1px solid #333333; }
+
+#editorContainer {
+  display: none;
+  position: fixed;
+  top: 73;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.9); }
+  #editorContainer #containerTXT {
+    background: white;
+    width: 70%;
+    height: 50%;
+    position: fixed;
+    top: 25%;
+    left: 15%;
+    margin: auto auto auto auto; }
+    #editorContainer #containerTXT .hideButton {
+      border: none;
+      width: 18px;
+      height: 18px;
+      background: #ff7f7f;
+      border-radius: 100%;
+      padding: 5px;
+      font-size: 12px;
+      float: right;
+      margin: 2.5px 2.5px auto auto; }
+    #editorContainer #containerTXT .hideButton:hover {
+      background: #ff0000; }
+    #editorContainer #containerTXT h1 {
+      font-family: OpenSansLight;
+      font-size: 32px;
+      font-weight: normal;
+      color: black;
+      margin: 5px 0px 2.5px 0px;
+      text-align: center; }
+    #editorContainer #containerTXT input {
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal;
+      text-align: center;
+      color: black;
+      width: 100%;
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      display: block;
+      padding: 5px 5px; }
+    #editorContainer #containerTXT textarea {
+      border: none;
+      width: 100%;
+      height: -moz-calc(100% - 136px);
+      height: -webkit-calc(100% - 136px);
+      height: calc(100% - 136px);
+      display: block;
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal; }
+    #editorContainer #containerTXT button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      width: 100%;
+      height: 28px;
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal;
+      text-align: center;
+      color: #e5e5e5;
+      border-top: 1px solid #e5e5e5; }
+    #editorContainer #containerTXT button:hover {
+      color: #0088cc; }
+
+#shareMethod {
+  width: 50%;
+  height: 81px;
+  margin: 90px auto -80px auto;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px; }
+  #shareMethod #buttons {
+    text-align: center;
+    width: 100%;
+    margin-top: 8px; }
+    #shareMethod #buttons #facebook, #shareMethod #buttons #twitter, #shareMethod #buttons #googlePlus {
+      width: 64px;
+      height: 66px;
+      display: inline-block; }
+      #shareMethod #buttons #facebook img, #shareMethod #buttons #twitter img, #shareMethod #buttons #googlePlus img {
+        width: 64px;
+        height: 64px; }
+    #shareMethod #buttons #facebook, #shareMethod #buttons #twitter {
+      margin-right: 25px; }
+
+#author {
+  width: 50%;
+  height: 350px;
+  margin: 90px auto 0px auto;
+  padding: 2.5px 2.5px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  text-align: center; }
+  #author .left {
+    float: left; }
+  #author .right {
+    float: right; }
+  #author .left, #author .right {
+    margin: 5px auto auto 5px; }
+  #author .left img, #author .right img {
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    filter: alpha(opacity=50); }
+  #author .left img:hover, #author .right img:hover {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  #author #profilePictureImg {
+    margin: 5px auto -10px auto; }
+    #author #profilePictureImg img {
+      width: 164px;
+      height: 164px;
+      border: 1px solid #e5e5e5;
+      border-radius: 100px; }
+    #author #profilePictureImg img:hover {
+      border-color: #0088cc; }
+  #author a {
+    font-family: OpenSansLight;
+    font-size: 38px;
+    font-weight: normal;
+    color: black;
+    margin: 0px 0px 0px 0px; }
+  #author #followers {
+    margin-top: 15px;
+    border-top: 1px solid #e5e5e5; }
+    #author #followers .header {
+      margin-top: 10px;
+      margin-bottom: -20px;
+      /* margin-bottom: 15px; */
+      border: none;
+      color: black; }
+    #author #followers a {
+      font-size: 32px;
+      display: block;
+      color: #0088cc; }
+
+#post {
+  display: none;
+  position: fixed;
+  top: 73;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.9); }
+  #post #container {
+    position: relative;
+    width: 98%;
+    height: 512px;
+    top: 50%;
+    background: white;
+    border-radius: 3px;
+    margin: -256px auto auto auto; }
+    #post #container input {
+      width: 100%;
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal;
+      color: black;
+      display: block;
+      padding: 5px 5px;
+      border: none;
+      border-bottom: 1px solid #e5e5e5;
+      margin: 0px 0px 0px 0px;
+      text-align: center; }
+    #post #container textarea {
+      border: none;
+      width: 100%;
+      height: 380px;
+      display: block;
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal; }
+    #post #container a {
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal;
+      color: #0088cc;
+      padding: 5px 5px;
+      border-top: 1px solid #e5e5e5;
+      display: block;
+      text-align: center; }
+
+#main-table {
+  margin-top: 24px;
+  width: 100%; }
+  #main-table #poster {
+    width: 98%;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background-color: white; }
+    #main-table #poster #quickMenu .left, #main-table #poster #quickMenu .right {
+      font-family: OpenSansRegular;
+      font-size: 24px;
+      font-weight: normal;
+      margin: 3.5px 3.5px;
+      color: #ccc; }
+    #main-table #poster #quickMenu .left:hover, #main-table #poster #quickMenu .right:hover {
+      color: #0088cc; }
+    #main-table #poster #quickMenu .left {
+      float: left; }
+    #main-table #poster #quickMenu .right {
+      float: right; }
+    #main-table #poster #quickMenu h1 {
+      font-family: OpenSansLight;
+      font-size: 46px;
+      font-weight: normal;
+      color: black;
+      margin: -25px 0px 5px 0px;
+      text-align: center;
+      padding: 5px 5px;
+      border-bottom: 1px solid #e5e5e5; }
+    #main-table #poster img {
+      display: block;
+      margin: 0px auto auto auto;
+      webkit-box-shadow: 0 8px 6px -6px black;
+      -moz-box-shadow: 0 8px 6px -6px black;
+      box-shadow: 0 8px 6px -6px black;
+      max-width: 100%; }
+    #main-table #poster iframe {
+      width: 100%;
+      min-height: 315px;
+      margin-bottom: 10px; }
+    #main-table #poster p {
+      font-family: OpenSansRegular;
+      font-size: 22px;
+      font-weight: normal;
+      padding: 2.5px 2.5px;
+      color: black; }
+
+#loadSign {
+  float: none;
+  display: block;
+  width: 100%;
+  text-align: center; }
+  #loadSign img {
+    width: 48px;
+    height: 48px; }
+
+#sideBar {
+  display: none; }
+
+#rightSideBar {
+  display: none; }
+
+.pushNotification {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

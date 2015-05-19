@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>The blog</title>
+<link href= "fonts.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lightbox.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+
+<script type = "text/javascript">
+		function displayNextImage() {
+			//$("#img").slideUp("slow");
+			x++;
+			if (x > 1)
+				x = 0;
+			document.getElementById("img").src = images[x];
+			//$("#img").slideDown("slow");
+        }
+
+		function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("img").src = images[x];
+        }
+
+        function startTimer() {
+            setInterval(displayNextImage, 2000);
+        }
+
+		var images = [], x = -1;
+		images[0] = "images/1.jpg";
+		images[1] = "images/2.jpg";
+
+		/*
+		function nameHover() {
+			document.getElementById("name").textContent = "#Gero Nikolov";
+		}
+		function nameLeave() {
+			document.getElementById("name").textContent = "Gero Nikolov";
+		}
+		*/
+</script>
+
+</head>
+
+<body onLoad = "startTimer()">
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li class="me"><a href="index.html">Me</a></li>
+			<li><a href="MyWork.html">My work</a></li>
+			<li><a href="CoolSnaps.html">Cool snaps</a></li>
+		</ul>
+	</div>
+	<!-- end #menu --> 
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>The blog</h1>
+			<h2>of</h2>
+		</div>
+	</div>
+</div>
+<div id="wrapper"> 
+	<!-- end #header -->
+	<div id="page">
+		<div id="top">
+			<img src="images/gero.jpg"/>
+			<h1><a href="https://www.facebook.com/gero.nikolov" target="_blank">Gero Nikolov</a></h1>
+			<h2>(1997 - ????)</h2>
+			<br>
+			<br>
+		</div>
+		<div id="left">
+			<h1>Who am I ?</h1>
+			<p>My name is Gero,<br>
+			I am from Sofia, Bulgaria and I am 17 years old.<br>
+			I am studying in Technological school "Electronic Systems".<br>
+			My job is based on software development and testing.<br>
+			I am working in <a href="http://www.vss.free.bg">VTM</a> from 2 years.<br>
+			And I had two bigger projects: <b>Notify</b> and <b>Weather</b>
+			</p>
+		</div>
+		<div id="right">
+			<h1>From today</h1>
+			<img id="img" src="images/1.jpg"/>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+</body>
+</html>
